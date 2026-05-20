@@ -1,726 +1,537 @@
-FAST clustered nodePoolBase finder / READ ONLY
-Date: 2026-05-20 21:55:28
-Output: C:\Users\Bogdan\Desktop\ce_nodePoolBase_FAST_cluster_20260520_215528.txt
-
-Перед запуском открой BattlePass/Rewards UI.
+BattlePass card/container cluster finder / READ ONLY
+Date: 2026-05-20 22:18:44
+Output: C:\Users\Bogdan\Desktop\ce_card_container_clusters_20260520_221844.txt
 
 ============================================================
-STEP 1: FLOAT 1,2,1,1 SCAN
+STEP 0: IMPORTANT STRING ADDRESSES
+============================================================
+[key] DefaultTakeButton hits=10, used=10
+  0x29FAEDE6D76
+  0x29FAEDE7226
+  0x29FAEDE7556
+  0x29FAEDE7676
+  0x29FAEDE7826
+  0x29FAEDE8816
+  0x29FAEDE8F96
+  0x29FAEDE91D6
+  0x29FAEDE9236
+  0x29FAEDE9B06
+[key] DefaultTakeButtonText hits=10, used=10
+  0x29FAEDE6D76
+  0x29FAEDE7226
+  0x29FAEDE7556
+  0x29FAEDE7676
+  0x29FAEDE7826
+  0x29FAEDE8816
+  0x29FAEDE8F96
+  0x29FAEDE91D6
+  0x29FAEDE9236
+  0x29FAEDE9B06
+[key] DefaultWasTaken hits=10, used=10
+  0x29FAEDE70A6
+  0x29FAEDE7286
+  0x29FAEDE7376
+  0x29FAEDE7796
+  0x29FAEDE8786
+  0x29FAEDE87E6
+  0x29FAEDE9296
+  0x29FAEDE9446
+  0x29FAEDE9536
+  0x29FAEDE98F6
+[key] DefaultWasTakenText hits=10, used=10
+  0x29FAEDE70A6
+  0x29FAEDE7286
+  0x29FAEDE7376
+  0x29FAEDE7796
+  0x29FAEDE8786
+  0x29FAEDE87E6
+  0x29FAEDE9296
+  0x29FAEDE9446
+  0x29FAEDE9536
+  0x29FAEDE98F6
+[key] DefaultBlockPart hits=0
+[key] BlockImg hits=0
+[key] RewardGrid hits=0
+[key] Take hits=1488, used=30
+  0x297021A0EDD
+  0x297021A0F53
+  0x297021B01E5
+  0x297021B025B
+  0x297022A0C70
+  0x297022A0CE0
+  0x29702380E25
+  0x29702380ED5
+  0x29702C90D36
+  0x29702C90DA1
+  0x297034D00AD
+  0x297034D012F
+  0x297034D05B7
+  0x297034D05DB
+  0x297036701E5
+  0x297037A03A5
+  0x297037A0406
+  0x297037C0FCC
+  0x297037D0C23
+  0x297039A00A3
+  0x297039A0C43
+  0x297039A0C73
+  0x29703A5003E
+  0x29703B908C8
+  0x29703B9090D
+  0x29703C40DF3
+  0x29703C40F4A
+  0x29703C60A89
+  0x29703DE0752
+  0x29703DE0AC0
+[key] Забрать hits=0
+[key] Получено hits=0
+[key] LevelText hits=0
+[key] BattlePass hits=111, used=30
+  0x2971A8A85AD
+  0x2971A8A866D
+  0x2971A8A869D
+  0x2971B119152
+  0x2971B26E3DD
+  0x2971B27182D
+  0x29737FA26C2
+  0x29785FF09D9
+  0x29785FF0A51
+  0x29785FF0A7A
+  0x29785FF0A9A
+  0x29785FF0AFE
+  0x29785FF0BA2
+  0x29785FF0BE3
+  0x29785FF0C1C
+  0x29785FF0C3A
+  0x29785FF0C58
+  0x29785FF0C76
+  0x29785FF0C95
+  0x297B359AF4D
+  0x297B35C4C4D
+  0x297B35C52AD
+  0x297B35C5DBD
+  0x297B35C746D
+  0x297B35C8F0D
+  0x297B35CA13D
+  0x297B35CAE5D
+  0x297B35CBAED
+  0x297B35CCF8D
+  0x297B35CE30D
+[key] Reward hits=485, used=30
+  0x29772520468
+  0x2978488051D
+  0x29786B90C51
+  0x29792BD0AD6
+  0x297A69B03BB
+  0x297A69B0837
+  0x297A69B08A6
+  0x297A69B092A
+  0x297A69B0996
+  0x297A69B09F7
+  0x297A6A004AC
+  0x297A6A004C1
+  0x297A6A00BA8
+  0x297A6A10769
+  0x297A6A10791
+  0x297A6A107CC
+  0x297A6A107DF
+  0x297A6A107F5
+  0x297A6A108B7
+  0x297A6A108C8
+  0x297A6A10904
+  0x297A6A1094F
+  0x297A6A1096F
+  0x297A6A10A42
+  0x297A6A10AAB
+  0x297A6A10B30
+  0x297A6A10B41
+  0x297A6A10B71
+  0x297A6A10B93
+  0x297A6A10BD7
+
+============================================================
+STEP 1: FLOAT HIT SCAN
 ============================================================
 AOB=00 00 80 3F 00 00 00 40 00 00 80 3F 00 00 80 3F
 scan mode: AOBScan with flags +W-C
-hits=181
+float hits=215
+clusters=47
 
 ============================================================
-STEP 2: BUILD STRIDE CLUSTERS
-============================================================
-clusters after prefilter=260
-will score max=120
+CLUSTER #001 pattern=PATTERN_A_C4_264_B64 start=0x29FAEF27E8C finish=0x29FAEF28D18 d=[0xC4,0x264,0xB64]
+region=0x29FAEF2798C .. 0x29FAEF2A518
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
 
 ============================================================
-STEP 3: SCORE TOP CLUSTERS
-============================================================
-scored 20/120
-scored 40/120
-scored 60/120
-scored 80/120
-scored 100/120
-scored 120/120
+CLUSTER #002 pattern=PATTERN_A_C4_264_B64 start=0x29FAF51D4AC finish=0x29FAF51E338 d=[0xC4,0x264,0xB64]
+region=0x29FAF51CFAC .. 0x29FAF51FB38
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
 
 ============================================================
-RESULTS
+CLUSTER #003 pattern=PATTERN_A_C4_264_B64 start=0x29FAF59F08C finish=0x29FAF59FF18 d=[0xC4,0x264,0xB64]
+region=0x29FAF59EB8C .. 0x29FAF5A1718
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
 ============================================================
-accepted=120
+CLUSTER #004 pattern=PATTERN_A_C4_264_B64 start=0x29FAF60BD6C finish=0x29FAF60CBF8 d=[0xC4,0x264,0xB64]
+region=0x29FAF60B86C .. 0x29FAF60E3F8
 
-#01 nodePoolBase=0x2A01F839050 score=4890 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | val=Получено | LevelText.key | DefaultTakeButton.key
-derived:
-  LevelTextNode          = 0x2A01F8399B8
-  DefaultWasTakenNode    = 0x2A01F839DC0
-  DefaultTakeButtonNode  = 0x2A01F839F18
-reasons:
-  hit=0x2A01F839190 off=0x140 back=0
-  hit=0x2A01F8392E8 off=0x140 back=1
-  hit=0x2A01F839440 off=0x140 back=2
-  hit=0x2A01F839598 off=0x140 back=3
-  hit=0x2A01F8396F0 off=0x140 back=4
-details:
-  node[0] 0x2A01F839050 headerScore=126
-  node[1] 0x2A01F8391A8 headerScore=126
-  node[2] 0x2A01F839300 headerScore=126
-  node[3] 0x2A01F839458 headerScore=126
-  node[4] 0x2A01F8395B0 headerScore=126
-  node[5] 0x2A01F839708 headerScore=126
-  LevelTextNode            node=0x2A01F8399B8 key=DefaultWasTakenText val=Получено
-  DefaultWasTakenNode      node=0x2A01F839DC0 key=LevelText val=2
-  DefaultTakeButtonNode    node=0x2A01F839F18 key=DefaultTakeButtonText val=T
+important ptr-text fields: 0
 
-#02 nodePoolBase=0x2A01F839708 score=4750 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | LevelText.key | DefaultTakeButton.key
-derived:
-  LevelTextNode          = 0x2A01F83A070
-  DefaultWasTakenNode    = 0x2A01F83A478
-  DefaultTakeButtonNode  = 0x2A01F83A5D0
-reasons:
-  hit=0x2A01F839848 off=0x140 back=0
-  hit=0x2A01F8399A0 off=0x140 back=1
-  hit=0x2A01F839AF8 off=0x140 back=2
-  hit=0x2A01F839C50 off=0x140 back=3
-  hit=0x2A01F839DA8 off=0x140 back=4
-details:
-  node[0] 0x2A01F839708 headerScore=126
-  node[1] 0x2A01F839860 headerScore=126
-  node[2] 0x2A01F8399B8 headerScore=126
-  node[3] 0x2A01F839B10 headerScore=126
-  node[4] 0x2A01F839C68 headerScore=126
-  node[5] 0x2A01F839DC0 headerScore=126
-  LevelTextNode            node=0x2A01F83A070 key=DefaultWasTakenText val=nil
-  DefaultWasTakenNode      node=0x2A01F83A478 key=LevelText val=3
-  DefaultTakeButtonNode    node=0x2A01F83A5D0 key=DefaultTakeButtonText val=T
+direct refs to important string addresses: 0
 
-#03 nodePoolBase=0x2A01F839DC0 score=4750 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | LevelText.key | DefaultTakeButton.key
-derived:
-  LevelTextNode          = 0x2A01F83A728
-  DefaultWasTakenNode    = 0x2A01F83AB30
-  DefaultTakeButtonNode  = 0x2A01F83AC88
-reasons:
-  hit=0x2A01F839F00 off=0x140 back=0
-  hit=0x2A01F83A058 off=0x140 back=1
-  hit=0x2A01F83A1B0 off=0x140 back=2
-  hit=0x2A01F83A308 off=0x140 back=3
-  hit=0x2A01F83A460 off=0x140 back=4
-details:
-  node[0] 0x2A01F839DC0 headerScore=126
-  node[1] 0x2A01F839F18 headerScore=126
-  node[2] 0x2A01F83A070 headerScore=126
-  node[3] 0x2A01F83A1C8 headerScore=126
-  node[4] 0x2A01F83A320 headerScore=126
-  node[5] 0x2A01F83A478 headerScore=126
-  LevelTextNode            node=0x2A01F83A728 key=DefaultWasTakenText val=nil
-  DefaultWasTakenNode      node=0x2A01F83AB30 key=LevelText val=4
-  DefaultTakeButtonNode    node=0x2A01F83AC88 key=DefaultTakeButtonText val=T
+============================================================
+CLUSTER #005 pattern=PATTERN_A_C4_264_B64 start=0x29FAF60F2AC finish=0x29FAF610138 d=[0xC4,0x264,0xB64]
+region=0x29FAF60EDAC .. 0x29FAF611938
 
-#04 nodePoolBase=0x2A01F83A478 score=4660 clusterHits=20
-notes: clusterHits=20 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | LevelText.key | DefaultTakeButton.key
-derived:
-  LevelTextNode          = 0x2A01F83ADE0
-  DefaultWasTakenNode    = 0x2A01F83B1E8
-  DefaultTakeButtonNode  = 0x2A01F83B340
-reasons:
-  hit=0x2A01F83A5B8 off=0x140 back=0
-  hit=0x2A01F83A710 off=0x140 back=1
-  hit=0x2A01F83A868 off=0x140 back=2
-  hit=0x2A01F83A9C0 off=0x140 back=3
-  hit=0x2A01F83AB18 off=0x140 back=4
-details:
-  node[0] 0x2A01F83A478 headerScore=126
-  node[1] 0x2A01F83A5D0 headerScore=126
-  node[2] 0x2A01F83A728 headerScore=126
-  node[3] 0x2A01F83A880 headerScore=126
-  node[4] 0x2A01F83A9D8 headerScore=126
-  node[5] 0x2A01F83AB30 headerScore=126
-  LevelTextNode            node=0x2A01F83ADE0 key=DefaultWasTakenText val=nil
-  DefaultWasTakenNode      node=0x2A01F83B1E8 key=LevelText val=5
-  DefaultTakeButtonNode    node=0x2A01F83B340 key=DefaultTakeButtonText val=T
+important ptr-text fields: 0
 
-#05 nodePoolBase=0x2A01F8391A8 score=4535 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
-derived:
-  LevelTextNode          = 0x2A01F839B10
-  DefaultWasTakenNode    = 0x2A01F839F18
-  DefaultTakeButtonNode  = 0x2A01F83A070
-reasons:
-  hit=0x2A01F8392E8 off=0x140 back=0
-  hit=0x2A01F839440 off=0x140 back=1
-  hit=0x2A01F839598 off=0x140 back=2
-  hit=0x2A01F8396F0 off=0x140 back=3
-  hit=0x2A01F839848 off=0x140 back=4
-details:
-  node[0] 0x2A01F8391A8 headerScore=126
-  node[1] 0x2A01F839300 headerScore=126
-  node[2] 0x2A01F839458 headerScore=126
-  node[3] 0x2A01F8395B0 headerScore=126
-  node[4] 0x2A01F839708 headerScore=126
-  node[5] 0x2A01F839860 headerScore=126
-  LevelTextNode            node=0x2A01F839B10 key=PremiumTakeButtonText val=T
-  DefaultWasTakenNode      node=0x2A01F839F18 key=DefaultTakeButtonText val=T
-  DefaultTakeButtonNode    node=0x2A01F83A070 key=DefaultWasTakenText val=nil
+direct refs to important string addresses: 0
 
-#06 nodePoolBase=0x2A01F8395B0 score=4535 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
-derived:
-  LevelTextNode          = 0x2A01F839F18
-  DefaultWasTakenNode    = 0x2A01F83A320
-  DefaultTakeButtonNode  = 0x2A01F83A478
-reasons:
-  hit=0x2A01F8396F0 off=0x140 back=0
-  hit=0x2A01F839848 off=0x140 back=1
-  hit=0x2A01F8399A0 off=0x140 back=2
-  hit=0x2A01F839AF8 off=0x140 back=3
-  hit=0x2A01F839C50 off=0x140 back=4
-details:
-  node[0] 0x2A01F8395B0 headerScore=126
-  node[1] 0x2A01F839708 headerScore=126
-  node[2] 0x2A01F839860 headerScore=126
-  node[3] 0x2A01F8399B8 headerScore=126
-  node[4] 0x2A01F839B10 headerScore=126
-  node[5] 0x2A01F839C68 headerScore=126
-  LevelTextNode            node=0x2A01F839F18 key=DefaultTakeButtonText val=T
-  DefaultWasTakenNode      node=0x2A01F83A320 key=PremiumWasTakenText val=nil
-  DefaultTakeButtonNode    node=0x2A01F83A478 key=LevelText val=3
+============================================================
+CLUSTER #006 pattern=PATTERN_B_94_274_C94 start=0x29FAF628FBC finish=0x29FAF629F58 d=[0x94,0x274,0xC94]
+region=0x29FAF628ABC .. 0x29FAF62B758
 
-#07 nodePoolBase=0x2A01F839860 score=4535 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
-derived:
-  LevelTextNode          = 0x2A01F83A1C8
-  DefaultWasTakenNode    = 0x2A01F83A5D0
-  DefaultTakeButtonNode  = 0x2A01F83A728
-reasons:
-  hit=0x2A01F8399A0 off=0x140 back=0
-  hit=0x2A01F839AF8 off=0x140 back=1
-  hit=0x2A01F839C50 off=0x140 back=2
-  hit=0x2A01F839DA8 off=0x140 back=3
-  hit=0x2A01F839F00 off=0x140 back=4
-details:
-  node[0] 0x2A01F839860 headerScore=126
-  node[1] 0x2A01F8399B8 headerScore=126
-  node[2] 0x2A01F839B10 headerScore=126
-  node[3] 0x2A01F839C68 headerScore=126
-  node[4] 0x2A01F839DC0 headerScore=126
-  node[5] 0x2A01F839F18 headerScore=126
-  LevelTextNode            node=0x2A01F83A1C8 key=PremiumTakeButtonText val=T
-  DefaultWasTakenNode      node=0x2A01F83A5D0 key=DefaultTakeButtonText val=T
-  DefaultTakeButtonNode    node=0x2A01F83A728 key=DefaultWasTakenText val=nil
+important ptr-text fields: 0
 
-#08 nodePoolBase=0x2A01F839C68 score=4535 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
-derived:
-  LevelTextNode          = 0x2A01F83A5D0
-  DefaultWasTakenNode    = 0x2A01F83A9D8
-  DefaultTakeButtonNode  = 0x2A01F83AB30
-reasons:
-  hit=0x2A01F839DA8 off=0x140 back=0
-  hit=0x2A01F839F00 off=0x140 back=1
-  hit=0x2A01F83A058 off=0x140 back=2
-  hit=0x2A01F83A1B0 off=0x140 back=3
-  hit=0x2A01F83A308 off=0x140 back=4
-details:
-  node[0] 0x2A01F839C68 headerScore=126
-  node[1] 0x2A01F839DC0 headerScore=126
-  node[2] 0x2A01F839F18 headerScore=126
-  node[3] 0x2A01F83A070 headerScore=126
-  node[4] 0x2A01F83A1C8 headerScore=126
-  node[5] 0x2A01F83A320 headerScore=126
-  LevelTextNode            node=0x2A01F83A5D0 key=DefaultTakeButtonText val=T
-  DefaultWasTakenNode      node=0x2A01F83A9D8 key=PremiumWasTakenText val=nil
-  DefaultTakeButtonNode    node=0x2A01F83AB30 key=LevelText val=4
+direct refs to important string addresses: 0
 
-#09 nodePoolBase=0x2A01F839F18 score=4535 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
-derived:
-  LevelTextNode          = 0x2A01F83A880
-  DefaultWasTakenNode    = 0x2A01F83AC88
-  DefaultTakeButtonNode  = 0x2A01F83ADE0
-reasons:
-  hit=0x2A01F83A058 off=0x140 back=0
-  hit=0x2A01F83A1B0 off=0x140 back=1
-  hit=0x2A01F83A308 off=0x140 back=2
-  hit=0x2A01F83A460 off=0x140 back=3
-  hit=0x2A01F83A5B8 off=0x140 back=4
-details:
-  node[0] 0x2A01F839F18 headerScore=126
-  node[1] 0x2A01F83A070 headerScore=126
-  node[2] 0x2A01F83A1C8 headerScore=126
-  node[3] 0x2A01F83A320 headerScore=126
-  node[4] 0x2A01F83A478 headerScore=126
-  node[5] 0x2A01F83A5D0 headerScore=126
-  LevelTextNode            node=0x2A01F83A880 key=PremiumTakeButtonText val=T
-  DefaultWasTakenNode      node=0x2A01F83AC88 key=DefaultTakeButtonText val=T
-  DefaultTakeButtonNode    node=0x2A01F83ADE0 key=DefaultWasTakenText val=nil
+============================================================
+CLUSTER #007 pattern=PATTERN_B_94_274_C94 start=0x29FAF7360FC finish=0x29FAF737098 d=[0x94,0x274,0xC94]
+region=0x29FAF735BFC .. 0x29FAF738898
 
-#10 nodePoolBase=0x2A01F83A320 score=4535 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
-derived:
-  LevelTextNode          = 0x2A01F83AC88
-  DefaultWasTakenNode    = 0x2A01F83B090
-  DefaultTakeButtonNode  = 0x2A01F83B1E8
-reasons:
-  hit=0x2A01F83A460 off=0x140 back=0
-  hit=0x2A01F83A5B8 off=0x140 back=1
-  hit=0x2A01F83A710 off=0x140 back=2
-  hit=0x2A01F83A868 off=0x140 back=3
-  hit=0x2A01F83A9C0 off=0x140 back=4
-details:
-  node[0] 0x2A01F83A320 headerScore=126
-  node[1] 0x2A01F83A478 headerScore=126
-  node[2] 0x2A01F83A5D0 headerScore=126
-  node[3] 0x2A01F83A728 headerScore=126
-  node[4] 0x2A01F83A880 headerScore=126
-  node[5] 0x2A01F83A9D8 headerScore=126
-  LevelTextNode            node=0x2A01F83AC88 key=DefaultTakeButtonText val=T
-  DefaultWasTakenNode      node=0x2A01F83B090 key=PremiumWasTakenText val=nil
-  DefaultTakeButtonNode    node=0x2A01F83B1E8 key=LevelText val=5
+important ptr-text fields: 0
 
-#11 nodePoolBase=0x2A01F838EF8 score=4500 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
-derived:
-  LevelTextNode          = 0x2A01F839860
-  DefaultWasTakenNode    = 0x2A01F839C68
-  DefaultTakeButtonNode  = 0x2A01F839DC0
-reasons:
-  hit=0x2A01F839038 off=0x140 back=0
-  hit=0x2A01F839190 off=0x140 back=1
-  hit=0x2A01F8392E8 off=0x140 back=2
-  hit=0x2A01F839440 off=0x140 back=3
-  hit=0x2A01F839598 off=0x140 back=4
-details:
-  node[0] 0x2A01F838EF8 headerScore=126
-  node[1] 0x2A01F839050 headerScore=126
-  node[2] 0x2A01F8391A8 headerScore=126
-  node[3] 0x2A01F839300 headerScore=126
-  node[4] 0x2A01F839458 headerScore=126
-  node[5] 0x2A01F8395B0 headerScore=126
-  LevelTextNode            node=0x2A01F839860 key=DefaultTakeButtonText val=T
-  DefaultWasTakenNode      node=0x2A01F839C68 key=PremiumWasTakenText val=nil
-  DefaultTakeButtonNode    node=0x2A01F839DC0 key=LevelText val=2
+direct refs to important string addresses: 0
 
-#12 nodePoolBase=0x2A01F83A5D0 score=4355 clusterHits=19
-notes: clusterHits=19 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
-derived:
-  LevelTextNode          = 0x2A01F83AF38
-  DefaultWasTakenNode    = 0x2A01F83B340
-  DefaultTakeButtonNode  = 0x2A01F83B498
-reasons:
-  hit=0x2A01F83A710 off=0x140 back=0
-  hit=0x2A01F83A868 off=0x140 back=1
-  hit=0x2A01F83A9C0 off=0x140 back=2
-  hit=0x2A01F83AB18 off=0x140 back=3
-  hit=0x2A01F83AC70 off=0x140 back=4
-details:
-  node[0] 0x2A01F83A5D0 headerScore=126
-  node[1] 0x2A01F83A728 headerScore=126
-  node[2] 0x2A01F83A880 headerScore=126
-  node[3] 0x2A01F83A9D8 headerScore=126
-  node[4] 0x2A01F83AB30 headerScore=126
-  node[5] 0x2A01F83AC88 headerScore=126
-  LevelTextNode            node=0x2A01F83AF38 key=PremiumTakeButtonText val=T
-  DefaultWasTakenNode      node=0x2A01F83B340 key=DefaultTakeButtonText val=T
-  DefaultTakeButtonNode    node=0x2A01F83B498 key=DefaultWasTakenText val=nil
+============================================================
+CLUSTER #008 pattern=PATTERN_B_94_274_C94 start=0x29FAF73B11C finish=0x29FAF73C0B8 d=[0x94,0x274,0xC94]
+region=0x29FAF73AC1C .. 0x29FAF73D8B8
 
-#13 nodePoolBase=0x2A01F839300 score=4285 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
-derived:
-  LevelTextNode          = 0x2A01F839C68
-  DefaultWasTakenNode    = 0x2A01F83A070
-  DefaultTakeButtonNode  = 0x2A01F83A1C8
-reasons:
-  hit=0x2A01F839440 off=0x140 back=0
-  hit=0x2A01F839598 off=0x140 back=1
-  hit=0x2A01F8396F0 off=0x140 back=2
-  hit=0x2A01F839848 off=0x140 back=3
-  hit=0x2A01F8399A0 off=0x140 back=4
-details:
-  node[0] 0x2A01F839300 headerScore=126
-  node[1] 0x2A01F839458 headerScore=126
-  node[2] 0x2A01F8395B0 headerScore=126
-  node[3] 0x2A01F839708 headerScore=126
-  node[4] 0x2A01F839860 headerScore=126
-  node[5] 0x2A01F8399B8 headerScore=126
-  LevelTextNode            node=0x2A01F839C68 key=PremiumWasTakenText val=nil
-  DefaultWasTakenNode      node=0x2A01F83A070 key=DefaultWasTakenText val=nil
-  DefaultTakeButtonNode    node=0x2A01F83A1C8 key=PremiumTakeButtonText val=T
+important ptr-text fields: 0
 
-#14 nodePoolBase=0x2A01F8399B8 score=4285 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
-derived:
-  LevelTextNode          = 0x2A01F83A320
-  DefaultWasTakenNode    = 0x2A01F83A728
-  DefaultTakeButtonNode  = 0x2A01F83A880
-reasons:
-  hit=0x2A01F839AF8 off=0x140 back=0
-  hit=0x2A01F839C50 off=0x140 back=1
-  hit=0x2A01F839DA8 off=0x140 back=2
-  hit=0x2A01F839F00 off=0x140 back=3
-  hit=0x2A01F83A058 off=0x140 back=4
-details:
-  node[0] 0x2A01F8399B8 headerScore=126
-  node[1] 0x2A01F839B10 headerScore=126
-  node[2] 0x2A01F839C68 headerScore=126
-  node[3] 0x2A01F839DC0 headerScore=126
-  node[4] 0x2A01F839F18 headerScore=126
-  node[5] 0x2A01F83A070 headerScore=126
-  LevelTextNode            node=0x2A01F83A320 key=PremiumWasTakenText val=nil
-  DefaultWasTakenNode      node=0x2A01F83A728 key=DefaultWasTakenText val=nil
-  DefaultTakeButtonNode    node=0x2A01F83A880 key=PremiumTakeButtonText val=T
+direct refs to important string addresses: 0
 
-#15 nodePoolBase=0x2A01F83A070 score=4285 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
-derived:
-  LevelTextNode          = 0x2A01F83A9D8
-  DefaultWasTakenNode    = 0x2A01F83ADE0
-  DefaultTakeButtonNode  = 0x2A01F83AF38
-reasons:
-  hit=0x2A01F83A1B0 off=0x140 back=0
-  hit=0x2A01F83A308 off=0x140 back=1
-  hit=0x2A01F83A460 off=0x140 back=2
-  hit=0x2A01F83A5B8 off=0x140 back=3
-  hit=0x2A01F83A710 off=0x140 back=4
-details:
-  node[0] 0x2A01F83A070 headerScore=126
-  node[1] 0x2A01F83A1C8 headerScore=126
-  node[2] 0x2A01F83A320 headerScore=126
-  node[3] 0x2A01F83A478 headerScore=126
-  node[4] 0x2A01F83A5D0 headerScore=126
-  node[5] 0x2A01F83A728 headerScore=126
-  LevelTextNode            node=0x2A01F83A9D8 key=PremiumWasTakenText val=nil
-  DefaultWasTakenNode      node=0x2A01F83ADE0 key=DefaultWasTakenText val=nil
-  DefaultTakeButtonNode    node=0x2A01F83AF38 key=PremiumTakeButtonText val=T
+============================================================
+CLUSTER #009 pattern=PATTERN_B_94_274_C94 start=0x29FAF73D92C finish=0x29FAF73E8C8 d=[0x94,0x274,0xC94]
+region=0x29FAF73D42C .. 0x29FAF7400C8
 
-#16 nodePoolBase=0x2A01F839458 score=4250 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | LevelText.key
-derived:
-  LevelTextNode          = 0x2A01F839DC0
-  DefaultWasTakenNode    = 0x2A01F83A1C8
-  DefaultTakeButtonNode  = 0x2A01F83A320
-reasons:
-  hit=0x2A01F839598 off=0x140 back=0
-  hit=0x2A01F8396F0 off=0x140 back=1
-  hit=0x2A01F839848 off=0x140 back=2
-  hit=0x2A01F8399A0 off=0x140 back=3
-  hit=0x2A01F839AF8 off=0x140 back=4
-details:
-  node[0] 0x2A01F839458 headerScore=126
-  node[1] 0x2A01F8395B0 headerScore=126
-  node[2] 0x2A01F839708 headerScore=126
-  node[3] 0x2A01F839860 headerScore=126
-  node[4] 0x2A01F8399B8 headerScore=126
-  node[5] 0x2A01F839B10 headerScore=126
-  LevelTextNode            node=0x2A01F839DC0 key=LevelText val=2
-  DefaultWasTakenNode      node=0x2A01F83A1C8 key=PremiumTakeButtonText val=T
-  DefaultTakeButtonNode    node=0x2A01F83A320 key=PremiumWasTakenText val=nil
+important ptr-text fields: 0
 
-#17 nodePoolBase=0x2A01F839B10 score=4250 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | LevelText.key
-derived:
-  LevelTextNode          = 0x2A01F83A478
-  DefaultWasTakenNode    = 0x2A01F83A880
-  DefaultTakeButtonNode  = 0x2A01F83A9D8
-reasons:
-  hit=0x2A01F839C50 off=0x140 back=0
-  hit=0x2A01F839DA8 off=0x140 back=1
-  hit=0x2A01F839F00 off=0x140 back=2
-  hit=0x2A01F83A058 off=0x140 back=3
-  hit=0x2A01F83A1B0 off=0x140 back=4
-details:
-  node[0] 0x2A01F839B10 headerScore=126
-  node[1] 0x2A01F839C68 headerScore=126
-  node[2] 0x2A01F839DC0 headerScore=126
-  node[3] 0x2A01F839F18 headerScore=126
-  node[4] 0x2A01F83A070 headerScore=126
-  node[5] 0x2A01F83A1C8 headerScore=126
-  LevelTextNode            node=0x2A01F83A478 key=LevelText val=3
-  DefaultWasTakenNode      node=0x2A01F83A880 key=PremiumTakeButtonText val=T
-  DefaultTakeButtonNode    node=0x2A01F83A9D8 key=PremiumWasTakenText val=nil
+direct refs to important string addresses: 0
 
-#18 nodePoolBase=0x2A01F83A1C8 score=4250 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | LevelText.key
-derived:
-  LevelTextNode          = 0x2A01F83AB30
-  DefaultWasTakenNode    = 0x2A01F83AF38
-  DefaultTakeButtonNode  = 0x2A01F83B090
-reasons:
-  hit=0x2A01F83A308 off=0x140 back=0
-  hit=0x2A01F83A460 off=0x140 back=1
-  hit=0x2A01F83A5B8 off=0x140 back=2
-  hit=0x2A01F83A710 off=0x140 back=3
-  hit=0x2A01F83A868 off=0x140 back=4
-details:
-  node[0] 0x2A01F83A1C8 headerScore=126
-  node[1] 0x2A01F83A320 headerScore=126
-  node[2] 0x2A01F83A478 headerScore=126
-  node[3] 0x2A01F83A5D0 headerScore=126
-  node[4] 0x2A01F83A728 headerScore=126
-  node[5] 0x2A01F83A880 headerScore=126
-  LevelTextNode            node=0x2A01F83AB30 key=LevelText val=4
-  DefaultWasTakenNode      node=0x2A01F83AF38 key=PremiumTakeButtonText val=T
-  DefaultTakeButtonNode    node=0x2A01F83B090 key=PremiumWasTakenText val=nil
+============================================================
+CLUSTER #010 pattern=PATTERN_B_94_274_C94 start=0x29FAF74A17C finish=0x29FAF74B118 d=[0x94,0x274,0xC94]
+region=0x29FAF749C7C .. 0x29FAF74C918
 
-#19 nodePoolBase=0x2A01F838AF0 score=4200 clusterHits=18
-notes: clusterHits=18 | goodHeaders=10 | strideOK | strongStride | count20Nodes=2 | float1211Nodes=6 | DefaultTakeButton.key | DefaultWasTaken.key | val=Получено
-derived:
-  LevelTextNode          = 0x2A01F839458
-  DefaultWasTakenNode    = 0x2A01F839860
-  DefaultTakeButtonNode  = 0x2A01F8399B8
-reasons:
-  hit=0x2A01F839038 off=0x140 back=3
-  hit=0x2A01F839190 off=0x140 back=4
-  hit=0x2A01F8392E8 off=0x140 back=5
-  hit=0x2A01F839440 off=0x140 back=6
-  hit=0x2A01F839598 off=0x140 back=7
-details:
-  node[0] 0x2A01F838AF0 headerScore=126
-  node[1] 0x2A01F838C48 headerScore=126
-  node[2] 0x2A01F838DA0 headerScore=126
-  node[3] 0x2A01F838EF8 headerScore=126
-  node[4] 0x2A01F839050 headerScore=126
-  node[5] 0x2A01F8391A8 headerScore=126
-  LevelTextNode            node=0x2A01F839458 key=PremiumTakeButtonText val=T
-  DefaultWasTakenNode      node=0x2A01F839860 key=DefaultTakeButtonText val=T
-  DefaultTakeButtonNode    node=0x2A01F8399B8 key=DefaultWasTakenText val=Получено
+important ptr-text fields: 0
 
-#20 nodePoolBase=0x2A01F838C48 score=4085 clusterHits=19
-notes: clusterHits=19 | goodHeaders=10 | strideOK | strongStride | count20Nodes=2 | float1211Nodes=7 | DefaultWasTaken.key | val=Получено
-derived:
-  LevelTextNode          = 0x2A01F8395B0
-  DefaultWasTakenNode    = 0x2A01F8399B8
-  DefaultTakeButtonNode  = 0x2A01F839B10
-reasons:
-  hit=0x2A01F839038 off=0x140 back=2
-  hit=0x2A01F839190 off=0x140 back=3
-  hit=0x2A01F8392E8 off=0x140 back=4
-  hit=0x2A01F839440 off=0x140 back=5
-  hit=0x2A01F839598 off=0x140 back=6
-details:
-  node[0] 0x2A01F838C48 headerScore=126
-  node[1] 0x2A01F838DA0 headerScore=126
-  node[2] 0x2A01F838EF8 headerScore=126
-  node[3] 0x2A01F839050 headerScore=126
-  node[4] 0x2A01F8391A8 headerScore=126
-  node[5] 0x2A01F839300 headerScore=126
-  LevelTextNode            node=0x2A01F8395B0 key=PremiumWasTakenText val=nil
-  DefaultWasTakenNode      node=0x2A01F8399B8 key=DefaultWasTakenText val=Получено
-  DefaultTakeButtonNode    node=0x2A01F839B10 key=PremiumTakeButtonText val=T
+direct refs to important string addresses: 0
 
-#21 nodePoolBase=0x2A01F838DA0 score=4080 clusterHits=20
-notes: clusterHits=20 | goodHeaders=10 | strideOK | strongStride | count20Nodes=2 | float1211Nodes=8 | LevelText.key
-derived:
-  LevelTextNode          = 0x2A01F839708
-  DefaultWasTakenNode    = 0x2A01F839B10
-  DefaultTakeButtonNode  = 0x2A01F839C68
-reasons:
-  hit=0x2A01F839038 off=0x140 back=1
-  hit=0x2A01F839190 off=0x140 back=2
-  hit=0x2A01F8392E8 off=0x140 back=3
-  hit=0x2A01F839440 off=0x140 back=4
-  hit=0x2A01F839598 off=0x140 back=5
-details:
-  node[0] 0x2A01F838DA0 headerScore=126
-  node[1] 0x2A01F838EF8 headerScore=126
-  node[2] 0x2A01F839050 headerScore=126
-  node[3] 0x2A01F8391A8 headerScore=126
-  node[4] 0x2A01F839300 headerScore=126
-  node[5] 0x2A01F839458 headerScore=126
-  LevelTextNode            node=0x2A01F839708 key=LevelText val=1
-  DefaultWasTakenNode      node=0x2A01F839B10 key=PremiumTakeButtonText val=T
-  DefaultTakeButtonNode    node=0x2A01F839C68 key=PremiumWasTakenText val=nil
+============================================================
+CLUSTER #011 pattern=PATTERN_B_94_274_C94 start=0x29FAF74F19C finish=0x29FAF750138 d=[0x94,0x274,0xC94]
+region=0x29FAF74EC9C .. 0x29FAF751938
 
-#22 nodePoolBase=0x2A01F838840 score=4030 clusterHits=17
-notes: clusterHits=17 | goodHeaders=10 | strideOK | strongStride | count20Nodes=1 | float1211Nodes=5 | DefaultTakeButton.key | val=Забрать | LevelText.key
-derived:
-  LevelTextNode          = 0x2A01F8391A8
-  DefaultWasTakenNode    = 0x2A01F8395B0
-  DefaultTakeButtonNode  = 0x2A01F839708
-reasons:
-  hit=0x2A01F838980 off=0x140 back=0
-  hit=0x2A01F839038 off=0x140 back=5
-  hit=0x2A01F839190 off=0x140 back=6
-  hit=0x2A01F8392E8 off=0x140 back=7
-  hit=0x2A01F839440 off=0x140 back=8
-details:
-  node[0] 0x2A01F838840 headerScore=126
-  node[1] 0x2A01F838998 headerScore=126
-  node[2] 0x2A01F838AF0 headerScore=126
-  node[3] 0x2A01F838C48 headerScore=126
-  node[4] 0x2A01F838DA0 headerScore=126
-  node[5] 0x2A01F838EF8 headerScore=126
-  LevelTextNode            node=0x2A01F8391A8 key=DefaultTakeButtonText val=Забрать
-  DefaultWasTakenNode      node=0x2A01F8395B0 key=PremiumWasTakenText val=nil
-  DefaultTakeButtonNode    node=0x2A01F839708 key=LevelText val=1
+important ptr-text fields: 0
 
-#23 nodePoolBase=0x2A01F83A728 score=4015 clusterHits=18
-notes: clusterHits=18 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
-derived:
-  LevelTextNode          = 0x2A01F83B090
-  DefaultWasTakenNode    = 0x2A01F83B498
-  DefaultTakeButtonNode  = 0x2A01F83B5F0
-reasons:
-  hit=0x2A01F83A868 off=0x140 back=0
-  hit=0x2A01F83A9C0 off=0x140 back=1
-  hit=0x2A01F83AB18 off=0x140 back=2
-  hit=0x2A01F83AC70 off=0x140 back=3
-  hit=0x2A01F83ADC8 off=0x140 back=4
-details:
-  node[0] 0x2A01F83A728 headerScore=126
-  node[1] 0x2A01F83A880 headerScore=126
-  node[2] 0x2A01F83A9D8 headerScore=126
-  node[3] 0x2A01F83AB30 headerScore=126
-  node[4] 0x2A01F83AC88 headerScore=126
-  node[5] 0x2A01F83ADE0 headerScore=126
-  LevelTextNode            node=0x2A01F83B090 key=PremiumWasTakenText val=nil
-  DefaultWasTakenNode      node=0x2A01F83B498 key=DefaultWasTakenText val=nil
-  DefaultTakeButtonNode    node=0x2A01F83B5F0 key=PremiumTakeButtonText val=T
+direct refs to important string addresses: 0
 
-#24 nodePoolBase=0x2A01F839858 score=3827 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take | val=Take
-derived:
-  LevelTextNode          = 0x2A01F83A1C0
-  DefaultWasTakenNode    = 0x2A01F83A5C8
-  DefaultTakeButtonNode  = 0x2A01F83A720
-reasons:
-  hit=0x2A01F8399A0 off=0x148 back=0
-  hit=0x2A01F839AF8 off=0x148 back=1
-  hit=0x2A01F839C50 off=0x148 back=2
-  hit=0x2A01F839DA8 off=0x148 back=3
-  hit=0x2A01F839F00 off=0x148 back=4
-details:
-  node[0] 0x2A01F839858 headerScore=84
-  node[1] 0x2A01F8399B0 headerScore=86
-  node[2] 0x2A01F839B08 headerScore=84
-  node[3] 0x2A01F839C60 headerScore=86
-  node[4] 0x2A01F839DB8 headerScore=86
-  node[5] 0x2A01F839F10 headerScore=84
-  LevelTextNode            node=0x2A01F83A1C0 key=nil val=Take
-  DefaultWasTakenNode      node=0x2A01F83A5C8 key=nil val=Take
-  DefaultTakeButtonNode    node=0x2A01F83A720 key=nil val=nil
+============================================================
+CLUSTER #012 pattern=PATTERN_B_94_274_C94 start=0x29FAF7519AC finish=0x29FAF752948 d=[0x94,0x274,0xC94]
+region=0x29FAF7514AC .. 0x29FAF754148
 
-#25 nodePoolBase=0x2A01F839F10 score=3827 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take | val=Take
-derived:
-  LevelTextNode          = 0x2A01F83A878
-  DefaultWasTakenNode    = 0x2A01F83AC80
-  DefaultTakeButtonNode  = 0x2A01F83ADD8
-reasons:
-  hit=0x2A01F83A058 off=0x148 back=0
-  hit=0x2A01F83A1B0 off=0x148 back=1
-  hit=0x2A01F83A308 off=0x148 back=2
-  hit=0x2A01F83A460 off=0x148 back=3
-  hit=0x2A01F83A5B8 off=0x148 back=4
-details:
-  node[0] 0x2A01F839F10 headerScore=84
-  node[1] 0x2A01F83A068 headerScore=86
-  node[2] 0x2A01F83A1C0 headerScore=84
-  node[3] 0x2A01F83A318 headerScore=86
-  node[4] 0x2A01F83A470 headerScore=86
-  node[5] 0x2A01F83A5C8 headerScore=84
-  LevelTextNode            node=0x2A01F83A878 key=nil val=Take
-  DefaultWasTakenNode      node=0x2A01F83AC80 key=nil val=Take
-  DefaultTakeButtonNode    node=0x2A01F83ADD8 key=nil val=nil
+important ptr-text fields: 0
 
-#26 nodePoolBase=0x2A01F8391A0 score=3817 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take | val=Take
-derived:
-  LevelTextNode          = 0x2A01F839B08
-  DefaultWasTakenNode    = 0x2A01F839F10
-  DefaultTakeButtonNode  = 0x2A01F83A068
-reasons:
-  hit=0x2A01F8392E8 off=0x148 back=0
-  hit=0x2A01F839440 off=0x148 back=1
-  hit=0x2A01F839598 off=0x148 back=2
-  hit=0x2A01F8396F0 off=0x148 back=3
-  hit=0x2A01F839848 off=0x148 back=4
-details:
-  node[0] 0x2A01F8391A0 headerScore=92
-  node[1] 0x2A01F8392F8 headerScore=86
-  node[2] 0x2A01F839450 headerScore=78
-  node[3] 0x2A01F8395A8 headerScore=86
-  node[4] 0x2A01F839700 headerScore=86
-  node[5] 0x2A01F839858 headerScore=78
-  LevelTextNode            node=0x2A01F839B08 key=nil val=Take
-  DefaultWasTakenNode      node=0x2A01F839F10 key=nil val=Take
-  DefaultTakeButtonNode    node=0x2A01F83A068 key=nil val=nil
+direct refs to important string addresses: 0
 
-#27 nodePoolBase=0x2A01F8392F8 score=3709 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
-derived:
-  LevelTextNode          = 0x2A01F839C60
-  DefaultWasTakenNode    = 0x2A01F83A068
-  DefaultTakeButtonNode  = 0x2A01F83A1C0
-reasons:
-  hit=0x2A01F839440 off=0x148 back=0
-  hit=0x2A01F839598 off=0x148 back=1
-  hit=0x2A01F8396F0 off=0x148 back=2
-  hit=0x2A01F839848 off=0x148 back=3
-  hit=0x2A01F8399A0 off=0x148 back=4
-details:
-  node[0] 0x2A01F8392F8 headerScore=92
-  node[1] 0x2A01F839450 headerScore=78
-  node[2] 0x2A01F8395A8 headerScore=86
-  node[3] 0x2A01F839700 headerScore=86
-  node[4] 0x2A01F839858 headerScore=78
-  node[5] 0x2A01F8399B0 headerScore=86
-  LevelTextNode            node=0x2A01F839C60 key=nil val=nil
-  DefaultWasTakenNode      node=0x2A01F83A068 key=nil val=nil
-  DefaultTakeButtonNode    node=0x2A01F83A1C0 key=nil val=Take
+============================================================
+CLUSTER #013 pattern=PATTERN_B_94_274_C94 start=0x29FAF7591DC finish=0x29FAF75A178 d=[0x94,0x274,0xC94]
+region=0x29FAF758CDC .. 0x29FAF75B978
 
-#28 nodePoolBase=0x2A01F8395A8 score=3709 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
-derived:
-  LevelTextNode          = 0x2A01F839F10
-  DefaultWasTakenNode    = 0x2A01F83A318
-  DefaultTakeButtonNode  = 0x2A01F83A470
-reasons:
-  hit=0x2A01F8396F0 off=0x148 back=0
-  hit=0x2A01F839848 off=0x148 back=1
-  hit=0x2A01F8399A0 off=0x148 back=2
-  hit=0x2A01F839AF8 off=0x148 back=3
-  hit=0x2A01F839C50 off=0x148 back=4
-details:
-  node[0] 0x2A01F8395A8 headerScore=92
-  node[1] 0x2A01F839700 headerScore=86
-  node[2] 0x2A01F839858 headerScore=78
-  node[3] 0x2A01F8399B0 headerScore=86
-  node[4] 0x2A01F839B08 headerScore=78
-  node[5] 0x2A01F839C60 headerScore=86
-  LevelTextNode            node=0x2A01F839F10 key=nil val=Take
-  DefaultWasTakenNode      node=0x2A01F83A318 key=nil val=nil
-  DefaultTakeButtonNode    node=0x2A01F83A470 key=nil val=3
+important ptr-text fields: 0
 
-#29 nodePoolBase=0x2A01F8399B0 score=3709 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
-derived:
-  LevelTextNode          = 0x2A01F83A318
-  DefaultWasTakenNode    = 0x2A01F83A720
-  DefaultTakeButtonNode  = 0x2A01F83A878
-reasons:
-  hit=0x2A01F839AF8 off=0x148 back=0
-  hit=0x2A01F839C50 off=0x148 back=1
-  hit=0x2A01F839DA8 off=0x148 back=2
-  hit=0x2A01F839F00 off=0x148 back=3
-  hit=0x2A01F83A058 off=0x148 back=4
-details:
-  node[0] 0x2A01F8399B0 headerScore=92
-  node[1] 0x2A01F839B08 headerScore=78
-  node[2] 0x2A01F839C60 headerScore=86
-  node[3] 0x2A01F839DB8 headerScore=86
-  node[4] 0x2A01F839F10 headerScore=78
-  node[5] 0x2A01F83A068 headerScore=86
-  LevelTextNode            node=0x2A01F83A318 key=nil val=nil
-  DefaultWasTakenNode      node=0x2A01F83A720 key=nil val=nil
-  DefaultTakeButtonNode    node=0x2A01F83A878 key=nil val=Take
+direct refs to important string addresses: 0
 
-#30 nodePoolBase=0x2A01F839C60 score=3709 clusterHits=21
-notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
-derived:
-  LevelTextNode          = 0x2A01F83A5C8
-  DefaultWasTakenNode    = 0x2A01F83A9D0
-  DefaultTakeButtonNode  = 0x2A01F83AB28
-reasons:
-  hit=0x2A01F839DA8 off=0x148 back=0
-  hit=0x2A01F839F00 off=0x148 back=1
-  hit=0x2A01F83A058 off=0x148 back=2
-  hit=0x2A01F83A1B0 off=0x148 back=3
-  hit=0x2A01F83A308 off=0x148 back=4
-details:
-  node[0] 0x2A01F839C60 headerScore=92
-  node[1] 0x2A01F839DB8 headerScore=86
-  node[2] 0x2A01F839F10 headerScore=78
-  node[3] 0x2A01F83A068 headerScore=86
-  node[4] 0x2A01F83A1C0 headerScore=78
-  node[5] 0x2A01F83A318 headerScore=86
-  LevelTextNode            node=0x2A01F83A5C8 key=nil val=Take
-  DefaultWasTakenNode      node=0x2A01F83A9D0 key=nil val=nil
-  DefaultTakeButtonNode    node=0x2A01F83AB28 key=nil val=4
+============================================================
+CLUSTER #014 pattern=PATTERN_B_94_274_C94 start=0x29FAF75B9EC finish=0x29FAF75C988 d=[0x94,0x274,0xC94]
+region=0x29FAF75B4EC .. 0x29FAF75E188
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #015 pattern=PATTERN_B_94_274_C94 start=0x29FAF75E1FC finish=0x29FAF75F198 d=[0x94,0x274,0xC94]
+region=0x29FAF75DCFC .. 0x29FAF760998
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #016 pattern=PATTERN_B_94_274_C94 start=0x29FAF760A0C finish=0x29FAF7619A8 d=[0x94,0x274,0xC94]
+region=0x29FAF76050C .. 0x29FAF7631A8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #017 pattern=PATTERN_B_94_274_C94 start=0x29FAF76321C finish=0x29FAF7641B8 d=[0x94,0x274,0xC94]
+region=0x29FAF762D1C .. 0x29FAF7659B8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #018 pattern=PATTERN_B_94_274_C94 start=0x29FAF76D25C finish=0x29FAF76E1F8 d=[0x94,0x274,0xC94]
+region=0x29FAF76CD5C .. 0x29FAF76F9F8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #019 pattern=PATTERN_A_C4_264_B64 start=0x29FAF80546C finish=0x29FAF8062F8 d=[0xC4,0x264,0xB64]
+region=0x29FAF804F6C .. 0x29FAF807AF8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #020 pattern=PATTERN_B_94_274_C94 start=0x29FAFA2459C finish=0x29FAFA25538 d=[0x94,0x274,0xC94]
+region=0x29FAFA2409C .. 0x29FAFA26D38
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #021 pattern=PATTERN_B_94_274_C94 start=0x29FAFA5441C finish=0x29FAFA553B8 d=[0x94,0x274,0xC94]
+region=0x29FAFA53F1C .. 0x29FAFA56BB8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #022 pattern=PATTERN_B_94_274_C94 start=0x29FAFA5E45C finish=0x29FAFA5F3F8 d=[0x94,0x274,0xC94]
+region=0x29FAFA5DF5C .. 0x29FAFA60BF8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #023 pattern=PATTERN_B_94_274_C94 start=0x29FAFA60C6C finish=0x29FAFA61C08 d=[0x94,0x274,0xC94]
+region=0x29FAFA6076C .. 0x29FAFA63408
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #024 pattern=PATTERN_B_94_274_C94 start=0x29FAFA6849C finish=0x29FAFA69438 d=[0x94,0x274,0xC94]
+region=0x29FAFA67F9C .. 0x29FAFA6AC38
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #025 pattern=PATTERN_B_94_274_C94 start=0x29FAFA6ACAC finish=0x29FAFA6BC48 d=[0x94,0x274,0xC94]
+region=0x29FAFA6A7AC .. 0x29FAFA6D448
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #026 pattern=PATTERN_B_94_274_C94 start=0x29FAFA6D4BC finish=0x29FAFA6E458 d=[0x94,0x274,0xC94]
+region=0x29FAFA6CFBC .. 0x29FAFA6FC58
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #027 pattern=PATTERN_B_94_274_C94 start=0x29FAFA7C51C finish=0x29FAFA7D4B8 d=[0x94,0x274,0xC94]
+region=0x29FAFA7C01C .. 0x29FAFA7ECB8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #028 pattern=PATTERN_B_94_274_C94 start=0x29FAFA8153C finish=0x29FAFA824D8 d=[0x94,0x274,0xC94]
+region=0x29FAFA8103C .. 0x29FAFA83CD8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #029 pattern=PATTERN_B_94_274_C94 start=0x29FAFA8DD8C finish=0x29FAFA8ED28 d=[0x94,0x274,0xC94]
+region=0x29FAFA8D88C .. 0x29FAFA90528
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #030 pattern=PATTERN_A_C4_264_B64 start=0x29FAFA9644C finish=0x29FAFA972D8 d=[0xC4,0x264,0xB64]
+region=0x29FAFA95F4C .. 0x29FAFA98AD8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #031 pattern=PATTERN_A_C4_264_B64 start=0x29FAFA9B06C finish=0x29FAFA9BEF8 d=[0xC4,0x264,0xB64]
+region=0x29FAFA9AB6C .. 0x29FAFA9D6F8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #032 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAA229C finish=0x29FAFAA3128 d=[0xC4,0x264,0xB64]
+region=0x29FAFAA1D9C .. 0x29FAFAA4928
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #033 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAA94CC finish=0x29FAFAAA358 d=[0xC4,0x264,0xB64]
+region=0x29FAFAA8FCC .. 0x29FAFAABB58
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #034 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAABADC finish=0x29FAFAAC968 d=[0xC4,0x264,0xB64]
+region=0x29FAFAAB5DC .. 0x29FAFAAE168
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #035 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAB06FC finish=0x29FAFAB1588 d=[0xC4,0x264,0xB64]
+region=0x29FAFAB01FC .. 0x29FAFAB2D88
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #036 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAB2D0C finish=0x29FAFAB3B98 d=[0xC4,0x264,0xB64]
+region=0x29FAFAB280C .. 0x29FAFAB5398
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #037 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAB9F3C finish=0x29FAFABADC8 d=[0xC4,0x264,0xB64]
+region=0x29FAFAB9A3C .. 0x29FAFABC5C8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #038 pattern=PATTERN_A_C4_264_B64 start=0x29FAFABC54C finish=0x29FAFABD3D8 d=[0xC4,0x264,0xB64]
+region=0x29FAFABC04C .. 0x29FAFABEBD8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #039 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAC116C finish=0x29FAFAC1FF8 d=[0xC4,0x264,0xB64]
+region=0x29FAFAC0C6C .. 0x29FAFAC37F8
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #040 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAC377C finish=0x29FAFAC4608 d=[0xC4,0x264,0xB64]
+region=0x29FAFAC327C .. 0x29FAFAC5E08
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #041 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAC5D8C finish=0x29FAFAC6C18 d=[0xC4,0x264,0xB64]
+region=0x29FAFAC588C .. 0x29FAFAC8418
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #042 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAC839C finish=0x29FAFAC9228 d=[0xC4,0x264,0xB64]
+region=0x29FAFAC7E9C .. 0x29FAFACAA28
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #043 pattern=PATTERN_A_C4_264_B64 start=0x29FAFACA9AC finish=0x29FAFACB838 d=[0xC4,0x264,0xB64]
+region=0x29FAFACA4AC .. 0x29FAFACD038
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #044 pattern=PATTERN_A_C4_264_B64 start=0x29FAFACCFBC finish=0x29FAFACDE48 d=[0xC4,0x264,0xB64]
+region=0x29FAFACCABC .. 0x29FAFACF648
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #045 pattern=PATTERN_A_C4_264_B64 start=0x29FAFACF5CC finish=0x29FAFAD0458 d=[0xC4,0x264,0xB64]
+region=0x29FAFACF0CC .. 0x29FAFAD1C58
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #046 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAD1BDC finish=0x29FAFAD2A68 d=[0xC4,0x264,0xB64]
+region=0x29FAFAD16DC .. 0x29FAFAD4268
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
+
+============================================================
+CLUSTER #047 pattern=PATTERN_A_C4_264_B64 start=0x29FAFAD41EC finish=0x29FAFAD5078 d=[0xC4,0x264,0xB64]
+region=0x29FAFAD3CEC .. 0x29FAFAD6878
+
+important ptr-text fields: 0
+
+direct refs to important string addresses: 0
 
 DONE
-Report: C:\Users\Bogdan\Desktop\ce_nodePoolBase_FAST_cluster_20260520_215528.txt
+Report: C:\Users\Bogdan\Desktop\ce_card_container_clusters_20260520_221844.txt
