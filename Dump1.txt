@@ -1,282 +1,760 @@
-Owner-entry parser / READ ONLY
-Date: 2026-05-20 23:31:03
-Output: C:\Users\Bogdan\Desktop\ce_parse_owner_entries_20260520_233103.txt
+-- CE Lua: find useful base -> main dump -> outbound pointer micro-dumps
+-- READ ONLY.
+--
+-- Тактика:
+-- 1) найти первый полезный text-node base через старый float/stride подход;
+-- 2) снять дамп base-512..base+512;
+-- 3) найти QWORD pointers, которые ведут в другие области памяти;
+-- 4) сделать micro dump ptr-64..ptr+64;
+-- 5) вывести рейтинг интересных указателей.
 
-============================================================
-TakeRu_owner ownerEntry=0x15D38FC4300
-============================================================
-    rec=0x15D38FC40C0 type=0x7FF684995C08 state=2 obj=0x15D2F8FD6A0 | vtable=0x7FF68498B328 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC40D8 type=0x7FF684995C08 state=2 obj=0x15A528D7530 | vtable=0x7FF6849C46F8 | class=nil | key=述ﺁŘ | val=nil
-    rec=0x15D38FC40F0 type=0x7FF684995C08 state=2 obj=0x15D2F8FE7D0 | vtable=0x7FF68498B328 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC4108 type=0x7FF684995C08 state=2 obj=0x15D2F8FDE20 | vtable=0x7FF68498B328 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC4120 type=0x7FF684995C08 state=1 obj=0x159DAA16660 | vtable=0x7FF684A34F60 | class=nil | key=PremiumItemPreview | val=nil
-    rec=0x15D38FC4138 type=0x7FF684995C08 state=2 obj=0x15BE91BA380 | vtable=0x7FF68498B328 | class=nil | key=nil | val=Heavy
-    rec=0x15D38FC4150 type=0x7FF684995C08 state=2 obj=0x15D2F8FB670 | vtable=0x7FF68498B328 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38FC4168 type=0x7FF684995C08 state=2 obj=0x15D2F8FC160 | vtable=0x7FF6849C5588 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38FC4180 type=0x7FF684995C08 state=2 obj=0x15A528D73B0 | vtable=0x7FF6849C41D8 | class=nil | key=䩠萅翶 | val=nil
-    rec=0x15D38FC4198 type=0x7FF684995C08 state=2 obj=0x15A528D7670 | vtable=0x7FF6849C41D8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC41B0 type=0x7FF684995C08 state=2 obj=0x15A528D7170 | vtable=0x7FF6849C41D8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC41C8 type=0x7FF684995C08 state=2 obj=0x15D2F8FCA70 | vtable=0x7FF68498B328 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38FC41E0 type=0x7FF684995C08 state=2 obj=0x15A528D62B0 | vtable=0x7FF6849C4840 | class=nil | key=nil | val=nil
-    rec=0x15D38FC41F8 type=0x7FF684995C08 state=2 obj=0x15D2F8FC2A0 | vtable=0x7FF6849C5440 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38FC4210 type=0x7FF684995C08 state=2 obj=0x15D2F8FCCA0 | vtable=0x7FF6849C76D8 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38FC4228 type=0x7FF684995C08 state=2 obj=0x15D2F8FC3E0 | vtable=0x7FF6849C5818 | class=nil | key=nil | val=垠蒜翶
-    rec=0x15D38FC4240 type=0x7FF684995C08 state=1 obj=0x15D38F881B8 | vtable=0x7FF6849D4968 | class=ButtonWidgetClass | key=PremiumTakeButton | val=㍈蒝翶
-    rec=0x15D38FC4258 type=0x7FF684995C08 state=2 obj=0x15A528D6A30 | vtable=0x7FF6849C4B48 | class=nil | key=꯰葐翶 | val=nil
-    rec=0x15D38FC4270 type=0x7FF684995C08 state=2 obj=0x15A528D62F0 | vtable=0x7FF6849C4B48 | class=nil | key=꣸蒫翶 | val=nil
-    rec=0x15D38FC4288 type=0x7FF684995C08 state=1 obj=0x15D2F2843E0 | vtable=0x7FF684A207E8 | class=nil | key=nil | val=餻
-    rec=0x15D38FC42A0 type=0x7FF684995C08 state=2 obj=0x15A528D61F0 | vtable=0x7FF6849C4B48 | class=nil | key=nil | val=nil
-    rec=0x15D38FC42B8 type=0x7FF684995C08 state=2 obj=0x15A528D79B0 | vtable=0x7FF6849C4468 | class=nil | key=nil | val=nil
-    rec=0x15D38FC42D0 type=0x7FF684995C08 state=2 obj=0x15A528D6EF0 | vtable=0x7FF6849C4468 | class=nil | key=䭐萅翶 | val=nil
-    rec=0x15D38FC42E8 type=0x7FF684995C08 state=2 obj=0x15D2F8FA630 | vtable=0x7FF6849C5E80 | class=nil | key=奠蒭翶 | val=奠蒭翶
->>> rec=0x15D38FC4300 type=0x7FF684995C08 state=1 obj=0x15CC2503340 | vtable=0x7FF6849DF058 | class=RichTextWidgetClass | key=DefaultTakeButtonText | val=Забрать
-    rec=0x15D38FC4318 type=0x7FF684995C08 state=1 obj=0x15D2F284428 | vtable=0x7FF6849EE0D0 | class=nil | key=쀐萝翶 | val=nil
-    rec=0x15D38FC4330 type=0x7FF684995C08 state=2 obj=0x15A528D7370 | vtable=0x7FF6849C4468 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4348 type=0x7FF684995C08 state=1 obj=0x1599FA90FC0 | vtable=0x7FF6849DFA60 | class=nil | key=DefaultItemName | val=C
-    rec=0x15D38FC4360 type=0x7FF684AC21A8 state=1 obj=0x15A8E76E270 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38FC4378 type=0x7FF684995C08 state=2 obj=0x15D38FD0B28 | vtable=0x7FF68498A3E8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4390 type=0x7FF684995C08 state=2 obj=0x15D2F8FD7E0 | vtable=0x7FF6849C76D8 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC43A8 type=0x7FF684995C08 state=2 obj=0x15D2F8F3420 | vtable=0x7FF68498B328 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38FC43C0 type=0x7FF684995C08 state=2 obj=0x15A528D71B0 | vtable=0x7FF6849C4840 | class=nil | key=nil | val=nil
-    rec=0x15D38FC43D8 type=0x7FF684995C08 state=2 obj=0x15D2F8FD420 | vtable=0x7FF6849C5440 | class=nil | key=專蒙翶 | val=奠蒭翶
-    rec=0x15D38FC43F0 type=0x7FF684995C08 state=2 obj=0x15A528D7AB0 | vtable=0x7FF6849C41D8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4408 type=0x7FF684995C08 state=2 obj=0x15A528D78F0 | vtable=0x7FF6849C4B48 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4420 type=0x7FF684995C08 state=2 obj=0x15A528D6730 | vtable=0x7FF6849C4468 | class=nil | key=䩠萅翶 | val=nil
-    rec=0x15D38FC4438 type=0x7FF684995C08 state=2 obj=0x15D2F8FD060 | vtable=0x7FF6849C5E80 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC4450 type=0x7FF684995C08 state=2 obj=0x15D2F8FC570 | vtable=0x7FF68498B328 | class=nil | key=奠蒭翶 | val=挨蒜翶
-    rec=0x15D38FC4468 type=0x7FF684995C08 state=2 obj=0x15A528D67B0 | vtable=0x7FF6849C41D8 | class=nil | key=䩠萅翶 | val=nil
-    rec=0x15D38FC4480 type=0x7FF684995C08 state=2 obj=0x15A528D6BB0 | vtable=0x7FF6849C46F8 | class=nil | key=䭐萅翶 | val=nil
-    rec=0x15D38FC4498 type=0x7FF684995C08 state=2 obj=0x15D2F8FCDE0 | vtable=0x7FF6849C5818 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC44B0 type=0x7FF684995C08 state=2 obj=0x15A528D7570 | vtable=0x7FF6849C4B48 | class=nil | key=䩠萅翶 | val=nil
-    rec=0x15D38FC44C8 type=0x7FF684995C08 state=1 obj=0x15D2F285FE0 | vtable=0x7FF684A207E8 | class=nil | key=nil | val=餻
-    rec=0x15D38FC44E0 type=0x7FF684995C08 state=2 obj=0x15A528D78B0 | vtable=0x7FF6849C4B48 | class=nil | key=nil | val=nil
-    rec=0x15D38FC44F8 type=0x7FF684995C08 state=2 obj=0x15A91AE3D20 | vtable=0x7FF6849DA198 | class=nil | key=rootFrame | val=蒛翶
-    rec=0x15D38FC4510 type=0x15D38FC5E30 state=0 obj=0x0 | unreadable
-    rec=0x15D38FC4528 type=0x7FF684995C08 state=1 obj=0x15D38F73120 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=DefaultBlockPart | val=nil
-    rec=0x15D38FC4540 type=0x7FF684995C08 state=1 obj=0x15A91AE3F00 | vtable=0x7FF6849DA198 | class=nil | key=PremiumBlock | val=nil
-    rec=0x15D38FC4558 type=0x7FF684995C08 state=1 obj=0x15D38F737E0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=PremiumBlockPart | val=nil
-    rec=0x15D38FC4570 type=0x7FF684995C08 state=1 obj=0x15B618E7D70 | vtable=0x7FF6849D4968 | class=ButtonWidgetClass | key=PremiumTakeButton | val=㍈蒝翶
-    rec=0x15D38FC4588 type=0x7FF684995C08 state=5 obj=0x15BE9A02FD0 | vtable=0x7FF684A3D180 | class=nil | key=nil | val=nil
-    rec=0x15D38FC45A0 type=0x7FF684995C08 state=2 obj=0x15A528D63F0 | vtable=0x7FF6849C41D8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC45B8 type=0x7FF684995C08 state=2 obj=0x15A528D6430 | vtable=0x7FF6849C4468 | class=nil | key=옐Ŕ | val=nil
-    rec=0x15D38FC45D0 type=0x7FF684995C08 state=2 obj=0x15A528D6030 | vtable=0x7FF6849C4840 | class=nil | key=nil | val=nil
-    rec=0x15D38FC45E8 type=0x7FF684995C08 state=1 obj=0x15D8BC78030 | vtable=0x7FF6849DF058 | class=RichTextWidgetClass | key=LevelText | val=2
-    rec=0x15D38FC4600 type=0x7FF684995C08 state=2 obj=0x15A528D63B0 | vtable=0x7FF6849C4840 | class=nil | key=䫀萅翶 | val=nil
-    rec=0x15D38FC4618 type=0x7FF684995C08 state=1 obj=0x159DAA183A0 | vtable=0x7FF684A34F60 | class=nil | key=DefaultItemPreview | val=nil
-    rec=0x15D38FC4630 type=0x7FF684995C08 state=2 obj=0x15CBB190FA0 | vtable=0x7FF68498B328 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4648 type=0x15D38FC4A08 state=0 obj=0x0 | unreadable
-    rec=0x15D38FC4660 type=0x7FF684995C08 state=2 obj=0x15A528D7730 | vtable=0x7FF6849C4B48 | class=nil | key=笠菡翶 | val=nil
-    rec=0x15D38FC4678 type=0x7FF684995C08 state=2 obj=0x15CBB190A60 | vtable=0x7FF68498B328 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4690 type=0x7FF684995C08 state=2 obj=0x15A51C9C110 | vtable=0x7FF6849C5818 | class=nil | key= | val=挨蒜翶
-    rec=0x15D38FC46A8 type=0x15D38FC53B0 state=0 obj=0x0 | unreadable
-    rec=0x15D38FC46C0 type=0x7FF684995C08 state=2 obj=0x15D2F8FDEC0 | vtable=0x7FF6849C5440 | class=nil | key=nil | val=奠蒭翶
+------------------------------------------------------------
+-- CONFIG
+------------------------------------------------------------
 
-============================================================
-WasTaken_owner ownerEntry=0x15D38FC48A0
-============================================================
-    rec=0x15D38FC4660 type=0x7FF684995C08 state=2 obj=0x15A528D7730 | vtable=0x7FF6849C4B48 | class=nil | key=笠菡翶 | val=nil
-    rec=0x15D38FC4678 type=0x7FF684995C08 state=2 obj=0x15CBB190A60 | vtable=0x7FF68498B328 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4690 type=0x7FF684995C08 state=2 obj=0x15A51C9C110 | vtable=0x7FF6849C5818 | class=nil | key= | val=挨蒜翶
-    rec=0x15D38FC46A8 type=0x15D38FC53B0 state=0 obj=0x0 | unreadable
-    rec=0x15D38FC46C0 type=0x7FF684995C08 state=2 obj=0x15D2F8FDEC0 | vtable=0x7FF6849C5440 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC46D8 type=0x7FF684995C08 state=2 obj=0x15A528D8CB0 | vtable=0x7FF6849C46F8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC46F0 type=0x15D38FC5E00 state=0 obj=0x0 | unreadable
-    rec=0x15D38FC4708 type=0x15D38FC46A8 state=0 obj=0x0 | unreadable
-    rec=0x15D38FC4720 type=0x7FF684995C08 state=2 obj=0x15A51C9BF30 | vtable=0x7FF6849C5818 | class=nil | key=nil | val=蒛翶
-    rec=0x15D38FC4738 type=0x7FF684995C08 state=2 obj=0x15A3CB3B0C0 | vtable=0x7FF6849C5818 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4750 type=0x7FF684995C08 state=2 obj=0x15A3CB3B160 | vtable=0x7FF6849C5818 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4768 type=0x7FF684995C08 state=2 obj=0x159BF117B50 | vtable=0x7FF684A74610 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4780 type=0x7FF684995C08 state=2 obj=0x15D38FA7E58 | vtable=0x7FF68498A3E8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4798 type=0x7FF684995C08 state=2 obj=0x15CBB18B480 | vtable=0x7FF68498B328 | class=nil | key=專蒙翶 | val=專蒙翶
-    rec=0x15D38FC47B0 type=0x7FF684995C08 state=2 obj=0x159BF12C1E0 | vtable=0x7FF684A74610 | class=nil | key=nil | val=nil
-    rec=0x15D38FC47C8 type=0x7FF684995C08 state=2 obj=0x15D38FD0030 | vtable=0x7FF68498A3E8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC47E0 type=0x7FF684995C08 state=2 obj=0x15CBB18B600 | vtable=0x7FF68498B328 | class=nil | key=nil | val=專蒙翶
-    rec=0x15D38FC47F8 type=0x7FF684AC21A8 state=1 obj=0x15A8E7674C0 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38FC4810 type=0x7FF684AC21A8 state=1 obj=0x15A8E767790 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38FC4828 type=0x7FF684AC21A8 state=1 obj=0x15A8E767A60 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38FC4840 type=0x7FF684AC21A8 state=1 obj=0x15A8E767D30 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38FC4858 type=0x7FF684995C08 state=1 obj=0x15D2F289FA8 | vtable=0x7FF6849EE0D0 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4870 type=0x7FF684995C08 state=2 obj=0x15D2F8FEA00 | vtable=0x7FF6849C76D8 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC4888 type=0x7FF684995C08 state=1 obj=0x1599FA91590 | vtable=0x7FF6849DFA60 | class=nil | key=DefaultItemName | val=B
->>> rec=0x15D38FC48A0 type=0x7FF684995C08 state=1 obj=0x15CC2503B50 | vtable=0x7FF6849DF058 | class=RichTextWidgetClass | key=DefaultWasTakenText | val=Получено
-    rec=0x15D38FC48B8 type=0x7FF684995C08 state=2 obj=0x15BE91BFA20 | vtable=0x7FF68498B328 | class=nil | key=nil | val=⻰Űŕ
-    rec=0x15D38FC48D0 type=0x7FF684995C08 state=2 obj=0x15A528D7430 | vtable=0x7FF6849C4B48 | class=nil | key=nil | val=nil
-    rec=0x15D38FC48E8 type=0x7FF684995C08 state=1 obj=0x15D2F289EE0 | vtable=0x7FF684A207E8 | class=nil | key=nil | val=餻
-    rec=0x15D38FC4900 type=0x7FF684995C08 state=2 obj=0x15A528D8BB0 | vtable=0x7FF6849C4468 | class=nil | key=曖Ś | val=nil
-    rec=0x15D38FC4918 type=0x7FF684995C08 state=2 obj=0x15D2F8FD880 | vtable=0x7FF6849C5588 | class=nil | key=nil | val=瞨蒜翶
-    rec=0x15D38FC4930 type=0x7FF684995C08 state=2 obj=0x15A528D75F0 | vtable=0x7FF6849C41D8 | class=nil | key=䩠萅翶 | val=nil
-    rec=0x15D38FC4948 type=0x7FF684995C08 state=2 obj=0x15A528D7DB0 | vtable=0x7FF6849C41D8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4960 type=0x7FF684995C08 state=2 obj=0x15A528D6F30 | vtable=0x7FF6849C46F8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4978 type=0x7FF684995C08 state=2 obj=0x1590B0E3BD0 | vtable=0x7FF68498B328 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38FC4990 type=0x7FF684995C08 state=2 obj=0x15A528D8070 | vtable=0x7FF6849C4B48 | class=nil | key=nil | val=nil
-    rec=0x15D38FC49A8 type=0x7FF684995C08 state=2 obj=0x15A528D5FF0 | vtable=0x7FF6849C4840 | class=nil | key=nil | val=nil
-    rec=0x15D38FC49C0 type=0x7FF684995C08 state=5 obj=0x15CBB8C3610 | vtable=0x7FF684A3D180 | class=nil | key=nil | val=nil
-    rec=0x15D38FC49D8 type=0x7FF684995C08 state=2 obj=0x15A528D88B0 | vtable=0x7FF6849C41D8 | class=nil | key=䫀萅翶 | val=nil
-    rec=0x15D38FC49F0 type=0x7FF684995C08 state=2 obj=0x15A528D8530 | vtable=0x7FF6849C4468 | class=nil | key=䩠萅翶 | val=nil
-    rec=0x15D38FC4A08 type=0x15D38FC4510 state=0 obj=0x0 | unreadable
-    rec=0x15D38FC4A20 type=0x7FF684995C08 state=2 obj=0x15A528D88F0 | vtable=0x7FF6849C4468 | class=nil | key=䫀萅翶 | val=nil
-    rec=0x15D38FC4A38 type=0x7FF684995C08 state=2 obj=0x15D2F8FE730 | vtable=0x7FF68498B328 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38FC4A50 type=0x7FF684995C08 state=2 obj=0x15A528D6FF0 | vtable=0x7FF6849C41D8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4A68 type=0x7FF684995C08 state=2 obj=0x15A528D8770 | vtable=0x7FF6849C41D8 | class=nil | key=䩠萅翶 | val=nil
-    rec=0x15D38FC4A80 type=0x7FF684995C08 state=2 obj=0x15A528D7EF0 | vtable=0x7FF6849C41D8 | class=nil | key=䭐萅翶 | val=nil
-    rec=0x15D38FC4A98 type=0x7FF684995C08 state=2 obj=0x15A528D8230 | vtable=0x7FF6849C41D8 | class=nil | key=䭐萅翶 | val=nil
-    rec=0x15D38FC4AB0 type=0x7FF684995C08 state=2 obj=0x15A528D7BB0 | vtable=0x7FF6849C4468 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4AC8 type=0x7FF684995C08 state=2 obj=0x15A528D7CB0 | vtable=0x7FF6849C4468 | class=nil | key=䭐萅翶 | val=nil
-    rec=0x15D38FC4AE0 type=0x7FF684995C08 state=2 obj=0x15D2F8FDE70 | vtable=0x7FF6849C5E80 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC4AF8 type=0x7FF684995C08 state=2 obj=0x15D2F8FEFA0 | vtable=0x7FF6849C5440 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC4B10 type=0x7FF684995C08 state=2 obj=0x1590B0D1340 | vtable=0x7FF68498B328 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38FC4B28 type=0x7FF684995C08 state=2 obj=0x15A528D7C70 | vtable=0x7FF6849C4468 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4B40 type=0x7FF684995C08 state=2 obj=0x15A528D7030 | vtable=0x7FF6849C4840 | class=nil | key=䭐萅翶 | val=nil
-    rec=0x15D38FC4B58 type=0x7FF684995C08 state=2 obj=0x15A528D70B0 | vtable=0x7FF6849C4840 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4B70 type=0x15D38FC5DE8 state=0 obj=0x0 | unreadable
-    rec=0x15D38FC4B88 type=0x7FF684995C08 state=2 obj=0x15A3CB3D500 | vtable=0x7FF6849C5818 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4BA0 type=0x7FF684995C08 state=2 obj=0x15A3CB3D140 | vtable=0x7FF6849C5818 | class=nil | key=nil | val=奠蒭翶
-    rec=0x15D38FC4BB8 type=0x7FF684995C08 state=2 obj=0x159BF129720 | vtable=0x7FF684A74610 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4BD0 type=0x7FF684995C08 state=2 obj=0x15D38FD0168 | vtable=0x7FF68498A3E8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4BE8 type=0x7FF684995C08 state=2 obj=0x15CBB18E180 | vtable=0x7FF68498B328 | class=nil | key=專蒙翶 | val=專蒙翶
-    rec=0x15D38FC4C00 type=0x7FF684995C08 state=2 obj=0x159BF12BAC0 | vtable=0x7FF684A74610 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4C18 type=0x7FF684995C08 state=2 obj=0x15D38FD02A0 | vtable=0x7FF68498A3E8 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4C30 type=0x7FF684995C08 state=2 obj=0x15CBB18EEA0 | vtable=0x7FF68498B328 | class=nil | key=nil | val=nil
-    rec=0x15D38FC4C48 type=0x7FF684AC21A8 state=1 obj=0x15A8E768000 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38FC4C60 type=0x7FF684AC21A8 state=1 obj=0x15A8E7682D0 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
+local CONFIG = {
+    -- Если хочешь отключить авто-поиск и руками задать base:
+    -- MANUAL_BASE = 0x123456789AB,
+    MANUAL_BASE = nil,
 
-============================================================
-Level_owner ownerEntry=0x15D38F87E70
-============================================================
-    rec=0x15D38F87C30 type=0x7FF684995C08 state=1 obj=0x15D38F72550 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part1 | val=nil
-    rec=0x15D38F87C48 type=0x7FF684995C08 state=1 obj=0x15D38F70540 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=BG_10 | val=nil
-    rec=0x15D38F87C60 type=0x7FF684995C08 state=1 obj=0x15D38F721F0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part0 | val=nil
-    rec=0x15D38F87C78 type=0x7FF684995C08 state=1 obj=0x15D38F72040 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part | val=nil
-    rec=0x15D38F87C90 type=0x7FF684995C08 state=1 obj=0x15CC2503748 | vtable=0x7FF6849DF058 | class=RichTextWidgetClass | key=PremiumWasTakenText | val=nil
-    rec=0x15D38F87CA8 type=0x7FF684995C08 state=1 obj=0x15D38F723A0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part10 | val=nil
-    rec=0x15D38F87CC0 type=0x7FF684995C08 state=1 obj=0x15D8BC7CA50 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part2 | val=nil
-    rec=0x15D38F87CD8 type=0x7FF684995C08 state=1 obj=0x15D8BC7C8A0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part1 | val=nil
-    rec=0x15D38F87CF0 type=0x7FF684995C08 state=1 obj=0x15D8BC7C6F0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part0 | val=nil
-    rec=0x15D38F87D08 type=0x7FF684995C08 state=1 obj=0x15D38F71620 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part7 | val=nil
-    rec=0x15D38F87D20 type=0x7FF684995C08 state=1 obj=0x15D8BC7CC00 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=DefaultBG | val=nil
-    rec=0x15D38F87D38 type=0x7FF684995C08 state=1460288880641 obj=0x15D8BC7CF60 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part3 | val=nil
-    rec=0x15D38F87D50 type=0x7FF684995C08 state=1 obj=0x15D38F71980 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part9 | val=nil
-    rec=0x15D38F87D68 type=0x7FF684995C08 state=1 obj=0x15D38F717D0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part8 | val=nil
-    rec=0x15D38F87D80 type=0x7FF684995C08 state=4914304225783054337 obj=0x15B618E78D8 | vtable=0x7FF6849D4968 | class=ButtonWidgetClass | key=DefaultTakeButton | val=㍈蒝翶
-    rec=0x15D38F87D98 type=0x7FF684995C08 state=-45079976738814 obj=0x15A91AE30F0 | vtable=0x7FF6849DA198 | class=nil | key=rootFrame | val=nil
-    rec=0x15D38F87DB0 type=0x7FF684995C08 state=4539628424389459969 obj=0x15D38F71CE0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=LevelBlock | val=nil
-    rec=0x15D38F87DC8 type=0x7FF684995C08 state=2 obj=0x15D2F8FB620 | vtable=0x7FF6849C56D0 | class=nil | key=專蒙翶 | val=nil
-    rec=0x15D38F87DE0 type=0x7FF684995C08 state=1 obj=0x159DAA16B40 | vtable=0x7FF684A34F60 | class=nil | key=DefaultItemPreview | val=nil
-    rec=0x15D38F87DF8 type=0x7FF684995C08 state=1 obj=0x15A91AE3960 | vtable=0x7FF6849DA198 | class=nil | key=PremiumBlock | val=nil
-    rec=0x15D38F87E10 type=0x7FF684995C08 state=1 obj=0x15B618E7A60 | vtable=0x7FF6849D4968 | class=ButtonWidgetClass | key=PremiumTakeButton | val=㍈蒝翶
-    rec=0x15D38F87E28 type=0x7FF684995C08 state=1 obj=0x15D38F71470 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=PremiumBlockPart | val=nil
-    rec=0x15D38F87E40 type=0x7FF684995C08 state=1 obj=0x15A91AE3000 | vtable=0x7FF6849DA198 | class=nil | key=DefaultBlock | val=蒛翶
-    rec=0x15D38F87E58 type=0x7FF684995C08 state=1 obj=0x15D38F70DB0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=DefaultBlockPart | val=nil
->>> rec=0x15D38F87E70 type=0x7FF684995C08 state=1 obj=0x15CC25038A0 | vtable=0x7FF6849DF058 | class=RichTextWidgetClass | key=LevelText | val=1
-    rec=0x15D38F87E88 type=0x7FF684995C08 state=2 obj=0x15D2F375360 | vtable=0x7FF6849C5818 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38F87EA0 type=0x7FF684995C08 state=2 obj=0x15D2F376030 | vtable=0x7FF6849C5818 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38F87EB8 type=0x7FF684AC21A8 state=1 obj=0x15A8E735BA0 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87ED0 type=0x7FF684AC21A8 state=1 obj=0x15A8E734D90 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87EE8 type=0x7FF684AC21A8 state=1 obj=0x15A8E734520 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87F00 type=0x7FF684AC21A8 state=1 obj=0x15A8E736140 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87F18 type=0x7FF684AC21A8 state=1 obj=0x15A8E735E70 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87F30 type=0x7FF684995C08 state=1 obj=0x15D38F71110 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=PremiumBG | val=nil
-    rec=0x15D38F87F48 type=0x7FF684995C08 state=1 obj=0x15D38F706F0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part3 | val=nil
-    rec=0x15D38F87F60 type=0x7FF684995C08 state=1 obj=0x15D38F70390 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=DefaultBG | val=nil
-    rec=0x15D38F87F78 type=0x7FF684995C08 state=1 obj=0x15D38F708A0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part5 | val=nil
-    rec=0x15D38F87F90 type=0x7FF684995C08 state=1 obj=0x15D38F70C00 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part6 | val=nil
-    rec=0x15D38F87FA8 type=0x7FF684995C08 state=1 obj=0x15CC2503498 | vtable=0x7FF6849DF058 | class=RichTextWidgetClass | key=DefaultWasTakenText | val=nil
-    rec=0x15D38F87FC0 type=0x7FF684995C08 state=1 obj=0x15D38F70A50 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part4 | val=nil
-    rec=0x15D38F87FD8 type=0x7FF684AC21A8 state=1 obj=0x15A8E7374F0 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87FF0 type=0x0 state=0 obj=0x0 | unreadable
-    rec=0x15D38F88008 type=0x158B4EEB600 state=0 obj=0x7FF684D73E70 | vtable=0x15D38F88000 | class=nil | key=nil | val=nil
-    rec=0x15D38F88020 type=0x18B000100030 state=0 obj=0x7FF6849D4968 | vtable=0x7FF68410D1E0 | class=nil | key=ဏ袁 | val=荈ჩ鏩찀쳌荈⣩蟩찀쳌荈ラ篩찀쳌荈ࣩ쿩찀쳌荈ჩ⏩찀쳌荈⣩៩찀쳌荈ラ௩찀쳌荈ჩῩ찀쳌荈⣩Ꮹ찀쳌荈ラߩ찀쳌荈ჩ
-    rec=0x15D38F88038 type=0x154EF3F2C80 state=140696763583072 obj=0x1 | unreadable
-    rec=0x15D38F88050 type=0x15D38FC5518 state=140696763583104 obj=0x7FF6849D4AB8 | vtable=0x7FF68410CE5C | class=nil | key=쀲쳃쳌쳌쳌쳌쳌쳌쀳쳃쳌쳌쳌쳌쳌쳌區荈⃬譈䠁�僿읈ࡃ | val=nil
-    rec=0x15D38F88068 type=0x0 state=0 obj=0x155019E15E0 | vtable=0x7FF6849DCA20 | class=nil | key=萒翶 | val=nil
-    rec=0x15D38F88080 type=0x154CC93F4F0 state=1488502797968 obj=0x15D8BC7CDB0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=BG_10 | val=nil
-    rec=0x15D38F88098 type=0x15D8BC7CF60 state=0 obj=0x0 | unreadable
-    rec=0x15D38F880B0 type=0x15CBB9D5926 state=4767060205571670016 obj=0x0 | unreadable
-    rec=0x15D38F880C8 type=0x4228000000000000 state=0 obj=0xA000094E | unreadable
-    rec=0x15D38F880E0 type=0xFFFF3C3C00000000 state=0 obj=0x0 | unreadable
-    rec=0x15D38F880F8 type=0x3F0000003F000000 state=4706261610602168320 obj=0x3DF1A9FC3F4CCCCD | unreadable
-    rec=0x15D38F88110 type=0x0 state=0 obj=0x154D6B82DF0 | vtable=0x7FF6849D9810 | class=nil | key=ꄠ蒝翶 | val=
-    rec=0x15D38F88128 type=0x154B3E5ECD0 state=1467045169200 obj=0xFFFFFFFFFFFFFFFF | unreadable
-    rec=0x15D38F88140 type=0x0 state=0 obj=0x3F8000003F800000 | unreadable
-    rec=0x15D38F88158 type=0x0 state=0 obj=0x0 | unreadable
-    rec=0x15D38F88170 type=0x0 state=0 obj=0x0 | unreadable
-    rec=0x15D38F88188 type=0x0 state=0 obj=0x7F0000000000 | unreadable
-    rec=0x15D38F881A0 type=0x3F800000 state=0 obj=0x7FF600000000 | unreadable
-    rec=0x15D38F881B8 type=0x7FF6849D4968 state=1464302775424 obj=0x7FF6849D4A60 | vtable=0x7FF68410CE44 | class=nil | key=쀲쳃쳌쳌쳌쳌쳌쳌쀳쳃쳌쳌쳌쳌쳌쳌區荈⃬譈䠁�僿읈ࡃ | val=쀲쳃쳌쳌쳌쳌쳌쳌쀳쳃쳌쳌쳌쳌쳌쳌區荈⃬譈䠁�僿읈ࡃ
-    rec=0x15D38F881D0 type=0x1 state=1499899642432 obj=0x7FF6849D4A80 | vtable=0x7FF684112350 | class=nil | key=쀲쳃쳌쳌쳌쳌쳌쳌쀳쳃쳌쳌쳌쳌쳌쳌區荈⃬譈䠁�僿읈ࡃ | val=쀲쳃쳌쳌쳌쳌쳌쳌쀳쳃쳌쳌쳌쳌쳌쳌區荈⃬譈䠁�僿읈ࡃ
-    rec=0x15D38F881E8 type=0x7FF6849D4AB8 state=0 obj=0x0 | unreadable
-    rec=0x15D38F88200 type=0x155019E15E0 state=1463721129200 obj=0x15A91AE32D0 | vtable=0x7FF6849DA198 | class=nil | key=PremiumBlock | val=nil
-    rec=0x15D38F88218 type=0x15D8BC7E550 state=1485431732704 obj=0x0 | unreadable
-    rec=0x15D38F88230 type=0x0 state=1497796271526 obj=0xC150000000000000 | unreadable
+    floatAob = "00 00 80 3F 00 00 00 40 00 00 80 3F 00 00 80 3F",
+    protectionFlags = "+W-C",
 
-============================================================
-WasTaken_nil_owner ownerEntry=0x15D38F87FA8
-============================================================
-    rec=0x15D38F87D68 type=0x7FF684995C08 state=1 obj=0x15D38F717D0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part8 | val=nil
-    rec=0x15D38F87D80 type=0x7FF684995C08 state=4914304225783054337 obj=0x15B618E78D8 | vtable=0x7FF6849D4968 | class=ButtonWidgetClass | key=DefaultTakeButton | val=㍈蒝翶
-    rec=0x15D38F87D98 type=0x7FF684995C08 state=-45079976738814 obj=0x15A91AE30F0 | vtable=0x7FF6849DA198 | class=nil | key=rootFrame | val=nil
-    rec=0x15D38F87DB0 type=0x7FF684995C08 state=4539628424389459969 obj=0x15D38F71CE0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=LevelBlock | val=nil
-    rec=0x15D38F87DC8 type=0x7FF684995C08 state=2 obj=0x15D2F8FB620 | vtable=0x7FF6849C56D0 | class=nil | key=專蒙翶 | val=nil
-    rec=0x15D38F87DE0 type=0x7FF684995C08 state=1 obj=0x159DAA16B40 | vtable=0x7FF684A34F60 | class=nil | key=DefaultItemPreview | val=nil
-    rec=0x15D38F87DF8 type=0x7FF684995C08 state=1 obj=0x15A91AE3960 | vtable=0x7FF6849DA198 | class=nil | key=PremiumBlock | val=nil
-    rec=0x15D38F87E10 type=0x7FF684995C08 state=1 obj=0x15B618E7A60 | vtable=0x7FF6849D4968 | class=ButtonWidgetClass | key=PremiumTakeButton | val=㍈蒝翶
-    rec=0x15D38F87E28 type=0x7FF684995C08 state=1 obj=0x15D38F71470 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=PremiumBlockPart | val=nil
-    rec=0x15D38F87E40 type=0x7FF684995C08 state=1 obj=0x15A91AE3000 | vtable=0x7FF6849DA198 | class=nil | key=DefaultBlock | val=蒛翶
-    rec=0x15D38F87E58 type=0x7FF684995C08 state=1 obj=0x15D38F70DB0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=DefaultBlockPart | val=nil
-    rec=0x15D38F87E70 type=0x7FF684995C08 state=1 obj=0x15CC25038A0 | vtable=0x7FF6849DF058 | class=RichTextWidgetClass | key=LevelText | val=1
-    rec=0x15D38F87E88 type=0x7FF684995C08 state=2 obj=0x15D2F375360 | vtable=0x7FF6849C5818 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38F87EA0 type=0x7FF684995C08 state=2 obj=0x15D2F376030 | vtable=0x7FF6849C5818 | class=nil | key=奠蒭翶 | val=奠蒭翶
-    rec=0x15D38F87EB8 type=0x7FF684AC21A8 state=1 obj=0x15A8E735BA0 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87ED0 type=0x7FF684AC21A8 state=1 obj=0x15A8E734D90 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87EE8 type=0x7FF684AC21A8 state=1 obj=0x15A8E734520 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87F00 type=0x7FF684AC21A8 state=1 obj=0x15A8E736140 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87F18 type=0x7FF684AC21A8 state=1 obj=0x15A8E735E70 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87F30 type=0x7FF684995C08 state=1 obj=0x15D38F71110 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=PremiumBG | val=nil
-    rec=0x15D38F87F48 type=0x7FF684995C08 state=1 obj=0x15D38F706F0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part3 | val=nil
-    rec=0x15D38F87F60 type=0x7FF684995C08 state=1 obj=0x15D38F70390 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=DefaultBG | val=nil
-    rec=0x15D38F87F78 type=0x7FF684995C08 state=1 obj=0x15D38F708A0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part5 | val=nil
-    rec=0x15D38F87F90 type=0x7FF684995C08 state=1 obj=0x15D38F70C00 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part6 | val=nil
->>> rec=0x15D38F87FA8 type=0x7FF684995C08 state=1 obj=0x15CC2503498 | vtable=0x7FF6849DF058 | class=RichTextWidgetClass | key=DefaultWasTakenText | val=nil
-    rec=0x15D38F87FC0 type=0x7FF684995C08 state=1 obj=0x15D38F70A50 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=Part4 | val=nil
-    rec=0x15D38F87FD8 type=0x7FF684AC21A8 state=1 obj=0x15A8E7374F0 | vtable=0x7FF684AC20A8 | class=nil | key=㣬葯翶 | val=nil
-    rec=0x15D38F87FF0 type=0x0 state=0 obj=0x0 | unreadable
-    rec=0x15D38F88008 type=0x158B4EEB600 state=0 obj=0x7FF684D73E70 | vtable=0x15D38F88000 | class=nil | key=nil | val=nil
-    rec=0x15D38F88020 type=0x18B000100030 state=0 obj=0x7FF6849D4968 | vtable=0x7FF68410D1E0 | class=nil | key=ဏ袁 | val=荈ჩ鏩찀쳌荈⣩蟩찀쳌荈ラ篩찀쳌荈ࣩ쿩찀쳌荈ჩ⏩찀쳌荈⣩៩찀쳌荈ラ௩찀쳌荈ჩῩ찀쳌荈⣩Ꮹ찀쳌荈ラߩ찀쳌荈ჩ
-    rec=0x15D38F88038 type=0x154EF3F2C80 state=140696763583072 obj=0x1 | unreadable
-    rec=0x15D38F88050 type=0x15D38FC5518 state=140696763583104 obj=0x7FF6849D4AB8 | vtable=0x7FF68410CE5C | class=nil | key=쀲쳃쳌쳌쳌쳌쳌쳌쀳쳃쳌쳌쳌쳌쳌쳌區荈⃬譈䠁�僿읈ࡃ | val=nil
-    rec=0x15D38F88068 type=0x0 state=0 obj=0x155019E15E0 | vtable=0x7FF6849DCA20 | class=nil | key=萒翶 | val=nil
-    rec=0x15D38F88080 type=0x154CC93F4F0 state=1488502797968 obj=0x15D8BC7CDB0 | vtable=0x7FF6849DB840 | class=ImageWidgetClass | key=BG_10 | val=nil
-    rec=0x15D38F88098 type=0x15D8BC7CF60 state=0 obj=0x0 | unreadable
-    rec=0x15D38F880B0 type=0x15CBB9D5926 state=4767060205571670016 obj=0x0 | unreadable
-    rec=0x15D38F880C8 type=0x4228000000000000 state=0 obj=0xA000094E | unreadable
-    rec=0x15D38F880E0 type=0xFFFF3C3C00000000 state=0 obj=0x0 | unreadable
-    rec=0x15D38F880F8 type=0x3F0000003F000000 state=4706261610602168320 obj=0x3DF1A9FC3F4CCCCD | unreadable
-    rec=0x15D38F88110 type=0x0 state=0 obj=0x154D6B82DF0 | vtable=0x7FF6849D9810 | class=nil | key=ꄠ蒝翶 | val=
-    rec=0x15D38F88128 type=0x154B3E5ECD0 state=1467045169200 obj=0xFFFFFFFFFFFFFFFF | unreadable
-    rec=0x15D38F88140 type=0x0 state=0 obj=0x3F8000003F800000 | unreadable
-    rec=0x15D38F88158 type=0x0 state=0 obj=0x0 | unreadable
-    rec=0x15D38F88170 type=0x0 state=0 obj=0x0 | unreadable
-    rec=0x15D38F88188 type=0x0 state=0 obj=0x7F0000000000 | unreadable
-    rec=0x15D38F881A0 type=0x3F800000 state=0 obj=0x7FF600000000 | unreadable
-    rec=0x15D38F881B8 type=0x7FF6849D4968 state=1464302775424 obj=0x7FF6849D4A60 | vtable=0x7FF68410CE44 | class=nil | key=쀲쳃쳌쳌쳌쳌쳌쳌쀳쳃쳌쳌쳌쳌쳌쳌區荈⃬譈䠁�僿읈ࡃ | val=쀲쳃쳌쳌쳌쳌쳌쳌쀳쳃쳌쳌쳌쳌쳌쳌區荈⃬譈䠁�僿읈ࡃ
-    rec=0x15D38F881D0 type=0x1 state=1499899642432 obj=0x7FF6849D4A80 | vtable=0x7FF684112350 | class=nil | key=쀲쳃쳌쳌쳌쳌쳌쳌쀳쳃쳌쳌쳌쳌쳌쳌區荈⃬譈䠁�僿읈ࡃ | val=쀲쳃쳌쳌쳌쳌쳌쳌쀳쳃쳌쳌쳌쳌쳌쳌區荈⃬譈䠁�僿읈ࡃ
-    rec=0x15D38F881E8 type=0x7FF6849D4AB8 state=0 obj=0x0 | unreadable
-    rec=0x15D38F88200 type=0x155019E15E0 state=1463721129200 obj=0x15A91AE32D0 | vtable=0x7FF6849DA198 | class=nil | key=PremiumBlock | val=nil
-    rec=0x15D38F88218 type=0x15D8BC7E550 state=1485431732704 obj=0x0 | unreadable
-    rec=0x15D38F88230 type=0x0 state=1497796271526 obj=0xC150000000000000 | unreadable
-    rec=0x15D38F88248 type=0x0 state=-4517110426252607488 obj=0x0 | unreadable
-    rec=0x15D38F88260 type=0x3F800000A000094E state=-45079976738816 obj=0x0 | unreadable
-    rec=0x15D38F88278 type=0x0 state=4539628425446424576 obj=0x4150000000000000 | unreadable
-    rec=0x15D38F88290 type=0x3DF1A9FC3F4CCCCD state=0 obj=0x0 | unreadable
-    rec=0x15D38F882A8 type=0x154D6B82DF0 state=1463307070672 obj=0x15592B4C830 | vtable=0x7FF6849D32D8 | class=nil | key=name | val=學蒜翶
-    rec=0x15D38F882C0 type=0xFFFFFFFFFFFFFFFF state=0 obj=0x0 | unreadable
-    rec=0x15D38F882D8 type=0x3F8000003F800000 state=0 obj=0x0 | unreadable
-    rec=0x15D38F882F0 type=0x0 state=0 obj=0x0 | unreadable
-    rec=0x15D38F88308 type=0x0 state=0 obj=0x0 | unreadable
-    rec=0x15D38F88320 type=0x0 state=1065353216 obj=0x0 | unreadable
-    rec=0x15D38F88338 type=0x0 state=140696763582824 obj=0x154EF3F2C80 | vtable=0x7FF6849BEC48 | class=nil | key=nil | val=蒛翶
-    rec=0x15D38F88350 type=0x7FF6849D4A60 state=1 obj=0x15D38FAFA80 | vtable=0x7FF684995C08 | class=nil | key=nil | val=nil
-    rec=0x15D38F88368 type=0x7FF6849D4A80 state=140696763583160 obj=0x44226EB943CF6666 | unreadable
+    stride = 0x158,
 
-DONE
-Report: C:\Users\Bogdan\Desktop\ce_parse_owner_entries_20260520_233103.txt
+    possibleFloatOffsets = {
+        0x130, 0x138, 0x140, 0x148, 0x150
+    },
+
+    maxStrideBack = 24,
+    minVoteHits = 4,
+    maxCandidatesToScore = 160,
+    checkNodes = 10,
+
+    mainBack = 0x200, -- -512
+    mainFwd  = 0x200, -- +512
+
+    microBack = 0x40, -- -64
+    microFwd  = 0x40, -- +64
+
+    maxMicroDumps = 80,
+
+    keywords = {
+        "DefaultTakeButton",
+        "DefaultTakeButtonText",
+        "DefaultWasTaken",
+        "DefaultWasTakenText",
+        "DefaultBlockPart",
+        "BlockImg",
+        "RewardGrid",
+        "LevelText",
+        "BattlePass",
+        "Reward",
+        "Take",
+        "Забрать",
+        "Получено",
+        "Combat Knife",
+        "Tactical Kukri",
+        "Boxed 12ga",
+    },
+}
+
+------------------------------------------------------------
+-- LOG
+------------------------------------------------------------
+
+local function makeOutPath()
+    local base = os.getenv("USERPROFILE") or os.getenv("HOME") or "."
+    return base .. "\\Desktop\\ce_base_outbound_microdumps_" .. os.date("%Y%m%d_%H%M%S") .. ".txt"
+end
+
+local OUT = makeOutPath()
+local F = io.open(OUT, "w")
+if not F then error("Cannot create output file: " .. OUT) end
+
+local function log(s)
+    s = tostring(s or "")
+    print(s)
+    F:write(s .. "\n")
+    F:flush()
+end
+
+------------------------------------------------------------
+-- UTILS
+------------------------------------------------------------
+
+local function hex(n)
+    if n == nil then return "nil" end
+    return string.format("0x%X", n)
+end
+
+local function alignDown(v, a)
+    return v - (v % a)
+end
+
+local function safeReadBytes(addr, count)
+    local ok, b = pcall(readBytes, addr, count, true)
+    if ok then return b end
+    return nil
+end
+
+local function safeReadQword(addr)
+    local ok, v = pcall(readQword, addr)
+    if ok then return v end
+    return nil
+end
+
+local function safeReadInteger(addr)
+    local ok, v = pcall(readInteger, addr)
+    if ok then return v end
+    return nil
+end
+
+local function safeReadFloat(addr)
+    local ok, v = pcall(readFloat, addr)
+    if ok then return v end
+    return nil
+end
+
+local function safeReadString(addr, len, wide)
+    local ok, s = pcall(readString, addr, len, wide)
+    if ok and s then return s end
+    return nil
+end
+
+local function isReadable(addr)
+    return addr and addr > 0x10000 and safeReadBytes(addr, 1) ~= nil
+end
+
+local function isLikelyPtr(v)
+    if not v then return false end
+    if v < 0x10000 then return false end
+    if v > 0x0000800000000000 then return false end
+    return true
+end
+
+local function isModulePtr(v)
+    return v and v >= 0x00007FF000000000 and v < 0x0000800000000000
+end
+
+local function low32(v)
+    if not v then return nil end
+    return v % 0x100000000
+end
+
+local function near(v, target, eps)
+    if not v then return false end
+    return math.abs(v - target) <= eps
+end
+
+local function addrFromString(s)
+    local ok, a = pcall(getAddressSafe, s)
+    if ok and a then return a end
+    return tonumber(tostring(s):gsub("^0x", ""), 16)
+end
+
+local function aobScanFast(aob)
+    local ok, sl = pcall(function()
+        return AOBScan(aob, CONFIG.protectionFlags)
+    end)
+
+    if ok and sl then
+        return sl, "AOBScan with flags " .. CONFIG.protectionFlags
+    end
+
+    return AOBScan(aob), "AOBScan without flags"
+end
+
+local function addRecord(desc, addr)
+    local al = getAddressList()
+    local mr = al.createMemoryRecord()
+    mr.Description = desc
+    mr.Address = hex(addr)
+    mr.Type = vtQword
+    mr.ShowAsHex = true
+end
+
+local function isPrintable(b)
+    return b >= 0x20 and b <= 0x7E
+end
+
+local function bytesToHexAscii(bytes, addr)
+    local out = {}
+    local i = 1
+
+    while i <= #bytes do
+        local hs, as = {}, {}
+
+        for j = 0, 15 do
+            local b = bytes[i + j]
+            if b == nil then
+                table.insert(hs, "  ")
+                table.insert(as, " ")
+            else
+                table.insert(hs, string.format("%02X", b))
+                table.insert(as, isPrintable(b) and string.char(b) or ".")
+            end
+        end
+
+        table.insert(out, string.format(
+            "%s : %-47s | %s",
+            hex(addr + i - 1),
+            table.concat(hs, " "),
+            table.concat(as, "")
+        ))
+
+        i = i + 16
+    end
+
+    return table.concat(out, "\n")
+end
+
+local function dumpRange(addr, size, title)
+    log("")
+    log("------------------------------------------------------------")
+    log(title .. " " .. hex(addr) .. " .. " .. hex(addr + size))
+    log("------------------------------------------------------------")
+
+    local bytes = safeReadBytes(addr, size)
+
+    if bytes then
+        log(bytesToHexAscii(bytes, addr))
+    else
+        log("[unreadable]")
+    end
+end
+
+local function readPtrText(ptr)
+    if not isLikelyPtr(ptr) then return nil end
+
+    local ascii = safeReadString(ptr, 128, false)
+    local wide  = safeReadString(ptr, 128, true)
+
+    if ascii and #ascii > 0 and string.match(ascii, "^[%w_ /%-%.:]+$") then
+        return ascii
+    end
+
+    if wide and #wide > 0 then return wide end
+    if ascii and #ascii > 0 then return ascii end
+
+    return nil
+end
+
+local function readFieldText(addr)
+    local p = safeReadQword(addr)
+    if not isLikelyPtr(p) then return p, nil end
+    return p, readPtrText(p)
+end
+
+local function containsKeyword(s)
+    if not s then return nil end
+
+    for _, k in ipairs(CONFIG.keywords) do
+        if string.find(s, k, 1, true) then
+            return k
+        end
+    end
+
+    return nil
+end
+
+local function hasFloat1211At(addr)
+    local f1 = safeReadFloat(addr)
+    local f2 = safeReadFloat(addr + 4)
+    local f3 = safeReadFloat(addr + 8)
+    local f4 = safeReadFloat(addr + 12)
+
+    return near(f1, 1.0, 0.001)
+       and near(f2, 2.0, 0.001)
+       and near(f3, 1.0, 0.001)
+       and near(f4, 1.0, 0.001)
+end
+
+------------------------------------------------------------
+-- LOCATE FIRST USEFUL BASE
+------------------------------------------------------------
+
+local function scoreHeader(node, first)
+    if not isReadable(node) then return 0 end
+
+    local score = 0
+
+    local q00 = safeReadQword(node + 0x00)
+    local q08 = safeReadQword(node + 0x08)
+    local q10 = safeReadQword(node + 0x10)
+    local i18 = safeReadInteger(node + 0x18)
+    local q28 = safeReadQword(node + 0x28)
+    local q30 = safeReadQword(node + 0x30)
+
+    if isLikelyPtr(q00) then score = score + 18 end
+    if isLikelyPtr(q08) then score = score + 8 end
+    if isLikelyPtr(q10) then score = score + 18 end
+    if i18 and i18 >= 0 and i18 <= 10 then score = score + 16 end
+    if isLikelyPtr(q28) then score = score + 8 end
+    if isLikelyPtr(q30) then score = score + 8 end
+
+    if first then
+        if first.q00 and q00 == first.q00 then score = score + 15 end
+        if first.q08 and q08 == first.q08 then score = score + 8 end
+        if first.q10 and q10 == first.q10 then score = score + 15 end
+    end
+
+    return score
+end
+
+local function scoreUsefulBase(base, votes)
+    if not isReadable(base) then return 0, "unreadable", {} end
+
+    local score = votes * 80
+    local notes = { "votes=" .. tostring(votes) }
+    local found = {}
+    local details = {}
+
+    local first = {
+        q00 = safeReadQword(base + 0x00),
+        q08 = safeReadQword(base + 0x08),
+        q10 = safeReadQword(base + 0x10),
+    }
+
+    local goodHeaders = 0
+
+    for i = 0, CONFIG.checkNodes - 1 do
+        local node = base + i * CONFIG.stride
+        local hs = scoreHeader(node, first)
+
+        if hs >= 55 then goodHeaders = goodHeaders + 1 end
+        score = score + hs
+    end
+
+    if goodHeaders >= 4 then
+        score = score + 120
+        table.insert(notes, "strideOK")
+    end
+
+    if goodHeaders >= 8 then
+        score = score + 220
+        table.insert(notes, "strongStride")
+    end
+
+    table.insert(notes, "goodHeaders=" .. tostring(goodHeaders))
+
+    -- Ищем знакомые key/value в первых 42 node.
+    for i = 0, 42 do
+        local node = base + i * CONFIG.stride
+        local _, keyText = readFieldText(node + 0x80)
+        local _, valText = readFieldText(node + 0xF8)
+
+        if keyText or valText then
+            table.insert(details, {
+                index = i,
+                node = node,
+                key = keyText,
+                val = valText,
+            })
+        end
+
+        if keyText then
+            if string.find(keyText, "DefaultTakeButtonText", 1, true) then found.takeText = true end
+            if string.find(keyText, "DefaultWasTakenText", 1, true) then found.wasText = true end
+            if string.find(keyText, "LevelText", 1, true) then found.levelText = true end
+        end
+
+        if valText then
+            if string.find(valText, "Забрать", 1, true) then found.takeRu = true end
+            if string.find(valText, "Получено", 1, true) then found.received = true end
+            if string.find(valText, "Take", 1, true) then found.takeEn = true end
+        end
+    end
+
+    if found.takeText then score = score + 250; table.insert(notes, "has DefaultTakeButtonText") end
+    if found.wasText then score = score + 250; table.insert(notes, "has DefaultWasTakenText") end
+    if found.levelText then score = score + 180; table.insert(notes, "has LevelText") end
+    if found.takeRu then score = score + 160; table.insert(notes, "has Забрать") end
+    if found.received then score = score + 160; table.insert(notes, "has Получено") end
+    if found.takeEn then score = score + 80; table.insert(notes, "has Take") end
+
+    return score, table.concat(notes, " | "), details
+end
+
+local function locateBase()
+    if CONFIG.MANUAL_BASE then
+        return CONFIG.MANUAL_BASE, "manual"
+    end
+
+    log("============================================================")
+    log("STEP 1: LOCATE USEFUL BASE")
+    log("============================================================")
+
+    local sl, mode = aobScanFast(CONFIG.floatAob)
+    log("scan mode: " .. mode)
+
+    if not sl then
+        log("float hits=0")
+        return nil, "no_float_hits"
+    end
+
+    local hits = {}
+
+    for i = 0, sl.Count - 1 do
+        local h = addrFromString(sl[i])
+        if h then table.insert(hits, h) end
+    end
+
+    sl.destroy()
+    table.sort(hits)
+
+    log("float hits=" .. tostring(#hits))
+
+    local voteMap = {}
+
+    local function addVote(base)
+        if not base or base < 0x10000 then return end
+        base = alignDown(base, 0x8)
+
+        local key = hex(base)
+
+        if not voteMap[key] then
+            voteMap[key] = { base = base, votes = 0 }
+        end
+
+        voteMap[key].votes = voteMap[key].votes + 1
+    end
+
+    for _, hit in ipairs(hits) do
+        for _, off in ipairs(CONFIG.possibleFloatOffsets) do
+            local nodeGuess = hit - off
+
+            for back = 0, CONFIG.maxStrideBack do
+                addVote(nodeGuess - back * CONFIG.stride)
+            end
+        end
+    end
+
+    local candidates = {}
+
+    for _, c in pairs(voteMap) do
+        if c.votes >= CONFIG.minVoteHits and isReadable(c.base) then
+            table.insert(candidates, c)
+        end
+    end
+
+    table.sort(candidates, function(a, b)
+        if a.votes == b.votes then return a.base < b.base end
+        return a.votes > b.votes
+    end)
+
+    log("candidates=" .. tostring(#candidates))
+
+    local best = nil
+
+    for i = 1, math.min(#candidates, CONFIG.maxCandidatesToScore) do
+        local c = candidates[i]
+        local score, notes, details = scoreUsefulBase(c.base, c.votes)
+
+        c.score = score
+        c.notes = notes
+        c.details = details
+
+        if not best or c.score > best.score then
+            best = c
+        end
+    end
+
+    if not best then
+        return nil, "no_candidate"
+    end
+
+    log("BEST base=" .. hex(best.base) .. " score=" .. tostring(best.score) .. " notes=" .. tostring(best.notes))
+
+    for _, d in ipairs(best.details or {}) do
+        log(string.format(
+            "  node[%02d] %s key=%s val=%s",
+            d.index,
+            hex(d.node),
+            tostring(d.key),
+            tostring(d.val)
+        ))
+    end
+
+    addRecord("[useful-base]", best.base)
+
+    return best.base, "auto"
+end
+
+------------------------------------------------------------
+-- POINTER ANALYSIS
+------------------------------------------------------------
+
+local function classifyPtr(ptr, mainStart, mainEnd)
+    if not isLikelyPtr(ptr) then return "not_ptr" end
+    if ptr >= mainStart and ptr <= mainEnd then return "IN_MAIN_DUMP" end
+    if isModulePtr(ptr) then return "MODULE_OR_VTABLE" end
+    if isReadable(ptr) then return "READABLE_EXTERNAL" end
+    return "UNREADABLE_EXTERNAL"
+end
+
+local function objectHeaderScore(addr)
+    if not isReadable(addr) then return 0 end
+
+    local score = 0
+
+    local q00 = safeReadQword(addr + 0x00)
+    local q08 = safeReadQword(addr + 0x08)
+    local q10 = safeReadQword(addr + 0x10)
+    local i18 = safeReadInteger(addr + 0x18)
+    local q28 = safeReadQword(addr + 0x28)
+    local q30 = safeReadQword(addr + 0x30)
+
+    if isLikelyPtr(q00) then score = score + 10 end
+    if isModulePtr(q00) then score = score + 15 end
+    if isLikelyPtr(q08) then score = score + 6 end
+    if isLikelyPtr(q10) then score = score + 8 end
+    if i18 and i18 >= 0 and i18 <= 100 then score = score + 6 end
+    if isLikelyPtr(q28) then score = score + 6 end
+    if isLikelyPtr(q30) then score = score + 6 end
+
+    return score
+end
+
+local function pointerDensityScore(addr)
+    if not isReadable(addr) then return 0, 0 end
+
+    local count = 0
+    local readableCount = 0
+
+    for off = -CONFIG.microBack, CONFIG.microFwd, 8 do
+        local q = safeReadQword(addr + off)
+
+        if isLikelyPtr(q) then
+            count = count + 1
+            if isReadable(q) then
+                readableCount = readableCount + 1
+            end
+        end
+    end
+
+    return count, readableCount
+end
+
+local function pointsBackIntoMain(addr, mainStart, mainEnd)
+    if not isReadable(addr) then return false end
+
+    for off = -CONFIG.microBack, CONFIG.microFwd, 8 do
+        local q = safeReadQword(addr + off)
+
+        if q and q >= mainStart and q <= mainEnd then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function hasFloatPatternNear(addr)
+    if not isReadable(addr) then return false end
+
+    for off = -CONFIG.microBack, CONFIG.microFwd - 0x10, 4 do
+        if hasFloat1211At(addr + off) then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function analyzePointer(fieldAddr, ptr, mainStart, mainEnd)
+    local class = classifyPtr(ptr, mainStart, mainEnd)
+    local score = 0
+    local notes = {}
+
+    if class == "READABLE_EXTERNAL" then
+        score = score + 30
+        table.insert(notes, "readable_external")
+    elseif class == "IN_MAIN_DUMP" then
+        score = score + 10
+        table.insert(notes, "inside_main")
+    elseif class == "MODULE_OR_VTABLE" then
+        score = score + 5
+        table.insert(notes, "module/vtable")
+    else
+        return nil
+    end
+
+    local txt = readPtrText(ptr)
+
+    if txt then
+        score = score + 80
+        table.insert(notes, "text=" .. txt)
+
+        local kw = containsKeyword(txt)
+
+        if kw then
+            score = score + 120
+            table.insert(notes, "keyword=" .. kw)
+        end
+    end
+
+    local hs = objectHeaderScore(ptr)
+    if hs > 0 then
+        score = score + hs
+        table.insert(notes, "headerScore=" .. tostring(hs))
+    end
+
+    local ptrCount, readablePtrCount = pointerDensityScore(ptr)
+
+    if ptrCount >= 3 then
+        score = score + ptrCount * 4
+        table.insert(notes, "ptrDensity=" .. tostring(ptrCount))
+    end
+
+    if readablePtrCount >= 2 then
+        score = score + readablePtrCount * 6
+        table.insert(notes, "readablePtrDensity=" .. tostring(readablePtrCount))
+    end
+
+    if pointsBackIntoMain(ptr, mainStart, mainEnd) then
+        score = score + 80
+        table.insert(notes, "pointsBackToMain")
+    end
+
+    if hasFloatPatternNear(ptr) then
+        score = score + 50
+        table.insert(notes, "float1211near")
+    end
+
+    return {
+        field = fieldAddr,
+        ptr = ptr,
+        class = class,
+        score = score,
+        text = txt,
+        notes = table.concat(notes, " | "),
+    }
+end
+
+local function collectOutboundPointers(base)
+    local mainStart = base - CONFIG.mainBack
+    local mainSize  = CONFIG.mainBack + CONFIG.mainFwd
+    local mainEnd   = mainStart + mainSize
+
+    log("")
+    log("============================================================")
+    log("STEP 2: MAIN DUMP")
+    log("============================================================")
+    log("base=" .. hex(base))
+    log("mainStart=" .. hex(mainStart))
+    log("mainEnd=" .. hex(mainEnd))
+
+    dumpRange(mainStart, mainSize, "MAIN DUMP base-512..base+512")
+
+    log("")
+    log("============================================================")
+    log("STEP 3: OUTBOUND POINTERS")
+    log("============================================================")
+
+    local map = {}
+
+    for a = mainStart, mainEnd - 8, 8 do
+        local q = safeReadQword(a)
+
+        if isLikelyPtr(q) then
+            local p = analyzePointer(a, q, mainStart, mainEnd)
+
+            if p then
+                local key = hex(q)
+
+                if not map[key] then
+                    map[key] = p
+                    map[key].fields = {}
+                end
+
+                table.insert(map[key].fields, a)
+
+                if p.score > map[key].score then
+                    map[key].score = p.score
+                    map[key].notes = p.notes
+                end
+            end
+        end
+    end
+
+    local list = {}
+
+    for _, p in pairs(map) do
+        table.insert(list, p)
+    end
+
+    table.sort(list, function(a, b)
+        if a.score == b.score then return a.ptr < b.ptr end
+        return a.score > b.score
+    end)
+
+    log("unique pointer targets=" .. tostring(#list))
+
+    for i, p in ipairs(list) do
+        if i > CONFIG.maxMicroDumps then break end
+
+        log("")
+        log(string.format(
+            "#%03d score=%d ptr=%s class=%s text=%s",
+            i,
+            p.score,
+            hex(p.ptr),
+            p.class,
+            tostring(p.text)
+        ))
+
+        log("  notes: " .. tostring(p.notes))
+        log("  fields:")
+
+        for j = 1, math.min(#p.fields, 12) do
+            local field = p.fields[j]
+            log(string.format(
+                "    %s base%+d",
+                hex(field),
+                field - base
+            ))
+        end
+
+        addRecord("[outbound] #" .. tostring(i), p.ptr)
+        dumpRange(p.ptr - CONFIG.microBack, CONFIG.microBack + CONFIG.microFwd, "MICRO DUMP #" .. tostring(i) .. " target=" .. hex(p.ptr))
+    end
+
+    return list
+end
+
+------------------------------------------------------------
+-- MAIN
+------------------------------------------------------------
+
+log("Useful base + outbound pointer micro-dumper / READ ONLY")
+log("Date: " .. os.date("%Y-%m-%d %H:%M:%S"))
+log("Output: " .. OUT)
+log("")
+
+local base, mode = locateBase()
+
+if not base then
+    log("")
+    log("FAILED: base not found.")
+    log("Reason: " .. tostring(mode))
+    log("")
+    log("If you already have a working base, set CONFIG.MANUAL_BASE = 0x...")
+    log("DONE")
+    F:close()
+    messageDialog("Base not found.\nSet CONFIG.MANUAL_BASE manually if needed.\n\nReport:\n" .. OUT, mtInformation, mbOK)
+    return
+end
+
+log("")
+log("Using base=" .. hex(base) .. " mode=" .. tostring(mode))
+
+collectOutboundPointers(base)
+
+log("")
+log("DONE")
+log("Report: " .. OUT)
+
+F:close()
+
+messageDialog("Base dump + pointer micro-dumps complete.\n\nBase: " .. hex(base) .. "\n\nReport:\n" .. OUT, mtInformation, mbOK)
