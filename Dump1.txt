@@ -1,0 +1,726 @@
+FAST clustered nodePoolBase finder / READ ONLY
+Date: 2026-05-20 21:24:45
+Output: C:\Users\Bogdan\Desktop\ce_nodePoolBase_FAST_cluster_20260520_212445.txt
+
+Перед запуском открой BattlePass/Rewards UI.
+
+============================================================
+STEP 1: FLOAT 1,2,1,1 SCAN
+============================================================
+AOB=00 00 80 3F 00 00 00 40 00 00 80 3F 00 00 80 3F
+scan mode: AOBScan with flags +W-C
+hits=118
+
+============================================================
+STEP 2: BUILD STRIDE CLUSTERS
+============================================================
+clusters after prefilter=550
+will score max=120
+
+============================================================
+STEP 3: SCORE TOP CLUSTERS
+============================================================
+scored 20/120
+scored 40/120
+scored 60/120
+scored 80/120
+scored 100/120
+scored 120/120
+
+============================================================
+RESULTS
+============================================================
+accepted=120
+
+#01 nodePoolBase=0x159FDCA1050 score=4890 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | val=Получено | LevelText.key | DefaultTakeButton.key
+derived:
+  LevelTextNode          = 0x159FDCA19B8
+  DefaultWasTakenNode    = 0x159FDCA1DC0
+  DefaultTakeButtonNode  = 0x159FDCA1F18
+reasons:
+  hit=0x159FDCA1190 off=0x140 back=0
+  hit=0x159FDCA12E8 off=0x140 back=1
+  hit=0x159FDCA1440 off=0x140 back=2
+  hit=0x159FDCA1598 off=0x140 back=3
+  hit=0x159FDCA16F0 off=0x140 back=4
+details:
+  node[0] 0x159FDCA1050 headerScore=126
+  node[1] 0x159FDCA11A8 headerScore=126
+  node[2] 0x159FDCA1300 headerScore=126
+  node[3] 0x159FDCA1458 headerScore=126
+  node[4] 0x159FDCA15B0 headerScore=126
+  node[5] 0x159FDCA1708 headerScore=126
+  LevelTextNode            node=0x159FDCA19B8 key=DefaultWasTakenText val=Получено
+  DefaultWasTakenNode      node=0x159FDCA1DC0 key=LevelText val=2
+  DefaultTakeButtonNode    node=0x159FDCA1F18 key=DefaultTakeButtonText val=T
+
+#02 nodePoolBase=0x159FDCA1708 score=4750 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | LevelText.key | DefaultTakeButton.key
+derived:
+  LevelTextNode          = 0x159FDCA2070
+  DefaultWasTakenNode    = 0x159FDCA2478
+  DefaultTakeButtonNode  = 0x159FDCA25D0
+reasons:
+  hit=0x159FDCA1848 off=0x140 back=0
+  hit=0x159FDCA19A0 off=0x140 back=1
+  hit=0x159FDCA1AF8 off=0x140 back=2
+  hit=0x159FDCA1C50 off=0x140 back=3
+  hit=0x159FDCA1DA8 off=0x140 back=4
+details:
+  node[0] 0x159FDCA1708 headerScore=126
+  node[1] 0x159FDCA1860 headerScore=126
+  node[2] 0x159FDCA19B8 headerScore=126
+  node[3] 0x159FDCA1B10 headerScore=126
+  node[4] 0x159FDCA1C68 headerScore=126
+  node[5] 0x159FDCA1DC0 headerScore=126
+  LevelTextNode            node=0x159FDCA2070 key=DefaultWasTakenText val=nil
+  DefaultWasTakenNode      node=0x159FDCA2478 key=LevelText val=3
+  DefaultTakeButtonNode    node=0x159FDCA25D0 key=DefaultTakeButtonText val=T
+
+#03 nodePoolBase=0x159FDCA1DC0 score=4750 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | LevelText.key | DefaultTakeButton.key
+derived:
+  LevelTextNode          = 0x159FDCA2728
+  DefaultWasTakenNode    = 0x159FDCA2B30
+  DefaultTakeButtonNode  = 0x159FDCA2C88
+reasons:
+  hit=0x159FDCA1F00 off=0x140 back=0
+  hit=0x159FDCA2058 off=0x140 back=1
+  hit=0x159FDCA21B0 off=0x140 back=2
+  hit=0x159FDCA2308 off=0x140 back=3
+  hit=0x159FDCA2460 off=0x140 back=4
+details:
+  node[0] 0x159FDCA1DC0 headerScore=126
+  node[1] 0x159FDCA1F18 headerScore=126
+  node[2] 0x159FDCA2070 headerScore=126
+  node[3] 0x159FDCA21C8 headerScore=126
+  node[4] 0x159FDCA2320 headerScore=126
+  node[5] 0x159FDCA2478 headerScore=126
+  LevelTextNode            node=0x159FDCA2728 key=DefaultWasTakenText val=nil
+  DefaultWasTakenNode      node=0x159FDCA2B30 key=LevelText val=4
+  DefaultTakeButtonNode    node=0x159FDCA2C88 key=DefaultTakeButtonText val=T
+
+#04 nodePoolBase=0x159FDCA2478 score=4660 clusterHits=20
+notes: clusterHits=20 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | LevelText.key | DefaultTakeButton.key
+derived:
+  LevelTextNode          = 0x159FDCA2DE0
+  DefaultWasTakenNode    = 0x159FDCA31E8
+  DefaultTakeButtonNode  = 0x159FDCA3340
+reasons:
+  hit=0x159FDCA25B8 off=0x140 back=0
+  hit=0x159FDCA2710 off=0x140 back=1
+  hit=0x159FDCA2868 off=0x140 back=2
+  hit=0x159FDCA29C0 off=0x140 back=3
+  hit=0x159FDCA2B18 off=0x140 back=4
+details:
+  node[0] 0x159FDCA2478 headerScore=126
+  node[1] 0x159FDCA25D0 headerScore=126
+  node[2] 0x159FDCA2728 headerScore=126
+  node[3] 0x159FDCA2880 headerScore=126
+  node[4] 0x159FDCA29D8 headerScore=126
+  node[5] 0x159FDCA2B30 headerScore=126
+  LevelTextNode            node=0x159FDCA2DE0 key=DefaultWasTakenText val=nil
+  DefaultWasTakenNode      node=0x159FDCA31E8 key=LevelText val=5
+  DefaultTakeButtonNode    node=0x159FDCA3340 key=DefaultTakeButtonText val=T
+
+#05 nodePoolBase=0x159FDCA11A8 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x159FDCA1B10
+  DefaultWasTakenNode    = 0x159FDCA1F18
+  DefaultTakeButtonNode  = 0x159FDCA2070
+reasons:
+  hit=0x159FDCA12E8 off=0x140 back=0
+  hit=0x159FDCA1440 off=0x140 back=1
+  hit=0x159FDCA1598 off=0x140 back=2
+  hit=0x159FDCA16F0 off=0x140 back=3
+  hit=0x159FDCA1848 off=0x140 back=4
+details:
+  node[0] 0x159FDCA11A8 headerScore=126
+  node[1] 0x159FDCA1300 headerScore=126
+  node[2] 0x159FDCA1458 headerScore=126
+  node[3] 0x159FDCA15B0 headerScore=126
+  node[4] 0x159FDCA1708 headerScore=126
+  node[5] 0x159FDCA1860 headerScore=126
+  LevelTextNode            node=0x159FDCA1B10 key=PremiumTakeButtonText val=T
+  DefaultWasTakenNode      node=0x159FDCA1F18 key=DefaultTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x159FDCA2070 key=DefaultWasTakenText val=nil
+
+#06 nodePoolBase=0x159FDCA15B0 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
+derived:
+  LevelTextNode          = 0x159FDCA1F18
+  DefaultWasTakenNode    = 0x159FDCA2320
+  DefaultTakeButtonNode  = 0x159FDCA2478
+reasons:
+  hit=0x159FDCA16F0 off=0x140 back=0
+  hit=0x159FDCA1848 off=0x140 back=1
+  hit=0x159FDCA19A0 off=0x140 back=2
+  hit=0x159FDCA1AF8 off=0x140 back=3
+  hit=0x159FDCA1C50 off=0x140 back=4
+details:
+  node[0] 0x159FDCA15B0 headerScore=126
+  node[1] 0x159FDCA1708 headerScore=126
+  node[2] 0x159FDCA1860 headerScore=126
+  node[3] 0x159FDCA19B8 headerScore=126
+  node[4] 0x159FDCA1B10 headerScore=126
+  node[5] 0x159FDCA1C68 headerScore=126
+  LevelTextNode            node=0x159FDCA1F18 key=DefaultTakeButtonText val=T
+  DefaultWasTakenNode      node=0x159FDCA2320 key=PremiumWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x159FDCA2478 key=LevelText val=3
+
+#07 nodePoolBase=0x159FDCA1860 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x159FDCA21C8
+  DefaultWasTakenNode    = 0x159FDCA25D0
+  DefaultTakeButtonNode  = 0x159FDCA2728
+reasons:
+  hit=0x159FDCA19A0 off=0x140 back=0
+  hit=0x159FDCA1AF8 off=0x140 back=1
+  hit=0x159FDCA1C50 off=0x140 back=2
+  hit=0x159FDCA1DA8 off=0x140 back=3
+  hit=0x159FDCA1F00 off=0x140 back=4
+details:
+  node[0] 0x159FDCA1860 headerScore=126
+  node[1] 0x159FDCA19B8 headerScore=126
+  node[2] 0x159FDCA1B10 headerScore=126
+  node[3] 0x159FDCA1C68 headerScore=126
+  node[4] 0x159FDCA1DC0 headerScore=126
+  node[5] 0x159FDCA1F18 headerScore=126
+  LevelTextNode            node=0x159FDCA21C8 key=PremiumTakeButtonText val=T
+  DefaultWasTakenNode      node=0x159FDCA25D0 key=DefaultTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x159FDCA2728 key=DefaultWasTakenText val=nil
+
+#08 nodePoolBase=0x159FDCA1C68 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
+derived:
+  LevelTextNode          = 0x159FDCA25D0
+  DefaultWasTakenNode    = 0x159FDCA29D8
+  DefaultTakeButtonNode  = 0x159FDCA2B30
+reasons:
+  hit=0x159FDCA1DA8 off=0x140 back=0
+  hit=0x159FDCA1F00 off=0x140 back=1
+  hit=0x159FDCA2058 off=0x140 back=2
+  hit=0x159FDCA21B0 off=0x140 back=3
+  hit=0x159FDCA2308 off=0x140 back=4
+details:
+  node[0] 0x159FDCA1C68 headerScore=126
+  node[1] 0x159FDCA1DC0 headerScore=126
+  node[2] 0x159FDCA1F18 headerScore=126
+  node[3] 0x159FDCA2070 headerScore=126
+  node[4] 0x159FDCA21C8 headerScore=126
+  node[5] 0x159FDCA2320 headerScore=126
+  LevelTextNode            node=0x159FDCA25D0 key=DefaultTakeButtonText val=T
+  DefaultWasTakenNode      node=0x159FDCA29D8 key=PremiumWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x159FDCA2B30 key=LevelText val=4
+
+#09 nodePoolBase=0x159FDCA1F18 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x159FDCA2880
+  DefaultWasTakenNode    = 0x159FDCA2C88
+  DefaultTakeButtonNode  = 0x159FDCA2DE0
+reasons:
+  hit=0x159FDCA2058 off=0x140 back=0
+  hit=0x159FDCA21B0 off=0x140 back=1
+  hit=0x159FDCA2308 off=0x140 back=2
+  hit=0x159FDCA2460 off=0x140 back=3
+  hit=0x159FDCA25B8 off=0x140 back=4
+details:
+  node[0] 0x159FDCA1F18 headerScore=126
+  node[1] 0x159FDCA2070 headerScore=126
+  node[2] 0x159FDCA21C8 headerScore=126
+  node[3] 0x159FDCA2320 headerScore=126
+  node[4] 0x159FDCA2478 headerScore=126
+  node[5] 0x159FDCA25D0 headerScore=126
+  LevelTextNode            node=0x159FDCA2880 key=PremiumTakeButtonText val=T
+  DefaultWasTakenNode      node=0x159FDCA2C88 key=DefaultTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x159FDCA2DE0 key=DefaultWasTakenText val=nil
+
+#10 nodePoolBase=0x159FDCA2320 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
+derived:
+  LevelTextNode          = 0x159FDCA2C88
+  DefaultWasTakenNode    = 0x159FDCA3090
+  DefaultTakeButtonNode  = 0x159FDCA31E8
+reasons:
+  hit=0x159FDCA2460 off=0x140 back=0
+  hit=0x159FDCA25B8 off=0x140 back=1
+  hit=0x159FDCA2710 off=0x140 back=2
+  hit=0x159FDCA2868 off=0x140 back=3
+  hit=0x159FDCA29C0 off=0x140 back=4
+details:
+  node[0] 0x159FDCA2320 headerScore=126
+  node[1] 0x159FDCA2478 headerScore=126
+  node[2] 0x159FDCA25D0 headerScore=126
+  node[3] 0x159FDCA2728 headerScore=126
+  node[4] 0x159FDCA2880 headerScore=126
+  node[5] 0x159FDCA29D8 headerScore=126
+  LevelTextNode            node=0x159FDCA2C88 key=DefaultTakeButtonText val=T
+  DefaultWasTakenNode      node=0x159FDCA3090 key=PremiumWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x159FDCA31E8 key=LevelText val=5
+
+#11 nodePoolBase=0x159FDCA0EF8 score=4500 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
+derived:
+  LevelTextNode          = 0x159FDCA1860
+  DefaultWasTakenNode    = 0x159FDCA1C68
+  DefaultTakeButtonNode  = 0x159FDCA1DC0
+reasons:
+  hit=0x159FDCA1038 off=0x140 back=0
+  hit=0x159FDCA1190 off=0x140 back=1
+  hit=0x159FDCA12E8 off=0x140 back=2
+  hit=0x159FDCA1440 off=0x140 back=3
+  hit=0x159FDCA1598 off=0x140 back=4
+details:
+  node[0] 0x159FDCA0EF8 headerScore=126
+  node[1] 0x159FDCA1050 headerScore=126
+  node[2] 0x159FDCA11A8 headerScore=126
+  node[3] 0x159FDCA1300 headerScore=126
+  node[4] 0x159FDCA1458 headerScore=126
+  node[5] 0x159FDCA15B0 headerScore=126
+  LevelTextNode            node=0x159FDCA1860 key=DefaultTakeButtonText val=T
+  DefaultWasTakenNode      node=0x159FDCA1C68 key=PremiumWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x159FDCA1DC0 key=LevelText val=2
+
+#12 nodePoolBase=0x159FDCA25D0 score=4355 clusterHits=19
+notes: clusterHits=19 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x159FDCA2F38
+  DefaultWasTakenNode    = 0x159FDCA3340
+  DefaultTakeButtonNode  = 0x159FDCA3498
+reasons:
+  hit=0x159FDCA2710 off=0x140 back=0
+  hit=0x159FDCA2868 off=0x140 back=1
+  hit=0x159FDCA29C0 off=0x140 back=2
+  hit=0x159FDCA2B18 off=0x140 back=3
+  hit=0x159FDCA2C70 off=0x140 back=4
+details:
+  node[0] 0x159FDCA25D0 headerScore=126
+  node[1] 0x159FDCA2728 headerScore=126
+  node[2] 0x159FDCA2880 headerScore=126
+  node[3] 0x159FDCA29D8 headerScore=126
+  node[4] 0x159FDCA2B30 headerScore=126
+  node[5] 0x159FDCA2C88 headerScore=126
+  LevelTextNode            node=0x159FDCA2F38 key=PremiumTakeButtonText val=T
+  DefaultWasTakenNode      node=0x159FDCA3340 key=DefaultTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x159FDCA3498 key=DefaultWasTakenText val=nil
+
+#13 nodePoolBase=0x159FDCA1300 score=4285 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x159FDCA1C68
+  DefaultWasTakenNode    = 0x159FDCA2070
+  DefaultTakeButtonNode  = 0x159FDCA21C8
+reasons:
+  hit=0x159FDCA1440 off=0x140 back=0
+  hit=0x159FDCA1598 off=0x140 back=1
+  hit=0x159FDCA16F0 off=0x140 back=2
+  hit=0x159FDCA1848 off=0x140 back=3
+  hit=0x159FDCA19A0 off=0x140 back=4
+details:
+  node[0] 0x159FDCA1300 headerScore=126
+  node[1] 0x159FDCA1458 headerScore=126
+  node[2] 0x159FDCA15B0 headerScore=126
+  node[3] 0x159FDCA1708 headerScore=126
+  node[4] 0x159FDCA1860 headerScore=126
+  node[5] 0x159FDCA19B8 headerScore=126
+  LevelTextNode            node=0x159FDCA1C68 key=PremiumWasTakenText val=nil
+  DefaultWasTakenNode      node=0x159FDCA2070 key=DefaultWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x159FDCA21C8 key=PremiumTakeButtonText val=T
+
+#14 nodePoolBase=0x159FDCA19B8 score=4285 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x159FDCA2320
+  DefaultWasTakenNode    = 0x159FDCA2728
+  DefaultTakeButtonNode  = 0x159FDCA2880
+reasons:
+  hit=0x159FDCA1AF8 off=0x140 back=0
+  hit=0x159FDCA1C50 off=0x140 back=1
+  hit=0x159FDCA1DA8 off=0x140 back=2
+  hit=0x159FDCA1F00 off=0x140 back=3
+  hit=0x159FDCA2058 off=0x140 back=4
+details:
+  node[0] 0x159FDCA19B8 headerScore=126
+  node[1] 0x159FDCA1B10 headerScore=126
+  node[2] 0x159FDCA1C68 headerScore=126
+  node[3] 0x159FDCA1DC0 headerScore=126
+  node[4] 0x159FDCA1F18 headerScore=126
+  node[5] 0x159FDCA2070 headerScore=126
+  LevelTextNode            node=0x159FDCA2320 key=PremiumWasTakenText val=nil
+  DefaultWasTakenNode      node=0x159FDCA2728 key=DefaultWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x159FDCA2880 key=PremiumTakeButtonText val=T
+
+#15 nodePoolBase=0x159FDCA2070 score=4285 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x159FDCA29D8
+  DefaultWasTakenNode    = 0x159FDCA2DE0
+  DefaultTakeButtonNode  = 0x159FDCA2F38
+reasons:
+  hit=0x159FDCA21B0 off=0x140 back=0
+  hit=0x159FDCA2308 off=0x140 back=1
+  hit=0x159FDCA2460 off=0x140 back=2
+  hit=0x159FDCA25B8 off=0x140 back=3
+  hit=0x159FDCA2710 off=0x140 back=4
+details:
+  node[0] 0x159FDCA2070 headerScore=126
+  node[1] 0x159FDCA21C8 headerScore=126
+  node[2] 0x159FDCA2320 headerScore=126
+  node[3] 0x159FDCA2478 headerScore=126
+  node[4] 0x159FDCA25D0 headerScore=126
+  node[5] 0x159FDCA2728 headerScore=126
+  LevelTextNode            node=0x159FDCA29D8 key=PremiumWasTakenText val=nil
+  DefaultWasTakenNode      node=0x159FDCA2DE0 key=DefaultWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x159FDCA2F38 key=PremiumTakeButtonText val=T
+
+#16 nodePoolBase=0x159FDCA1458 score=4250 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | LevelText.key
+derived:
+  LevelTextNode          = 0x159FDCA1DC0
+  DefaultWasTakenNode    = 0x159FDCA21C8
+  DefaultTakeButtonNode  = 0x159FDCA2320
+reasons:
+  hit=0x159FDCA1598 off=0x140 back=0
+  hit=0x159FDCA16F0 off=0x140 back=1
+  hit=0x159FDCA1848 off=0x140 back=2
+  hit=0x159FDCA19A0 off=0x140 back=3
+  hit=0x159FDCA1AF8 off=0x140 back=4
+details:
+  node[0] 0x159FDCA1458 headerScore=126
+  node[1] 0x159FDCA15B0 headerScore=126
+  node[2] 0x159FDCA1708 headerScore=126
+  node[3] 0x159FDCA1860 headerScore=126
+  node[4] 0x159FDCA19B8 headerScore=126
+  node[5] 0x159FDCA1B10 headerScore=126
+  LevelTextNode            node=0x159FDCA1DC0 key=LevelText val=2
+  DefaultWasTakenNode      node=0x159FDCA21C8 key=PremiumTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x159FDCA2320 key=PremiumWasTakenText val=nil
+
+#17 nodePoolBase=0x159FDCA1B10 score=4250 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | LevelText.key
+derived:
+  LevelTextNode          = 0x159FDCA2478
+  DefaultWasTakenNode    = 0x159FDCA2880
+  DefaultTakeButtonNode  = 0x159FDCA29D8
+reasons:
+  hit=0x159FDCA1C50 off=0x140 back=0
+  hit=0x159FDCA1DA8 off=0x140 back=1
+  hit=0x159FDCA1F00 off=0x140 back=2
+  hit=0x159FDCA2058 off=0x140 back=3
+  hit=0x159FDCA21B0 off=0x140 back=4
+details:
+  node[0] 0x159FDCA1B10 headerScore=126
+  node[1] 0x159FDCA1C68 headerScore=126
+  node[2] 0x159FDCA1DC0 headerScore=126
+  node[3] 0x159FDCA1F18 headerScore=126
+  node[4] 0x159FDCA2070 headerScore=126
+  node[5] 0x159FDCA21C8 headerScore=126
+  LevelTextNode            node=0x159FDCA2478 key=LevelText val=3
+  DefaultWasTakenNode      node=0x159FDCA2880 key=PremiumTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x159FDCA29D8 key=PremiumWasTakenText val=nil
+
+#18 nodePoolBase=0x159FDCA21C8 score=4250 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | LevelText.key
+derived:
+  LevelTextNode          = 0x159FDCA2B30
+  DefaultWasTakenNode    = 0x159FDCA2F38
+  DefaultTakeButtonNode  = 0x159FDCA3090
+reasons:
+  hit=0x159FDCA2308 off=0x140 back=0
+  hit=0x159FDCA2460 off=0x140 back=1
+  hit=0x159FDCA25B8 off=0x140 back=2
+  hit=0x159FDCA2710 off=0x140 back=3
+  hit=0x159FDCA2868 off=0x140 back=4
+details:
+  node[0] 0x159FDCA21C8 headerScore=126
+  node[1] 0x159FDCA2320 headerScore=126
+  node[2] 0x159FDCA2478 headerScore=126
+  node[3] 0x159FDCA25D0 headerScore=126
+  node[4] 0x159FDCA2728 headerScore=126
+  node[5] 0x159FDCA2880 headerScore=126
+  LevelTextNode            node=0x159FDCA2B30 key=LevelText val=4
+  DefaultWasTakenNode      node=0x159FDCA2F38 key=PremiumTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x159FDCA3090 key=PremiumWasTakenText val=nil
+
+#19 nodePoolBase=0x159FDCA0AF0 score=4200 clusterHits=18
+notes: clusterHits=18 | goodHeaders=10 | strideOK | strongStride | count20Nodes=2 | float1211Nodes=6 | DefaultTakeButton.key | DefaultWasTaken.key | val=Получено
+derived:
+  LevelTextNode          = 0x159FDCA1458
+  DefaultWasTakenNode    = 0x159FDCA1860
+  DefaultTakeButtonNode  = 0x159FDCA19B8
+reasons:
+  hit=0x159FDCA1038 off=0x140 back=3
+  hit=0x159FDCA1190 off=0x140 back=4
+  hit=0x159FDCA12E8 off=0x140 back=5
+  hit=0x159FDCA1440 off=0x140 back=6
+  hit=0x159FDCA1598 off=0x140 back=7
+details:
+  node[0] 0x159FDCA0AF0 headerScore=126
+  node[1] 0x159FDCA0C48 headerScore=126
+  node[2] 0x159FDCA0DA0 headerScore=126
+  node[3] 0x159FDCA0EF8 headerScore=126
+  node[4] 0x159FDCA1050 headerScore=126
+  node[5] 0x159FDCA11A8 headerScore=126
+  LevelTextNode            node=0x159FDCA1458 key=PremiumTakeButtonText val=T
+  DefaultWasTakenNode      node=0x159FDCA1860 key=DefaultTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x159FDCA19B8 key=DefaultWasTakenText val=Получено
+
+#20 nodePoolBase=0x159FDCA0C48 score=4085 clusterHits=19
+notes: clusterHits=19 | goodHeaders=10 | strideOK | strongStride | count20Nodes=2 | float1211Nodes=7 | DefaultWasTaken.key | val=Получено
+derived:
+  LevelTextNode          = 0x159FDCA15B0
+  DefaultWasTakenNode    = 0x159FDCA19B8
+  DefaultTakeButtonNode  = 0x159FDCA1B10
+reasons:
+  hit=0x159FDCA1038 off=0x140 back=2
+  hit=0x159FDCA1190 off=0x140 back=3
+  hit=0x159FDCA12E8 off=0x140 back=4
+  hit=0x159FDCA1440 off=0x140 back=5
+  hit=0x159FDCA1598 off=0x140 back=6
+details:
+  node[0] 0x159FDCA0C48 headerScore=126
+  node[1] 0x159FDCA0DA0 headerScore=126
+  node[2] 0x159FDCA0EF8 headerScore=126
+  node[3] 0x159FDCA1050 headerScore=126
+  node[4] 0x159FDCA11A8 headerScore=126
+  node[5] 0x159FDCA1300 headerScore=126
+  LevelTextNode            node=0x159FDCA15B0 key=PremiumWasTakenText val=nil
+  DefaultWasTakenNode      node=0x159FDCA19B8 key=DefaultWasTakenText val=Получено
+  DefaultTakeButtonNode    node=0x159FDCA1B10 key=PremiumTakeButtonText val=T
+
+#21 nodePoolBase=0x159FDCA0DA0 score=4080 clusterHits=20
+notes: clusterHits=20 | goodHeaders=10 | strideOK | strongStride | count20Nodes=2 | float1211Nodes=8 | LevelText.key
+derived:
+  LevelTextNode          = 0x159FDCA1708
+  DefaultWasTakenNode    = 0x159FDCA1B10
+  DefaultTakeButtonNode  = 0x159FDCA1C68
+reasons:
+  hit=0x159FDCA1038 off=0x140 back=1
+  hit=0x159FDCA1190 off=0x140 back=2
+  hit=0x159FDCA12E8 off=0x140 back=3
+  hit=0x159FDCA1440 off=0x140 back=4
+  hit=0x159FDCA1598 off=0x140 back=5
+details:
+  node[0] 0x159FDCA0DA0 headerScore=126
+  node[1] 0x159FDCA0EF8 headerScore=126
+  node[2] 0x159FDCA1050 headerScore=126
+  node[3] 0x159FDCA11A8 headerScore=126
+  node[4] 0x159FDCA1300 headerScore=126
+  node[5] 0x159FDCA1458 headerScore=126
+  LevelTextNode            node=0x159FDCA1708 key=LevelText val=1
+  DefaultWasTakenNode      node=0x159FDCA1B10 key=PremiumTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x159FDCA1C68 key=PremiumWasTakenText val=nil
+
+#22 nodePoolBase=0x159FDCA0840 score=4030 clusterHits=17
+notes: clusterHits=17 | goodHeaders=10 | strideOK | strongStride | count20Nodes=1 | float1211Nodes=5 | DefaultTakeButton.key | val=Забрать | LevelText.key
+derived:
+  LevelTextNode          = 0x159FDCA11A8
+  DefaultWasTakenNode    = 0x159FDCA15B0
+  DefaultTakeButtonNode  = 0x159FDCA1708
+reasons:
+  hit=0x159FDCA0980 off=0x140 back=0
+  hit=0x159FDCA1038 off=0x140 back=5
+  hit=0x159FDCA1190 off=0x140 back=6
+  hit=0x159FDCA12E8 off=0x140 back=7
+  hit=0x159FDCA1440 off=0x140 back=8
+details:
+  node[0] 0x159FDCA0840 headerScore=126
+  node[1] 0x159FDCA0998 headerScore=126
+  node[2] 0x159FDCA0AF0 headerScore=126
+  node[3] 0x159FDCA0C48 headerScore=126
+  node[4] 0x159FDCA0DA0 headerScore=126
+  node[5] 0x159FDCA0EF8 headerScore=126
+  LevelTextNode            node=0x159FDCA11A8 key=DefaultTakeButtonText val=Забрать
+  DefaultWasTakenNode      node=0x159FDCA15B0 key=PremiumWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x159FDCA1708 key=LevelText val=1
+
+#23 nodePoolBase=0x159FDCA2728 score=4015 clusterHits=18
+notes: clusterHits=18 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x159FDCA3090
+  DefaultWasTakenNode    = 0x159FDCA3498
+  DefaultTakeButtonNode  = 0x159FDCA35F0
+reasons:
+  hit=0x159FDCA2868 off=0x140 back=0
+  hit=0x159FDCA29C0 off=0x140 back=1
+  hit=0x159FDCA2B18 off=0x140 back=2
+  hit=0x159FDCA2C70 off=0x140 back=3
+  hit=0x159FDCA2DC8 off=0x140 back=4
+details:
+  node[0] 0x159FDCA2728 headerScore=126
+  node[1] 0x159FDCA2880 headerScore=126
+  node[2] 0x159FDCA29D8 headerScore=126
+  node[3] 0x159FDCA2B30 headerScore=126
+  node[4] 0x159FDCA2C88 headerScore=126
+  node[5] 0x159FDCA2DE0 headerScore=126
+  LevelTextNode            node=0x159FDCA3090 key=PremiumWasTakenText val=nil
+  DefaultWasTakenNode      node=0x159FDCA3498 key=DefaultWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x159FDCA35F0 key=PremiumTakeButtonText val=T
+
+#24 nodePoolBase=0x159FDCA1858 score=3827 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take | val=Take
+derived:
+  LevelTextNode          = 0x159FDCA21C0
+  DefaultWasTakenNode    = 0x159FDCA25C8
+  DefaultTakeButtonNode  = 0x159FDCA2720
+reasons:
+  hit=0x159FDCA19A0 off=0x148 back=0
+  hit=0x159FDCA1AF8 off=0x148 back=1
+  hit=0x159FDCA1C50 off=0x148 back=2
+  hit=0x159FDCA1DA8 off=0x148 back=3
+  hit=0x159FDCA1F00 off=0x148 back=4
+details:
+  node[0] 0x159FDCA1858 headerScore=84
+  node[1] 0x159FDCA19B0 headerScore=86
+  node[2] 0x159FDCA1B08 headerScore=84
+  node[3] 0x159FDCA1C60 headerScore=86
+  node[4] 0x159FDCA1DB8 headerScore=86
+  node[5] 0x159FDCA1F10 headerScore=84
+  LevelTextNode            node=0x159FDCA21C0 key=nil val=Take
+  DefaultWasTakenNode      node=0x159FDCA25C8 key=nil val=Take
+  DefaultTakeButtonNode    node=0x159FDCA2720 key=nil val=nil
+
+#25 nodePoolBase=0x159FDCA1F10 score=3827 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take | val=Take
+derived:
+  LevelTextNode          = 0x159FDCA2878
+  DefaultWasTakenNode    = 0x159FDCA2C80
+  DefaultTakeButtonNode  = 0x159FDCA2DD8
+reasons:
+  hit=0x159FDCA2058 off=0x148 back=0
+  hit=0x159FDCA21B0 off=0x148 back=1
+  hit=0x159FDCA2308 off=0x148 back=2
+  hit=0x159FDCA2460 off=0x148 back=3
+  hit=0x159FDCA25B8 off=0x148 back=4
+details:
+  node[0] 0x159FDCA1F10 headerScore=84
+  node[1] 0x159FDCA2068 headerScore=86
+  node[2] 0x159FDCA21C0 headerScore=84
+  node[3] 0x159FDCA2318 headerScore=86
+  node[4] 0x159FDCA2470 headerScore=86
+  node[5] 0x159FDCA25C8 headerScore=84
+  LevelTextNode            node=0x159FDCA2878 key=nil val=Take
+  DefaultWasTakenNode      node=0x159FDCA2C80 key=nil val=Take
+  DefaultTakeButtonNode    node=0x159FDCA2DD8 key=nil val=nil
+
+#26 nodePoolBase=0x159FDCA11A0 score=3817 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take | val=Take
+derived:
+  LevelTextNode          = 0x159FDCA1B08
+  DefaultWasTakenNode    = 0x159FDCA1F10
+  DefaultTakeButtonNode  = 0x159FDCA2068
+reasons:
+  hit=0x159FDCA12E8 off=0x148 back=0
+  hit=0x159FDCA1440 off=0x148 back=1
+  hit=0x159FDCA1598 off=0x148 back=2
+  hit=0x159FDCA16F0 off=0x148 back=3
+  hit=0x159FDCA1848 off=0x148 back=4
+details:
+  node[0] 0x159FDCA11A0 headerScore=92
+  node[1] 0x159FDCA12F8 headerScore=86
+  node[2] 0x159FDCA1450 headerScore=78
+  node[3] 0x159FDCA15A8 headerScore=86
+  node[4] 0x159FDCA1700 headerScore=86
+  node[5] 0x159FDCA1858 headerScore=78
+  LevelTextNode            node=0x159FDCA1B08 key=nil val=Take
+  DefaultWasTakenNode      node=0x159FDCA1F10 key=nil val=Take
+  DefaultTakeButtonNode    node=0x159FDCA2068 key=nil val=nil
+
+#27 nodePoolBase=0x159FDCA12F8 score=3709 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
+derived:
+  LevelTextNode          = 0x159FDCA1C60
+  DefaultWasTakenNode    = 0x159FDCA2068
+  DefaultTakeButtonNode  = 0x159FDCA21C0
+reasons:
+  hit=0x159FDCA1440 off=0x148 back=0
+  hit=0x159FDCA1598 off=0x148 back=1
+  hit=0x159FDCA16F0 off=0x148 back=2
+  hit=0x159FDCA1848 off=0x148 back=3
+  hit=0x159FDCA19A0 off=0x148 back=4
+details:
+  node[0] 0x159FDCA12F8 headerScore=92
+  node[1] 0x159FDCA1450 headerScore=78
+  node[2] 0x159FDCA15A8 headerScore=86
+  node[3] 0x159FDCA1700 headerScore=86
+  node[4] 0x159FDCA1858 headerScore=78
+  node[5] 0x159FDCA19B0 headerScore=86
+  LevelTextNode            node=0x159FDCA1C60 key=nil val=nil
+  DefaultWasTakenNode      node=0x159FDCA2068 key=nil val=nil
+  DefaultTakeButtonNode    node=0x159FDCA21C0 key=nil val=Take
+
+#28 nodePoolBase=0x159FDCA15A8 score=3709 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
+derived:
+  LevelTextNode          = 0x159FDCA1F10
+  DefaultWasTakenNode    = 0x159FDCA2318
+  DefaultTakeButtonNode  = 0x159FDCA2470
+reasons:
+  hit=0x159FDCA16F0 off=0x148 back=0
+  hit=0x159FDCA1848 off=0x148 back=1
+  hit=0x159FDCA19A0 off=0x148 back=2
+  hit=0x159FDCA1AF8 off=0x148 back=3
+  hit=0x159FDCA1C50 off=0x148 back=4
+details:
+  node[0] 0x159FDCA15A8 headerScore=92
+  node[1] 0x159FDCA1700 headerScore=86
+  node[2] 0x159FDCA1858 headerScore=78
+  node[3] 0x159FDCA19B0 headerScore=86
+  node[4] 0x159FDCA1B08 headerScore=78
+  node[5] 0x159FDCA1C60 headerScore=86
+  LevelTextNode            node=0x159FDCA1F10 key=nil val=Take
+  DefaultWasTakenNode      node=0x159FDCA2318 key=nil val=nil
+  DefaultTakeButtonNode    node=0x159FDCA2470 key=nil val=3
+
+#29 nodePoolBase=0x159FDCA19B0 score=3709 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
+derived:
+  LevelTextNode          = 0x159FDCA2318
+  DefaultWasTakenNode    = 0x159FDCA2720
+  DefaultTakeButtonNode  = 0x159FDCA2878
+reasons:
+  hit=0x159FDCA1AF8 off=0x148 back=0
+  hit=0x159FDCA1C50 off=0x148 back=1
+  hit=0x159FDCA1DA8 off=0x148 back=2
+  hit=0x159FDCA1F00 off=0x148 back=3
+  hit=0x159FDCA2058 off=0x148 back=4
+details:
+  node[0] 0x159FDCA19B0 headerScore=92
+  node[1] 0x159FDCA1B08 headerScore=78
+  node[2] 0x159FDCA1C60 headerScore=86
+  node[3] 0x159FDCA1DB8 headerScore=86
+  node[4] 0x159FDCA1F10 headerScore=78
+  node[5] 0x159FDCA2068 headerScore=86
+  LevelTextNode            node=0x159FDCA2318 key=nil val=nil
+  DefaultWasTakenNode      node=0x159FDCA2720 key=nil val=nil
+  DefaultTakeButtonNode    node=0x159FDCA2878 key=nil val=Take
+
+#30 nodePoolBase=0x159FDCA1C60 score=3709 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
+derived:
+  LevelTextNode          = 0x159FDCA25C8
+  DefaultWasTakenNode    = 0x159FDCA29D0
+  DefaultTakeButtonNode  = 0x159FDCA2B28
+reasons:
+  hit=0x159FDCA1DA8 off=0x148 back=0
+  hit=0x159FDCA1F00 off=0x148 back=1
+  hit=0x159FDCA2058 off=0x148 back=2
+  hit=0x159FDCA21B0 off=0x148 back=3
+  hit=0x159FDCA2308 off=0x148 back=4
+details:
+  node[0] 0x159FDCA1C60 headerScore=92
+  node[1] 0x159FDCA1DB8 headerScore=86
+  node[2] 0x159FDCA1F10 headerScore=78
+  node[3] 0x159FDCA2068 headerScore=86
+  node[4] 0x159FDCA21C0 headerScore=78
+  node[5] 0x159FDCA2318 headerScore=86
+  LevelTextNode            node=0x159FDCA25C8 key=nil val=Take
+  DefaultWasTakenNode      node=0x159FDCA29D0 key=nil val=nil
+  DefaultTakeButtonNode    node=0x159FDCA2B28 key=nil val=4
+
+DONE
+Report: C:\Users\Bogdan\Desktop\ce_nodePoolBase_FAST_cluster_20260520_212445.txt
