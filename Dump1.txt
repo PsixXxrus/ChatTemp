@@ -1,2024 +1,726 @@
- 
-Before patch: 
------------------------------------------------------------- 
-SRC_TAKE_RU = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_WAS_TAKEN = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EC116 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1534CCEF7F6 : 鿐뻐믐菑蟑뗐뷐뻐 
-+0xF8 display 0x159FDCA1AB0 -> 0x159224EBDB6 : Получено 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_LEVEL_LOCKED = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x1534CCEF776 : LevelText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x1594AA610B6 : 2 
-+0xF8 display 0x159FDCA1EB8 -> 0x1534CCEF7B6 : 2 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-============================================================ 
-PATCH GROUP: DefaultWasTaken -> DefaultTakeButton 
-srcCenter=0x159FDCA11A8 
-dstCenter=0x159FDCA19B8 
-radius=1 
-============================================================ 
- 
----- rel=-1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1050 
-+0x80 key     0x159FDCA10D0 -> 0x1534CCF8ED6 : DenyButtonText 
-+0xF0 valueA  0x159FDCA1140 -> 0x1534CCF9496 : 黐苑볐뗐뷐룐苑賑 
-+0xF8 display 0x159FDCA1148 -> 0x159224DFC66 : Отменить 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1878 <- 0x2 
-copy scalar +0x38 0x159FDCA1898 <- 0x0 
-copy scalar +0x40 0x159FDCA18A0 <- 0x0 
-copy scalar +0x60 0x159FDCA18C0 <- 0x0 
-copy scalar +0x68 0x159FDCA18C8 <- 0x0 
-copy scalar +0x70 0x159FDCA18D0 <- 0x0 
-copy scalar +0x78 0x159FDCA18D8 <- 0x0 
-copy scalar +0x110 0x159FDCA1970 <- 0x0 
-copy scalar +0x118 0x159FDCA1978 <- 0x0 
-copy scalar +0x128 0x159FDCA1988 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1990 <- 0x0 
-copy scalar +0x138 0x159FDCA1998 <- 0x7 
-copy scalar +0x140 0x159FDCA19A0 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA19A8 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA19B0 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=0 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EC116 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1534CCEF7F6 : 鿐뻐믐菑蟑뗐뷐뻐 
-+0xF8 display 0x159FDCA1AB0 -> 0x159224EBDB6 : Получено 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA19D0 <- 0x1 
-copy scalar +0x38 0x159FDCA19F0 <- 0x0 
-copy scalar +0x40 0x159FDCA19F8 <- 0x0 
-copy scalar +0x60 0x159FDCA1A18 <- 0x0 
-copy scalar +0x70 0x159FDCA1A28 <- 0x0 
-copy scalar +0x78 0x159FDCA1A30 <- 0x0 
-copy scalar +0x110 0x159FDCA1AC8 <- 0x0 
-copy scalar +0x118 0x159FDCA1AD0 <- 0x0 
-copy scalar +0x128 0x159FDCA1AE0 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1AE8 <- 0x0 
-copy scalar +0x138 0x159FDCA1AF0 <- 0x7 
-copy scalar +0x140 0x159FDCA1AF8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1B00 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1B08 <- 0x0 
-copy +0x80 0x159FDCA1A38 <- 0x159224EB246 
-copy +0xF0 0x159FDCA1AA8 <- 0x1534CCEEEF6 
-copy +0xF8 0x159FDCA1AB0 <- 0x1534CCEDF36 
------------------------------------------------------------- 
-DST after = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
----- rel=1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1300 
-+0x80 key     0x159FDCA1380 -> 0x159224EB516 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA13F0 -> 0x0 : nil 
-+0xF8 display 0x159FDCA13F8 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1B28 <- 0x1 
-copy scalar +0x38 0x159FDCA1B48 <- 0x0 
-copy scalar +0x40 0x159FDCA1B50 <- 0x0 
-copy scalar +0x60 0x159FDCA1B70 <- 0x0 
-copy scalar +0x70 0x159FDCA1B80 <- 0x0 
-copy scalar +0x78 0x159FDCA1B88 <- 0x0 
-copy scalar +0x110 0x159FDCA1C20 <- 0x0 
-copy scalar +0x118 0x159FDCA1C28 <- 0x0 
-copy scalar +0x128 0x159FDCA1C38 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1C40 <- 0x0 
-copy scalar +0x138 0x159FDCA1C48 <- 0x7 
-copy scalar +0x140 0x159FDCA1C50 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1C58 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1C60 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-Patch complete. 
-To restore, run: 
-restoreVisualBranchPatch() 
- 
-Before patch: 
------------------------------------------------------------- 
-SRC_TAKE_RU = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_WAS_TAKEN = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_LEVEL_LOCKED = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x1534CCEF776 : LevelText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x1594AA610B6 : 2 
-+0xF8 display 0x159FDCA1EB8 -> 0x1534CCEF7B6 : 2 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-============================================================ 
-PATCH GROUP: DefaultWasTaken -> DefaultTakeButton 
-srcCenter=0x159FDCA11A8 
-dstCenter=0x159FDCA19B8 
-radius=1 
-============================================================ 
- 
----- rel=-1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1050 
-+0x80 key     0x159FDCA10D0 -> 0x1534CCF8ED6 : DenyButtonText 
-+0xF0 valueA  0x159FDCA1140 -> 0x1534CCF9496 : 黐苑볐뗐뷐룐苑賑 
-+0xF8 display 0x159FDCA1148 -> 0x159224DFC66 : Отменить 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1878 <- 0x2 
-copy scalar +0x38 0x159FDCA1898 <- 0x0 
-copy scalar +0x40 0x159FDCA18A0 <- 0x0 
-copy scalar +0x60 0x159FDCA18C0 <- 0x0 
-copy scalar +0x68 0x159FDCA18C8 <- 0x0 
-copy scalar +0x70 0x159FDCA18D0 <- 0x0 
-copy scalar +0x78 0x159FDCA18D8 <- 0x0 
-copy scalar +0x110 0x159FDCA1970 <- 0x0 
-copy scalar +0x118 0x159FDCA1978 <- 0x0 
-copy scalar +0x128 0x159FDCA1988 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1990 <- 0x0 
-copy scalar +0x138 0x159FDCA1998 <- 0x7 
-copy scalar +0x140 0x159FDCA19A0 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA19A8 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA19B0 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=0 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA19D0 <- 0x1 
-copy scalar +0x38 0x159FDCA19F0 <- 0x0 
-copy scalar +0x40 0x159FDCA19F8 <- 0x0 
-copy scalar +0x60 0x159FDCA1A18 <- 0x0 
-copy scalar +0x70 0x159FDCA1A28 <- 0x0 
-copy scalar +0x78 0x159FDCA1A30 <- 0x0 
-copy scalar +0x110 0x159FDCA1AC8 <- 0x0 
-copy scalar +0x118 0x159FDCA1AD0 <- 0x0 
-copy scalar +0x128 0x159FDCA1AE0 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1AE8 <- 0x0 
-copy scalar +0x138 0x159FDCA1AF0 <- 0x7 
-copy scalar +0x140 0x159FDCA1AF8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1B00 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1B08 <- 0x0 
-copy +0x80 0x159FDCA1A38 <- 0x159224EB246 
-copy +0xF0 0x159FDCA1AA8 <- 0x1534CCEEEF6 
-copy +0xF8 0x159FDCA1AB0 <- 0x1534CCEDF36 
------------------------------------------------------------- 
-DST after = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
----- rel=1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1300 
-+0x80 key     0x159FDCA1380 -> 0x159224EB516 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA13F0 -> 0x0 : nil 
-+0xF8 display 0x159FDCA13F8 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1B28 <- 0x1 
-copy scalar +0x38 0x159FDCA1B48 <- 0x0 
-copy scalar +0x40 0x159FDCA1B50 <- 0x0 
-copy scalar +0x60 0x159FDCA1B70 <- 0x0 
-copy scalar +0x70 0x159FDCA1B80 <- 0x0 
-copy scalar +0x78 0x159FDCA1B88 <- 0x0 
-copy scalar +0x110 0x159FDCA1C20 <- 0x0 
-copy scalar +0x118 0x159FDCA1C28 <- 0x0 
-copy scalar +0x128 0x159FDCA1C38 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1C40 <- 0x0 
-copy scalar +0x138 0x159FDCA1C48 <- 0x7 
-copy scalar +0x140 0x159FDCA1C50 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1C58 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1C60 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-============================================================ 
-PATCH GROUP: Locked/Level -> DefaultTakeButton 
-srcCenter=0x159FDCA11A8 
-dstCenter=0x159FDCA1DC0 
-radius=1 
-============================================================ 
- 
----- rel=-1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1050 
-+0x80 key     0x159FDCA10D0 -> 0x1534CCF8ED6 : DenyButtonText 
-+0xF0 valueA  0x159FDCA1140 -> 0x1534CCF9496 : 黐苑볐뗐뷐룐苑賑 
-+0xF8 display 0x159FDCA1148 -> 0x159224DFC66 : Отменить 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1C80 <- 0x2 
-copy scalar +0x38 0x159FDCA1CA0 <- 0x0 
-copy scalar +0x40 0x159FDCA1CA8 <- 0x0 
-copy scalar +0x60 0x159FDCA1CC8 <- 0x0 
-copy scalar +0x70 0x159FDCA1CD8 <- 0x0 
-copy scalar +0x78 0x159FDCA1CE0 <- 0x0 
-copy scalar +0x110 0x159FDCA1D78 <- 0x0 
-copy scalar +0x118 0x159FDCA1D80 <- 0x0 
-copy scalar +0x128 0x159FDCA1D90 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1D98 <- 0x0 
-copy scalar +0x138 0x159FDCA1DA0 <- 0x7 
-copy scalar +0x140 0x159FDCA1DA8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1DB0 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1DB8 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
----- rel=0 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x1534CCEF776 : LevelText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x1594AA610B6 : 2 
-+0xF8 display 0x159FDCA1EB8 -> 0x1534CCEF7B6 : 2 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1DD8 <- 0x1 
-copy scalar +0x38 0x159FDCA1DF8 <- 0x0 
-copy scalar +0x40 0x159FDCA1E00 <- 0x0 
-copy scalar +0x60 0x159FDCA1E20 <- 0x0 
-copy scalar +0x70 0x159FDCA1E30 <- 0x0 
-copy scalar +0x78 0x159FDCA1E38 <- 0x0 
-copy scalar +0x110 0x159FDCA1ED0 <- 0x0 
-copy scalar +0x118 0x159FDCA1ED8 <- 0x0 
-copy scalar +0x128 0x159FDCA1EE8 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1EF0 <- 0x0 
-copy scalar +0x138 0x159FDCA1EF8 <- 0x7 
-copy scalar +0x140 0x159FDCA1F00 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1F08 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1F10 <- 0x0 
-copy +0x80 0x159FDCA1E40 <- 0x159224EB246 
-copy +0xF0 0x159FDCA1EB0 <- 0x1534CCEEEF6 
-copy +0xF8 0x159FDCA1EB8 <- 0x1534CCEDF36 
------------------------------------------------------------- 
-DST after = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1EB8 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1300 
-+0x80 key     0x159FDCA1380 -> 0x159224EB516 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA13F0 -> 0x0 : nil 
-+0xF8 display 0x159FDCA13F8 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1F18 
-+0x80 key     0x159FDCA1F98 -> 0x159224EBDE6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA2008 -> 0x1534CCF1696 : Take 
-+0xF8 display 0x159FDCA2010 -> 0x1534CCF18B6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1F30 <- 0x1 
-copy scalar +0x38 0x159FDCA1F50 <- 0x0 
-copy scalar +0x40 0x159FDCA1F58 <- 0x0 
-copy scalar +0x60 0x159FDCA1F78 <- 0x0 
-copy scalar +0x70 0x159FDCA1F88 <- 0x0 
-copy scalar +0x78 0x159FDCA1F90 <- 0x0 
-copy scalar +0x110 0x159FDCA2028 <- 0x0 
-copy scalar +0x118 0x159FDCA2030 <- 0x0 
-copy scalar +0x128 0x159FDCA2040 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA2048 <- 0x0 
-copy scalar +0x138 0x159FDCA2050 <- 0x7 
-copy scalar +0x140 0x159FDCA2058 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA2060 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA2068 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1F18 
-+0x80 key     0x159FDCA1F98 -> 0x159224EBDE6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA2008 -> 0x1534CCF1696 : Take 
-+0xF8 display 0x159FDCA2010 -> 0x1534CCF18B6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-Patch complete. 
-To restore, run: 
-restoreVisualBranchPatch() 
- 
-Before patch: 
------------------------------------------------------------- 
-SRC_TAKE_RU = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_WAS_TAKEN = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_LEVEL_LOCKED = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1EB8 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-============================================================ 
-PATCH GROUP: DefaultWasTaken -> DefaultTakeButton 
-srcCenter=0x159FDCA11A8 
-dstCenter=0x159FDCA19B8 
-radius=2 
-============================================================ 
- 
----- rel=-2 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA0EF8 
-+0x80 key     0x159FDCA0F78 -> 0x1534CCF93F6 : AcceptButtonText 
-+0xF0 valueA  0x159FDCA0FE8 -> 0x1534CCF91F6 : 鿐胑룐뷐近苑賑猀 
-+0xF8 display 0x159FDCA0FF0 -> 0x1534CCF9556 : Принять 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1708 
-+0x80 key     0x159FDCA1788 -> 0x1534CCEEC96 : LevelText 
-+0xF0 valueA  0x159FDCA17F8 -> 0x1594AA61226 : 1 
-+0xF8 display 0x159FDCA1800 -> 0x1534CCEE736 : 1 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1720 <- 0x2 
-copy scalar +0x38 0x159FDCA1740 <- 0x0 
-copy scalar +0x40 0x159FDCA1748 <- 0x0 
-copy scalar +0x60 0x159FDCA1768 <- 0x0 
-copy scalar +0x70 0x159FDCA1778 <- 0x0 
-copy scalar +0x78 0x159FDCA1780 <- 0x0 
-copy scalar +0x110 0x159FDCA1818 <- 0x0 
-copy scalar +0x118 0x159FDCA1820 <- 0x0 
-copy scalar +0x128 0x159FDCA1830 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1838 <- 0x0 
-copy scalar +0x138 0x159FDCA1840 <- 0x7 
-copy scalar +0x140 0x159FDCA1848 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1850 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1858 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1708 
-+0x80 key     0x159FDCA1788 -> 0x1534CCEEC96 : LevelText 
-+0xF0 valueA  0x159FDCA17F8 -> 0x1594AA61226 : 1 
-+0xF8 display 0x159FDCA1800 -> 0x1534CCEE736 : 1 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=-1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1050 
-+0x80 key     0x159FDCA10D0 -> 0x1534CCF8ED6 : DenyButtonText 
-+0xF0 valueA  0x159FDCA1140 -> 0x1534CCF9496 : 黐苑볐뗐뷐룐苑賑 
-+0xF8 display 0x159FDCA1148 -> 0x159224DFC66 : Отменить 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1878 <- 0x2 
-copy scalar +0x38 0x159FDCA1898 <- 0x0 
-copy scalar +0x40 0x159FDCA18A0 <- 0x0 
-copy scalar +0x60 0x159FDCA18C0 <- 0x0 
-copy scalar +0x68 0x159FDCA18C8 <- 0x0 
-copy scalar +0x70 0x159FDCA18D0 <- 0x0 
-copy scalar +0x78 0x159FDCA18D8 <- 0x0 
-copy scalar +0x110 0x159FDCA1970 <- 0x0 
-copy scalar +0x118 0x159FDCA1978 <- 0x0 
-copy scalar +0x128 0x159FDCA1988 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1990 <- 0x0 
-copy scalar +0x138 0x159FDCA1998 <- 0x7 
-copy scalar +0x140 0x159FDCA19A0 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA19A8 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA19B0 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=0 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA19D0 <- 0x1 
-copy scalar +0x38 0x159FDCA19F0 <- 0x0 
-copy scalar +0x40 0x159FDCA19F8 <- 0x0 
-copy scalar +0x60 0x159FDCA1A18 <- 0x0 
-copy scalar +0x70 0x159FDCA1A28 <- 0x0 
-copy scalar +0x78 0x159FDCA1A30 <- 0x0 
-copy scalar +0x110 0x159FDCA1AC8 <- 0x0 
-copy scalar +0x118 0x159FDCA1AD0 <- 0x0 
-copy scalar +0x128 0x159FDCA1AE0 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1AE8 <- 0x0 
-copy scalar +0x138 0x159FDCA1AF0 <- 0x7 
-copy scalar +0x140 0x159FDCA1AF8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1B00 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1B08 <- 0x0 
-copy +0x80 0x159FDCA1A38 <- 0x159224EB246 
-copy +0xF0 0x159FDCA1AA8 <- 0x1534CCEEEF6 
-copy +0xF8 0x159FDCA1AB0 <- 0x1534CCEDF36 
------------------------------------------------------------- 
-DST after = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
----- rel=1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1300 
-+0x80 key     0x159FDCA1380 -> 0x159224EB516 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA13F0 -> 0x0 : nil 
-+0xF8 display 0x159FDCA13F8 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1B28 <- 0x1 
-copy scalar +0x38 0x159FDCA1B48 <- 0x0 
-copy scalar +0x40 0x159FDCA1B50 <- 0x0 
-copy scalar +0x60 0x159FDCA1B70 <- 0x0 
-copy scalar +0x70 0x159FDCA1B80 <- 0x0 
-copy scalar +0x78 0x159FDCA1B88 <- 0x0 
-copy scalar +0x110 0x159FDCA1C20 <- 0x0 
-copy scalar +0x118 0x159FDCA1C28 <- 0x0 
-copy scalar +0x128 0x159FDCA1C38 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1C40 <- 0x0 
-copy scalar +0x138 0x159FDCA1C48 <- 0x7 
-copy scalar +0x140 0x159FDCA1C50 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1C58 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1C60 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=2 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1458 
-+0x80 key     0x159FDCA14D8 -> 0x159224EB5A6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1548 -> 0x1534CCEDDD6 : Take 
-+0xF8 display 0x159FDCA1550 -> 0x1534CCEE016 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1C80 <- 0x1 
-copy scalar +0x38 0x159FDCA1CA0 <- 0x0 
-copy scalar +0x40 0x159FDCA1CA8 <- 0x0 
-copy scalar +0x60 0x159FDCA1CC8 <- 0x0 
-copy scalar +0x70 0x159FDCA1CD8 <- 0x0 
-copy scalar +0x78 0x159FDCA1CE0 <- 0x0 
-copy scalar +0x110 0x159FDCA1D78 <- 0x0 
-copy scalar +0x118 0x159FDCA1D80 <- 0x0 
-copy scalar +0x128 0x159FDCA1D90 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1D98 <- 0x0 
-copy scalar +0x138 0x159FDCA1DA0 <- 0x7 
-copy scalar +0x140 0x159FDCA1DA8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1DB0 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1DB8 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
-============================================================ 
-PATCH GROUP: Locked/Level -> DefaultTakeButton 
-srcCenter=0x159FDCA11A8 
-dstCenter=0x159FDCA1DC0 
-radius=2 
-============================================================ 
- 
----- rel=-2 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA0EF8 
-+0x80 key     0x159FDCA0F78 -> 0x1534CCF93F6 : AcceptButtonText 
-+0xF0 valueA  0x159FDCA0FE8 -> 0x1534CCF91F6 : 鿐胑룐뷐近苑賑猀 
-+0xF8 display 0x159FDCA0FF0 -> 0x1534CCF9556 : Принять 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1B28 <- 0x2 
-copy scalar +0x38 0x159FDCA1B48 <- 0x0 
-copy scalar +0x40 0x159FDCA1B50 <- 0x0 
-copy scalar +0x60 0x159FDCA1B70 <- 0x0 
-copy scalar +0x68 0x159FDCA1B78 <- 0x0 
-copy scalar +0x70 0x159FDCA1B80 <- 0x0 
-copy scalar +0x78 0x159FDCA1B88 <- 0x0 
-copy scalar +0x110 0x159FDCA1C20 <- 0x0 
-copy scalar +0x118 0x159FDCA1C28 <- 0x0 
-copy scalar +0x128 0x159FDCA1C38 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1C40 <- 0x0 
-copy scalar +0x138 0x159FDCA1C48 <- 0x7 
-copy scalar +0x140 0x159FDCA1C50 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1C58 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1C60 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=-1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1050 
-+0x80 key     0x159FDCA10D0 -> 0x1534CCF8ED6 : DenyButtonText 
-+0xF0 valueA  0x159FDCA1140 -> 0x1534CCF9496 : 黐苑볐뗐뷐룐苑賑 
-+0xF8 display 0x159FDCA1148 -> 0x159224DFC66 : Отменить 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1C80 <- 0x2 
-copy scalar +0x38 0x159FDCA1CA0 <- 0x0 
-copy scalar +0x40 0x159FDCA1CA8 <- 0x0 
-copy scalar +0x60 0x159FDCA1CC8 <- 0x0 
-copy scalar +0x70 0x159FDCA1CD8 <- 0x0 
-copy scalar +0x78 0x159FDCA1CE0 <- 0x0 
-copy scalar +0x110 0x159FDCA1D78 <- 0x0 
-copy scalar +0x118 0x159FDCA1D80 <- 0x0 
-copy scalar +0x128 0x159FDCA1D90 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1D98 <- 0x0 
-copy scalar +0x138 0x159FDCA1DA0 <- 0x7 
-copy scalar +0x140 0x159FDCA1DA8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1DB0 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1DB8 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
----- rel=0 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1EB8 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1DD8 <- 0x1 
-copy scalar +0x38 0x159FDCA1DF8 <- 0x0 
-copy scalar +0x40 0x159FDCA1E00 <- 0x0 
-copy scalar +0x60 0x159FDCA1E20 <- 0x0 
-copy scalar +0x70 0x159FDCA1E30 <- 0x0 
-copy scalar +0x78 0x159FDCA1E38 <- 0x0 
-copy scalar +0x110 0x159FDCA1ED0 <- 0x0 
-copy scalar +0x118 0x159FDCA1ED8 <- 0x0 
-copy scalar +0x128 0x159FDCA1EE8 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1EF0 <- 0x0 
-copy scalar +0x138 0x159FDCA1EF8 <- 0x7 
-copy scalar +0x140 0x159FDCA1F00 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1F08 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1F10 <- 0x0 
-copy +0x80 0x159FDCA1E40 <- 0x159224EB246 
-copy +0xF0 0x159FDCA1EB0 <- 0x1534CCEEEF6 
-copy +0xF8 0x159FDCA1EB8 <- 0x1534CCEDF36 
------------------------------------------------------------- 
-DST after = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x159224EB246 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x1534CCEEEF6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1EB8 -> 0x1534CCEDF36 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1300 
-+0x80 key     0x159FDCA1380 -> 0x159224EB516 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA13F0 -> 0x0 : nil 
-+0xF8 display 0x159FDCA13F8 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1F18 
-+0x80 key     0x159FDCA1F98 -> 0x159224EBDE6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA2008 -> 0x1534CCF1696 : Take 
-+0xF8 display 0x159FDCA2010 -> 0x1534CCF18B6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1F30 <- 0x1 
-copy scalar +0x38 0x159FDCA1F50 <- 0x0 
-copy scalar +0x40 0x159FDCA1F58 <- 0x0 
-copy scalar +0x60 0x159FDCA1F78 <- 0x0 
-copy scalar +0x70 0x159FDCA1F88 <- 0x0 
-copy scalar +0x78 0x159FDCA1F90 <- 0x0 
-copy scalar +0x110 0x159FDCA2028 <- 0x0 
-copy scalar +0x118 0x159FDCA2030 <- 0x0 
-copy scalar +0x128 0x159FDCA2040 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA2048 <- 0x0 
-copy scalar +0x138 0x159FDCA2050 <- 0x7 
-copy scalar +0x140 0x159FDCA2058 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA2060 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA2068 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1F18 
-+0x80 key     0x159FDCA1F98 -> 0x159224EBDE6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA2008 -> 0x1534CCF1696 : Take 
-+0xF8 display 0x159FDCA2010 -> 0x1534CCF18B6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=2 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1458 
-+0x80 key     0x159FDCA14D8 -> 0x159224EB5A6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1548 -> 0x1534CCEDDD6 : Take 
-+0xF8 display 0x159FDCA1550 -> 0x1534CCEE016 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA2070 
-+0x80 key     0x159FDCA20F0 -> 0x159224EBFC6 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA2160 -> 0x0 : nil 
-+0xF8 display 0x159FDCA2168 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA2088 <- 0x1 
-copy scalar +0x38 0x159FDCA20A8 <- 0x0 
-copy scalar +0x40 0x159FDCA20B0 <- 0x0 
-copy scalar +0x60 0x159FDCA20D0 <- 0x0 
-copy scalar +0x70 0x159FDCA20E0 <- 0x0 
-copy scalar +0x78 0x159FDCA20E8 <- 0x0 
-copy scalar +0x110 0x159FDCA2180 <- 0x0 
-copy scalar +0x118 0x159FDCA2188 <- 0x0 
-copy scalar +0x128 0x159FDCA2198 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA21A0 <- 0x0 
-copy scalar +0x138 0x159FDCA21A8 <- 0x7 
-copy scalar +0x140 0x159FDCA21B0 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA21B8 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA21C0 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA2070 
-+0x80 key     0x159FDCA20F0 -> 0x159224EBFC6 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA2160 -> 0x0 : nil 
-+0xF8 display 0x159FDCA2168 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
-Patch complete. 
-To restore, run: 
-restoreVisualBranchPatch() 
- 
-Before patch: 
------------------------------------------------------------- 
-SRC_TAKE_RU = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_WAS_TAKEN = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x15749456576 : LevelText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1594AA613D6 : 1 
-+0xF8 display 0x159FDCA1AB0 -> 0x15749456596 : 1 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_LEVEL_LOCKED = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x159224EBA86 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x15749456AB6 : Take 
-+0xF8 display 0x159FDCA1EB8 -> 0x15749456DF6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-============================================================ 
-PATCH GROUP: DefaultWasTaken -> DefaultTakeButton 
-srcCenter=0x159FDCA11A8 
-dstCenter=0x159FDCA19B8 
-radius=2 
-============================================================ 
- 
----- rel=-2 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA0EF8 
-+0x80 key     0x159FDCA0F78 -> 0x1534CCF93F6 : AcceptButtonText 
-+0xF0 valueA  0x159FDCA0FE8 -> 0x1534CCF91F6 : 鿐胑룐뷐近苑賑猀 
-+0xF8 display 0x159FDCA0FF0 -> 0x1534CCF9556 : Принять 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1708 
-+0x80 key     0x159FDCA1788 -> 0x1534CCEEC96 : LevelText 
-+0xF0 valueA  0x159FDCA17F8 -> 0x1594AA61226 : 1 
-+0xF8 display 0x159FDCA1800 -> 0x1534CCEE736 : 1 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1720 <- 0x2 
-copy scalar +0x38 0x159FDCA1740 <- 0x0 
-copy scalar +0x40 0x159FDCA1748 <- 0x0 
-copy scalar +0x60 0x159FDCA1768 <- 0x0 
-copy scalar +0x68 0x159FDCA1770 <- 0x0 
-copy scalar +0x70 0x159FDCA1778 <- 0x0 
-copy scalar +0x78 0x159FDCA1780 <- 0x0 
-copy scalar +0x110 0x159FDCA1818 <- 0x0 
-copy scalar +0x118 0x159FDCA1820 <- 0x0 
-copy scalar +0x128 0x159FDCA1830 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1838 <- 0x0 
-copy scalar +0x138 0x159FDCA1840 <- 0x7 
-copy scalar +0x140 0x159FDCA1848 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1850 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1858 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1708 
-+0x80 key     0x159FDCA1788 -> 0x1534CCEEC96 : LevelText 
-+0xF0 valueA  0x159FDCA17F8 -> 0x1594AA61226 : 1 
-+0xF8 display 0x159FDCA1800 -> 0x1534CCEE736 : 1 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=-1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1050 
-+0x80 key     0x159FDCA10D0 -> 0x1534CCF8ED6 : DenyButtonText 
-+0xF0 valueA  0x159FDCA1140 -> 0x1534CCF9496 : 黐苑볐뗐뷐룐苑賑 
-+0xF8 display 0x159FDCA1148 -> 0x159224DFC66 : Отменить 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1878 <- 0x2 
-copy scalar +0x38 0x159FDCA1898 <- 0x0 
-copy scalar +0x40 0x159FDCA18A0 <- 0x0 
-copy scalar +0x60 0x159FDCA18C0 <- 0x0 
-copy scalar +0x68 0x159FDCA18C8 <- 0x0 
-copy scalar +0x70 0x159FDCA18D0 <- 0x0 
-copy scalar +0x78 0x159FDCA18D8 <- 0x0 
-copy scalar +0x110 0x159FDCA1970 <- 0x0 
-copy scalar +0x118 0x159FDCA1978 <- 0x0 
-copy scalar +0x128 0x159FDCA1988 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1990 <- 0x0 
-copy scalar +0x138 0x159FDCA1998 <- 0x7 
-copy scalar +0x140 0x159FDCA19A0 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA19A8 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA19B0 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=0 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x15749456576 : LevelText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x1594AA613D6 : 1 
-+0xF8 display 0x159FDCA1AB0 -> 0x15749456596 : 1 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA19D0 <- 0x1 
-copy scalar +0x38 0x159FDCA19F0 <- 0x0 
-copy scalar +0x40 0x159FDCA19F8 <- 0x0 
-copy scalar +0x60 0x159FDCA1A18 <- 0x0 
-copy scalar +0x70 0x159FDCA1A28 <- 0x0 
-copy scalar +0x78 0x159FDCA1A30 <- 0x0 
-copy scalar +0x110 0x159FDCA1AC8 <- 0x0 
-copy scalar +0x118 0x159FDCA1AD0 <- 0x0 
-copy scalar +0x128 0x159FDCA1AE0 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1AE8 <- 0x0 
-copy scalar +0x138 0x159FDCA1AF0 <- 0x7 
-copy scalar +0x140 0x159FDCA1AF8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1B00 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1B08 <- 0x0 
-copy +0x80 0x159FDCA1A38 <- 0x159224EA736 
-copy +0xF0 0x159FDCA1AA8 <- 0x157494567F6 
-copy +0xF8 0x159FDCA1AB0 <- 0x15749456376 
------------------------------------------------------------- 
-DST after = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1300 
-+0x80 key     0x159FDCA1380 -> 0x159224EAA66 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA13F0 -> 0x0 : nil 
-+0xF8 display 0x159FDCA13F8 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1B28 <- 0x1 
-copy scalar +0x38 0x159FDCA1B48 <- 0x0 
-copy scalar +0x40 0x159FDCA1B50 <- 0x0 
-copy scalar +0x60 0x159FDCA1B70 <- 0x0 
-copy scalar +0x70 0x159FDCA1B80 <- 0x0 
-copy scalar +0x78 0x159FDCA1B88 <- 0x0 
-copy scalar +0x110 0x159FDCA1C20 <- 0x0 
-copy scalar +0x118 0x159FDCA1C28 <- 0x0 
-copy scalar +0x128 0x159FDCA1C38 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1C40 <- 0x0 
-copy scalar +0x138 0x159FDCA1C48 <- 0x7 
-copy scalar +0x140 0x159FDCA1C50 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1C58 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1C60 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=2 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1458 
-+0x80 key     0x159FDCA14D8 -> 0x159224EAC76 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1548 -> 0x15749456236 : Take 
-+0xF8 display 0x159FDCA1550 -> 0x157494566F6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1C80 <- 0x1 
-copy scalar +0x38 0x159FDCA1CA0 <- 0x0 
-copy scalar +0x40 0x159FDCA1CA8 <- 0x0 
-copy scalar +0x60 0x159FDCA1CC8 <- 0x0 
-copy scalar +0x68 0x159FDCA1CD0 <- 0x0 
-copy scalar +0x70 0x159FDCA1CD8 <- 0x0 
-copy scalar +0x78 0x159FDCA1CE0 <- 0x0 
-copy scalar +0x110 0x159FDCA1D78 <- 0x0 
-copy scalar +0x118 0x159FDCA1D80 <- 0x0 
-copy scalar +0x128 0x159FDCA1D90 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1D98 <- 0x0 
-copy scalar +0x138 0x159FDCA1DA0 <- 0x7 
-copy scalar +0x140 0x159FDCA1DA8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1DB0 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1DB8 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
-============================================================ 
-PATCH GROUP: Locked/Level -> DefaultTakeButton 
-srcCenter=0x159FDCA11A8 
-dstCenter=0x159FDCA1DC0 
-radius=2 
-============================================================ 
- 
----- rel=-2 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA0EF8 
-+0x80 key     0x159FDCA0F78 -> 0x1534CCF93F6 : AcceptButtonText 
-+0xF0 valueA  0x159FDCA0FE8 -> 0x1534CCF91F6 : 鿐胑룐뷐近苑賑猀 
-+0xF8 display 0x159FDCA0FF0 -> 0x1534CCF9556 : Принять 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1B28 <- 0x2 
-copy scalar +0x38 0x159FDCA1B48 <- 0x0 
-copy scalar +0x40 0x159FDCA1B50 <- 0x0 
-copy scalar +0x60 0x159FDCA1B70 <- 0x0 
-copy scalar +0x68 0x159FDCA1B78 <- 0x0 
-copy scalar +0x70 0x159FDCA1B80 <- 0x0 
-copy scalar +0x78 0x159FDCA1B88 <- 0x0 
-copy scalar +0x110 0x159FDCA1C20 <- 0x0 
-copy scalar +0x118 0x159FDCA1C28 <- 0x0 
-copy scalar +0x128 0x159FDCA1C38 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1C40 <- 0x0 
-copy scalar +0x138 0x159FDCA1C48 <- 0x7 
-copy scalar +0x140 0x159FDCA1C50 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1C58 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1C60 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=-1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1050 
-+0x80 key     0x159FDCA10D0 -> 0x1534CCF8ED6 : DenyButtonText 
-+0xF0 valueA  0x159FDCA1140 -> 0x1534CCF9496 : 黐苑볐뗐뷐룐苑賑 
-+0xF8 display 0x159FDCA1148 -> 0x159224DFC66 : Отменить 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1C80 <- 0x2 
-copy scalar +0x38 0x159FDCA1CA0 <- 0x0 
-copy scalar +0x40 0x159FDCA1CA8 <- 0x0 
-copy scalar +0x60 0x159FDCA1CC8 <- 0x0 
-copy scalar +0x68 0x159FDCA1CD0 <- 0x0 
-copy scalar +0x70 0x159FDCA1CD8 <- 0x0 
-copy scalar +0x78 0x159FDCA1CE0 <- 0x0 
-copy scalar +0x110 0x159FDCA1D78 <- 0x0 
-copy scalar +0x118 0x159FDCA1D80 <- 0x0 
-copy scalar +0x128 0x159FDCA1D90 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1D98 <- 0x0 
-copy scalar +0x138 0x159FDCA1DA0 <- 0x7 
-copy scalar +0x140 0x159FDCA1DA8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1DB0 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1DB8 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
----- rel=0 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x159224EBA86 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x15749456AB6 : Take 
-+0xF8 display 0x159FDCA1EB8 -> 0x15749456DF6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1DD8 <- 0x1 
-copy scalar +0x38 0x159FDCA1DF8 <- 0x0 
-copy scalar +0x40 0x159FDCA1E00 <- 0x0 
-copy scalar +0x60 0x159FDCA1E20 <- 0x0 
-copy scalar +0x68 0x159FDCA1E28 <- 0x0 
-copy scalar +0x70 0x159FDCA1E30 <- 0x0 
-copy scalar +0x78 0x159FDCA1E38 <- 0x0 
-copy scalar +0x110 0x159FDCA1ED0 <- 0x0 
-copy scalar +0x118 0x159FDCA1ED8 <- 0x0 
-copy scalar +0x128 0x159FDCA1EE8 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1EF0 <- 0x0 
-copy scalar +0x138 0x159FDCA1EF8 <- 0x7 
-copy scalar +0x140 0x159FDCA1F00 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1F08 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1F10 <- 0x0 
-copy +0x80 0x159FDCA1E40 <- 0x159224EA736 
-copy +0xF0 0x159FDCA1EB0 <- 0x157494567F6 
-copy +0xF8 0x159FDCA1EB8 <- 0x15749456376 
------------------------------------------------------------- 
-DST after = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1EB8 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1300 
-+0x80 key     0x159FDCA1380 -> 0x159224EAA66 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA13F0 -> 0x0 : nil 
-+0xF8 display 0x159FDCA13F8 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1F18 
-+0x80 key     0x159FDCA1F98 -> 0x159224EB246 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA2008 -> 0x157494570D6 : 鿐뻐믐菑蟑뗐뷐뻐 
-+0xF8 display 0x159FDCA2010 -> 0x159224EC236 : Получено 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1F30 <- 0x1 
-copy scalar +0x38 0x159FDCA1F50 <- 0x0 
-copy scalar +0x40 0x159FDCA1F58 <- 0x0 
-copy scalar +0x60 0x159FDCA1F78 <- 0x0 
-copy scalar +0x70 0x159FDCA1F88 <- 0x0 
-copy scalar +0x78 0x159FDCA1F90 <- 0x0 
-copy scalar +0x110 0x159FDCA2028 <- 0x0 
-copy scalar +0x118 0x159FDCA2030 <- 0x0 
-copy scalar +0x128 0x159FDCA2040 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA2048 <- 0x0 
-copy scalar +0x138 0x159FDCA2050 <- 0x7 
-copy scalar +0x140 0x159FDCA2058 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA2060 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA2068 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1F18 
-+0x80 key     0x159FDCA1F98 -> 0x159224EB246 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA2008 -> 0x157494570D6 : 鿐뻐믐菑蟑뗐뷐뻐 
-+0xF8 display 0x159FDCA2010 -> 0x159224EC236 : Получено 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
----- rel=2 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1458 
-+0x80 key     0x159FDCA14D8 -> 0x159224EAC76 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1548 -> 0x15749456236 : Take 
-+0xF8 display 0x159FDCA1550 -> 0x157494566F6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA2070 
-+0x80 key     0x159FDCA20F0 -> 0x159224EB276 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA2160 -> 0x15749456FB6 : Take 
-+0xF8 display 0x159FDCA2168 -> 0x157494569B6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA2088 <- 0x1 
-copy scalar +0x20 0x159FDCA2090 <- 0x0 
-copy scalar +0x38 0x159FDCA20A8 <- 0x0 
-copy scalar +0x40 0x159FDCA20B0 <- 0x0 
-copy scalar +0x60 0x159FDCA20D0 <- 0x0 
-copy scalar +0x68 0x159FDCA20D8 <- 0x0 
-copy scalar +0x70 0x159FDCA20E0 <- 0x0 
-copy scalar +0x78 0x159FDCA20E8 <- 0x0 
-copy scalar +0x110 0x159FDCA2180 <- 0x0 
-copy scalar +0x118 0x159FDCA2188 <- 0x0 
-copy scalar +0x128 0x159FDCA2198 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA21A0 <- 0x0 
-copy scalar +0x138 0x159FDCA21A8 <- 0x7 
-copy scalar +0x140 0x159FDCA21B0 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA21B8 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA21C0 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA2070 
-+0x80 key     0x159FDCA20F0 -> 0x159224EB276 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA2160 -> 0x15749456FB6 : Take 
-+0xF8 display 0x159FDCA2168 -> 0x157494569B6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-Patch complete. 
-To restore, run: 
-restoreVisualBranchPatch() 
- 
-Before patch: 
------------------------------------------------------------- 
-SRC_TAKE_RU = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_WAS_TAKEN = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_LEVEL_LOCKED = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1EB8 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-============================================================ 
-PATCH GROUP: DefaultWasTaken -> DefaultTakeButton 
-srcCenter=0x159FDCA11A8 
-dstCenter=0x159FDCA19B8 
-radius=2 
-============================================================ 
- 
----- rel=-2 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA0EF8 
-+0x80 key     0x159FDCA0F78 -> 0x1534CCF93F6 : AcceptButtonText 
-+0xF0 valueA  0x159FDCA0FE8 -> 0x1534CCF91F6 : 鿐胑룐뷐近苑賑猀 
-+0xF8 display 0x159FDCA0FF0 -> 0x1534CCF9556 : Принять 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1708 
-+0x80 key     0x159FDCA1788 -> 0x1534CCEEC96 : LevelText 
-+0xF0 valueA  0x159FDCA17F8 -> 0x1594AA61226 : 1 
-+0xF8 display 0x159FDCA1800 -> 0x1534CCEE736 : 1 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1720 <- 0x2 
-copy scalar +0x38 0x159FDCA1740 <- 0x0 
-copy scalar +0x40 0x159FDCA1748 <- 0x0 
-copy scalar +0x60 0x159FDCA1768 <- 0x0 
-copy scalar +0x68 0x159FDCA1770 <- 0x0 
-copy scalar +0x70 0x159FDCA1778 <- 0x0 
-copy scalar +0x78 0x159FDCA1780 <- 0x0 
-copy scalar +0x110 0x159FDCA1818 <- 0x0 
-copy scalar +0x118 0x159FDCA1820 <- 0x0 
-copy scalar +0x128 0x159FDCA1830 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1838 <- 0x0 
-copy scalar +0x138 0x159FDCA1840 <- 0x7 
-copy scalar +0x140 0x159FDCA1848 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1850 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1858 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1708 
-+0x80 key     0x159FDCA1788 -> 0x1534CCEEC96 : LevelText 
-+0xF0 valueA  0x159FDCA17F8 -> 0x1594AA61226 : 1 
-+0xF8 display 0x159FDCA1800 -> 0x1534CCEE736 : 1 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=-1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1050 
-+0x80 key     0x159FDCA10D0 -> 0x1534CCF8ED6 : DenyButtonText 
-+0xF0 valueA  0x159FDCA1140 -> 0x1534CCF9496 : 黐苑볐뗐뷐룐苑賑 
-+0xF8 display 0x159FDCA1148 -> 0x159224DFC66 : Отменить 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1878 <- 0x2 
-copy scalar +0x38 0x159FDCA1898 <- 0x0 
-copy scalar +0x40 0x159FDCA18A0 <- 0x0 
-copy scalar +0x60 0x159FDCA18C0 <- 0x0 
-copy scalar +0x68 0x159FDCA18C8 <- 0x0 
-copy scalar +0x70 0x159FDCA18D0 <- 0x0 
-copy scalar +0x78 0x159FDCA18D8 <- 0x0 
-copy scalar +0x110 0x159FDCA1970 <- 0x0 
-copy scalar +0x118 0x159FDCA1978 <- 0x0 
-copy scalar +0x128 0x159FDCA1988 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1990 <- 0x0 
-copy scalar +0x138 0x159FDCA1998 <- 0x7 
-copy scalar +0x140 0x159FDCA19A0 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA19A8 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA19B0 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=0 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA19D0 <- 0x1 
-copy scalar +0x38 0x159FDCA19F0 <- 0x0 
-copy scalar +0x40 0x159FDCA19F8 <- 0x0 
-copy scalar +0x60 0x159FDCA1A18 <- 0x0 
-copy scalar +0x70 0x159FDCA1A28 <- 0x0 
-copy scalar +0x78 0x159FDCA1A30 <- 0x0 
-copy scalar +0x110 0x159FDCA1AC8 <- 0x0 
-copy scalar +0x118 0x159FDCA1AD0 <- 0x0 
-copy scalar +0x128 0x159FDCA1AE0 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1AE8 <- 0x0 
-copy scalar +0x138 0x159FDCA1AF0 <- 0x7 
-copy scalar +0x140 0x159FDCA1AF8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1B00 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1B08 <- 0x0 
-copy +0x80 0x159FDCA1A38 <- 0x159224EA736 
-copy +0xF0 0x159FDCA1AA8 <- 0x157494567F6 
-copy +0xF8 0x159FDCA1AB0 <- 0x15749456376 
------------------------------------------------------------- 
-DST after = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1300 
-+0x80 key     0x159FDCA1380 -> 0x159224EAA66 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA13F0 -> 0x0 : nil 
-+0xF8 display 0x159FDCA13F8 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1B28 <- 0x1 
-copy scalar +0x38 0x159FDCA1B48 <- 0x0 
-copy scalar +0x40 0x159FDCA1B50 <- 0x0 
-copy scalar +0x60 0x159FDCA1B70 <- 0x0 
-copy scalar +0x70 0x159FDCA1B80 <- 0x0 
-copy scalar +0x78 0x159FDCA1B88 <- 0x0 
-copy scalar +0x110 0x159FDCA1C20 <- 0x0 
-copy scalar +0x118 0x159FDCA1C28 <- 0x0 
-copy scalar +0x128 0x159FDCA1C38 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1C40 <- 0x0 
-copy scalar +0x138 0x159FDCA1C48 <- 0x7 
-copy scalar +0x140 0x159FDCA1C50 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1C58 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1C60 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=2 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1458 
-+0x80 key     0x159FDCA14D8 -> 0x159224EAC76 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1548 -> 0x15749456236 : Take 
-+0xF8 display 0x159FDCA1550 -> 0x157494566F6 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1C80 <- 0x1 
-copy scalar +0x38 0x159FDCA1CA0 <- 0x0 
-copy scalar +0x40 0x159FDCA1CA8 <- 0x0 
-copy scalar +0x60 0x159FDCA1CC8 <- 0x0 
-copy scalar +0x68 0x159FDCA1CD0 <- 0x0 
-copy scalar +0x70 0x159FDCA1CD8 <- 0x0 
-copy scalar +0x78 0x159FDCA1CE0 <- 0x0 
-copy scalar +0x110 0x159FDCA1D78 <- 0x0 
-copy scalar +0x118 0x159FDCA1D80 <- 0x0 
-copy scalar +0x128 0x159FDCA1D90 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1D98 <- 0x0 
-copy scalar +0x138 0x159FDCA1DA0 <- 0x7 
-copy scalar +0x140 0x159FDCA1DA8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1DB0 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1DB8 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1C68 
-+0x80 key     0x159FDCA1CE8 -> 0x159224EBE76 : PremiumWasTakenText 
-+0xF0 valueA  0x159FDCA1D58 -> 0x0 : nil 
-+0xF8 display 0x159FDCA1D60 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
- 
-Patch complete. 
-To restore, run: 
-restoreVisualBranchPatch() 
- 
-Before patch: 
------------------------------------------------------------- 
-SRC_TAKE_RU = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_WAS_TAKEN = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST_LEVEL_LOCKED = 0x159FDCA1DC0 
-+0x80 key     0x159FDCA1E40 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1EB0 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1EB8 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-============================================================ 
-PATCH GROUP: DefaultWasTaken -> DefaultTakeButton 
-srcCenter=0x159FDCA11A8 
-dstCenter=0x159FDCA19B8 
-radius=1 
-============================================================ 
- 
----- rel=-1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1050 
-+0x80 key     0x159FDCA10D0 -> 0x1534CCF8ED6 : DenyButtonText 
-+0xF0 valueA  0x159FDCA1140 -> 0x1534CCF9496 : 黐苑볐뗐뷐룐苑賑 
-+0xF8 display 0x159FDCA1148 -> 0x159224DFC66 : Отменить 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1878 <- 0x2 
-copy scalar +0x38 0x159FDCA1898 <- 0x0 
-copy scalar +0x40 0x159FDCA18A0 <- 0x0 
-copy scalar +0x60 0x159FDCA18C0 <- 0x0 
-copy scalar +0x68 0x159FDCA18C8 <- 0x0 
-copy scalar +0x70 0x159FDCA18D0 <- 0x0 
-copy scalar +0x78 0x159FDCA18D8 <- 0x0 
-copy scalar +0x110 0x159FDCA1970 <- 0x0 
-copy scalar +0x118 0x159FDCA1978 <- 0x0 
-copy scalar +0x128 0x159FDCA1988 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1990 <- 0x0 
-copy scalar +0x138 0x159FDCA1998 <- 0x7 
-copy scalar +0x140 0x159FDCA19A0 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA19A8 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA19B0 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1860 
-+0x80 key     0x159FDCA18E0 -> 0x159224EBED6 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1950 -> 0x1534CCEF296 : Take 
-+0xF8 display 0x159FDCA1958 -> 0x1534CCEEF96 : T 
-+0x18 = 0x2 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=0 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA11A8 
-+0x80 key     0x159FDCA1228 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1298 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA12A0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA19D0 <- 0x1 
-copy scalar +0x38 0x159FDCA19F0 <- 0x0 
-copy scalar +0x40 0x159FDCA19F8 <- 0x0 
-copy scalar +0x60 0x159FDCA1A18 <- 0x0 
-copy scalar +0x70 0x159FDCA1A28 <- 0x0 
-copy scalar +0x78 0x159FDCA1A30 <- 0x0 
-copy scalar +0x110 0x159FDCA1AC8 <- 0x0 
-copy scalar +0x118 0x159FDCA1AD0 <- 0x0 
-copy scalar +0x128 0x159FDCA1AE0 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1AE8 <- 0x0 
-copy scalar +0x138 0x159FDCA1AF0 <- 0x7 
-copy scalar +0x140 0x159FDCA1AF8 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1B00 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1B08 <- 0x0 
-copy +0x80 0x159FDCA1A38 <- 0x159224EA736 
-copy +0xF0 0x159FDCA1AA8 <- 0x157494567F6 
-copy +0xF8 0x159FDCA1AB0 <- 0x15749456376 
------------------------------------------------------------- 
-DST after = 0x159FDCA19B8 
-+0x80 key     0x159FDCA1A38 -> 0x159224EA736 : DefaultTakeButtonText 
-+0xF0 valueA  0x159FDCA1AA8 -> 0x157494567F6 : 韐냐뇐胑냐苑賑 
-+0xF8 display 0x159FDCA1AB0 -> 0x15749456376 : Забрать 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
----- rel=1 ---- 
------------------------------------------------------------- 
-SRC = 0x159FDCA1300 
-+0x80 key     0x159FDCA1380 -> 0x159224EAA66 : DefaultWasTakenText 
-+0xF0 valueA  0x159FDCA13F0 -> 0x0 : nil 
-+0xF8 display 0x159FDCA13F8 -> 0x0 : nil 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000014 
-+0x140 = 0x400000003F800000 
------------------------------------------------------------- 
-DST before = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
-copy scalar +0x18 0x159FDCA1B28 <- 0x1 
-copy scalar +0x38 0x159FDCA1B48 <- 0x0 
-copy scalar +0x40 0x159FDCA1B50 <- 0x0 
-copy scalar +0x60 0x159FDCA1B70 <- 0x0 
-copy scalar +0x70 0x159FDCA1B80 <- 0x0 
-copy scalar +0x78 0x159FDCA1B88 <- 0x0 
-copy scalar +0x110 0x159FDCA1C20 <- 0x0 
-copy scalar +0x118 0x159FDCA1C28 <- 0x0 
-copy scalar +0x128 0x159FDCA1C38 <- 0x3F80000000000000 
-copy scalar +0x130 0x159FDCA1C40 <- 0x0 
-copy scalar +0x138 0x159FDCA1C48 <- 0x7 
-copy scalar +0x140 0x159FDCA1C50 <- 0x400000003F800000 
-copy scalar +0x148 0x159FDCA1C58 <- 0x3F8000003F800000 
-copy scalar +0x150 0x159FDCA1C60 <- 0x0 
------------------------------------------------------------- 
-DST after = 0x159FDCA1B10 
-+0x80 key     0x159FDCA1B90 -> 0x159224EC6E6 : PremiumTakeButtonText 
-+0xF0 valueA  0x159FDCA1C00 -> 0x1534CCEF756 : Take 
-+0xF8 display 0x159FDCA1C08 -> 0x1534CCEFA56 : T 
-+0x18 = 0x1 
-+0x40 = 0x0 
-+0x78 = 0x0 
-+0x120 = 0x100000000 
-+0x140 = 0x400000003F800000 
- 
-Patch complete. 
-To restore, run: 
-restoreVisualBranchPatch() 
+FAST clustered nodePoolBase finder / READ ONLY
+Date: 2026-05-20 21:55:28
+Output: C:\Users\Bogdan\Desktop\ce_nodePoolBase_FAST_cluster_20260520_215528.txt
+
+Перед запуском открой BattlePass/Rewards UI.
+
+============================================================
+STEP 1: FLOAT 1,2,1,1 SCAN
+============================================================
+AOB=00 00 80 3F 00 00 00 40 00 00 80 3F 00 00 80 3F
+scan mode: AOBScan with flags +W-C
+hits=181
+
+============================================================
+STEP 2: BUILD STRIDE CLUSTERS
+============================================================
+clusters after prefilter=260
+will score max=120
+
+============================================================
+STEP 3: SCORE TOP CLUSTERS
+============================================================
+scored 20/120
+scored 40/120
+scored 60/120
+scored 80/120
+scored 100/120
+scored 120/120
+
+============================================================
+RESULTS
+============================================================
+accepted=120
+
+#01 nodePoolBase=0x2A01F839050 score=4890 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | val=Получено | LevelText.key | DefaultTakeButton.key
+derived:
+  LevelTextNode          = 0x2A01F8399B8
+  DefaultWasTakenNode    = 0x2A01F839DC0
+  DefaultTakeButtonNode  = 0x2A01F839F18
+reasons:
+  hit=0x2A01F839190 off=0x140 back=0
+  hit=0x2A01F8392E8 off=0x140 back=1
+  hit=0x2A01F839440 off=0x140 back=2
+  hit=0x2A01F839598 off=0x140 back=3
+  hit=0x2A01F8396F0 off=0x140 back=4
+details:
+  node[0] 0x2A01F839050 headerScore=126
+  node[1] 0x2A01F8391A8 headerScore=126
+  node[2] 0x2A01F839300 headerScore=126
+  node[3] 0x2A01F839458 headerScore=126
+  node[4] 0x2A01F8395B0 headerScore=126
+  node[5] 0x2A01F839708 headerScore=126
+  LevelTextNode            node=0x2A01F8399B8 key=DefaultWasTakenText val=Получено
+  DefaultWasTakenNode      node=0x2A01F839DC0 key=LevelText val=2
+  DefaultTakeButtonNode    node=0x2A01F839F18 key=DefaultTakeButtonText val=T
+
+#02 nodePoolBase=0x2A01F839708 score=4750 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | LevelText.key | DefaultTakeButton.key
+derived:
+  LevelTextNode          = 0x2A01F83A070
+  DefaultWasTakenNode    = 0x2A01F83A478
+  DefaultTakeButtonNode  = 0x2A01F83A5D0
+reasons:
+  hit=0x2A01F839848 off=0x140 back=0
+  hit=0x2A01F8399A0 off=0x140 back=1
+  hit=0x2A01F839AF8 off=0x140 back=2
+  hit=0x2A01F839C50 off=0x140 back=3
+  hit=0x2A01F839DA8 off=0x140 back=4
+details:
+  node[0] 0x2A01F839708 headerScore=126
+  node[1] 0x2A01F839860 headerScore=126
+  node[2] 0x2A01F8399B8 headerScore=126
+  node[3] 0x2A01F839B10 headerScore=126
+  node[4] 0x2A01F839C68 headerScore=126
+  node[5] 0x2A01F839DC0 headerScore=126
+  LevelTextNode            node=0x2A01F83A070 key=DefaultWasTakenText val=nil
+  DefaultWasTakenNode      node=0x2A01F83A478 key=LevelText val=3
+  DefaultTakeButtonNode    node=0x2A01F83A5D0 key=DefaultTakeButtonText val=T
+
+#03 nodePoolBase=0x2A01F839DC0 score=4750 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | LevelText.key | DefaultTakeButton.key
+derived:
+  LevelTextNode          = 0x2A01F83A728
+  DefaultWasTakenNode    = 0x2A01F83AB30
+  DefaultTakeButtonNode  = 0x2A01F83AC88
+reasons:
+  hit=0x2A01F839F00 off=0x140 back=0
+  hit=0x2A01F83A058 off=0x140 back=1
+  hit=0x2A01F83A1B0 off=0x140 back=2
+  hit=0x2A01F83A308 off=0x140 back=3
+  hit=0x2A01F83A460 off=0x140 back=4
+details:
+  node[0] 0x2A01F839DC0 headerScore=126
+  node[1] 0x2A01F839F18 headerScore=126
+  node[2] 0x2A01F83A070 headerScore=126
+  node[3] 0x2A01F83A1C8 headerScore=126
+  node[4] 0x2A01F83A320 headerScore=126
+  node[5] 0x2A01F83A478 headerScore=126
+  LevelTextNode            node=0x2A01F83A728 key=DefaultWasTakenText val=nil
+  DefaultWasTakenNode      node=0x2A01F83AB30 key=LevelText val=4
+  DefaultTakeButtonNode    node=0x2A01F83AC88 key=DefaultTakeButtonText val=T
+
+#04 nodePoolBase=0x2A01F83A478 score=4660 clusterHits=20
+notes: clusterHits=20 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultWasTaken.key | LevelText.key | DefaultTakeButton.key
+derived:
+  LevelTextNode          = 0x2A01F83ADE0
+  DefaultWasTakenNode    = 0x2A01F83B1E8
+  DefaultTakeButtonNode  = 0x2A01F83B340
+reasons:
+  hit=0x2A01F83A5B8 off=0x140 back=0
+  hit=0x2A01F83A710 off=0x140 back=1
+  hit=0x2A01F83A868 off=0x140 back=2
+  hit=0x2A01F83A9C0 off=0x140 back=3
+  hit=0x2A01F83AB18 off=0x140 back=4
+details:
+  node[0] 0x2A01F83A478 headerScore=126
+  node[1] 0x2A01F83A5D0 headerScore=126
+  node[2] 0x2A01F83A728 headerScore=126
+  node[3] 0x2A01F83A880 headerScore=126
+  node[4] 0x2A01F83A9D8 headerScore=126
+  node[5] 0x2A01F83AB30 headerScore=126
+  LevelTextNode            node=0x2A01F83ADE0 key=DefaultWasTakenText val=nil
+  DefaultWasTakenNode      node=0x2A01F83B1E8 key=LevelText val=5
+  DefaultTakeButtonNode    node=0x2A01F83B340 key=DefaultTakeButtonText val=T
+
+#05 nodePoolBase=0x2A01F8391A8 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x2A01F839B10
+  DefaultWasTakenNode    = 0x2A01F839F18
+  DefaultTakeButtonNode  = 0x2A01F83A070
+reasons:
+  hit=0x2A01F8392E8 off=0x140 back=0
+  hit=0x2A01F839440 off=0x140 back=1
+  hit=0x2A01F839598 off=0x140 back=2
+  hit=0x2A01F8396F0 off=0x140 back=3
+  hit=0x2A01F839848 off=0x140 back=4
+details:
+  node[0] 0x2A01F8391A8 headerScore=126
+  node[1] 0x2A01F839300 headerScore=126
+  node[2] 0x2A01F839458 headerScore=126
+  node[3] 0x2A01F8395B0 headerScore=126
+  node[4] 0x2A01F839708 headerScore=126
+  node[5] 0x2A01F839860 headerScore=126
+  LevelTextNode            node=0x2A01F839B10 key=PremiumTakeButtonText val=T
+  DefaultWasTakenNode      node=0x2A01F839F18 key=DefaultTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x2A01F83A070 key=DefaultWasTakenText val=nil
+
+#06 nodePoolBase=0x2A01F8395B0 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
+derived:
+  LevelTextNode          = 0x2A01F839F18
+  DefaultWasTakenNode    = 0x2A01F83A320
+  DefaultTakeButtonNode  = 0x2A01F83A478
+reasons:
+  hit=0x2A01F8396F0 off=0x140 back=0
+  hit=0x2A01F839848 off=0x140 back=1
+  hit=0x2A01F8399A0 off=0x140 back=2
+  hit=0x2A01F839AF8 off=0x140 back=3
+  hit=0x2A01F839C50 off=0x140 back=4
+details:
+  node[0] 0x2A01F8395B0 headerScore=126
+  node[1] 0x2A01F839708 headerScore=126
+  node[2] 0x2A01F839860 headerScore=126
+  node[3] 0x2A01F8399B8 headerScore=126
+  node[4] 0x2A01F839B10 headerScore=126
+  node[5] 0x2A01F839C68 headerScore=126
+  LevelTextNode            node=0x2A01F839F18 key=DefaultTakeButtonText val=T
+  DefaultWasTakenNode      node=0x2A01F83A320 key=PremiumWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x2A01F83A478 key=LevelText val=3
+
+#07 nodePoolBase=0x2A01F839860 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x2A01F83A1C8
+  DefaultWasTakenNode    = 0x2A01F83A5D0
+  DefaultTakeButtonNode  = 0x2A01F83A728
+reasons:
+  hit=0x2A01F8399A0 off=0x140 back=0
+  hit=0x2A01F839AF8 off=0x140 back=1
+  hit=0x2A01F839C50 off=0x140 back=2
+  hit=0x2A01F839DA8 off=0x140 back=3
+  hit=0x2A01F839F00 off=0x140 back=4
+details:
+  node[0] 0x2A01F839860 headerScore=126
+  node[1] 0x2A01F8399B8 headerScore=126
+  node[2] 0x2A01F839B10 headerScore=126
+  node[3] 0x2A01F839C68 headerScore=126
+  node[4] 0x2A01F839DC0 headerScore=126
+  node[5] 0x2A01F839F18 headerScore=126
+  LevelTextNode            node=0x2A01F83A1C8 key=PremiumTakeButtonText val=T
+  DefaultWasTakenNode      node=0x2A01F83A5D0 key=DefaultTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x2A01F83A728 key=DefaultWasTakenText val=nil
+
+#08 nodePoolBase=0x2A01F839C68 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
+derived:
+  LevelTextNode          = 0x2A01F83A5D0
+  DefaultWasTakenNode    = 0x2A01F83A9D8
+  DefaultTakeButtonNode  = 0x2A01F83AB30
+reasons:
+  hit=0x2A01F839DA8 off=0x140 back=0
+  hit=0x2A01F839F00 off=0x140 back=1
+  hit=0x2A01F83A058 off=0x140 back=2
+  hit=0x2A01F83A1B0 off=0x140 back=3
+  hit=0x2A01F83A308 off=0x140 back=4
+details:
+  node[0] 0x2A01F839C68 headerScore=126
+  node[1] 0x2A01F839DC0 headerScore=126
+  node[2] 0x2A01F839F18 headerScore=126
+  node[3] 0x2A01F83A070 headerScore=126
+  node[4] 0x2A01F83A1C8 headerScore=126
+  node[5] 0x2A01F83A320 headerScore=126
+  LevelTextNode            node=0x2A01F83A5D0 key=DefaultTakeButtonText val=T
+  DefaultWasTakenNode      node=0x2A01F83A9D8 key=PremiumWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x2A01F83AB30 key=LevelText val=4
+
+#09 nodePoolBase=0x2A01F839F18 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x2A01F83A880
+  DefaultWasTakenNode    = 0x2A01F83AC88
+  DefaultTakeButtonNode  = 0x2A01F83ADE0
+reasons:
+  hit=0x2A01F83A058 off=0x140 back=0
+  hit=0x2A01F83A1B0 off=0x140 back=1
+  hit=0x2A01F83A308 off=0x140 back=2
+  hit=0x2A01F83A460 off=0x140 back=3
+  hit=0x2A01F83A5B8 off=0x140 back=4
+details:
+  node[0] 0x2A01F839F18 headerScore=126
+  node[1] 0x2A01F83A070 headerScore=126
+  node[2] 0x2A01F83A1C8 headerScore=126
+  node[3] 0x2A01F83A320 headerScore=126
+  node[4] 0x2A01F83A478 headerScore=126
+  node[5] 0x2A01F83A5D0 headerScore=126
+  LevelTextNode            node=0x2A01F83A880 key=PremiumTakeButtonText val=T
+  DefaultWasTakenNode      node=0x2A01F83AC88 key=DefaultTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x2A01F83ADE0 key=DefaultWasTakenText val=nil
+
+#10 nodePoolBase=0x2A01F83A320 score=4535 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
+derived:
+  LevelTextNode          = 0x2A01F83AC88
+  DefaultWasTakenNode    = 0x2A01F83B090
+  DefaultTakeButtonNode  = 0x2A01F83B1E8
+reasons:
+  hit=0x2A01F83A460 off=0x140 back=0
+  hit=0x2A01F83A5B8 off=0x140 back=1
+  hit=0x2A01F83A710 off=0x140 back=2
+  hit=0x2A01F83A868 off=0x140 back=3
+  hit=0x2A01F83A9C0 off=0x140 back=4
+details:
+  node[0] 0x2A01F83A320 headerScore=126
+  node[1] 0x2A01F83A478 headerScore=126
+  node[2] 0x2A01F83A5D0 headerScore=126
+  node[3] 0x2A01F83A728 headerScore=126
+  node[4] 0x2A01F83A880 headerScore=126
+  node[5] 0x2A01F83A9D8 headerScore=126
+  LevelTextNode            node=0x2A01F83AC88 key=DefaultTakeButtonText val=T
+  DefaultWasTakenNode      node=0x2A01F83B090 key=PremiumWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x2A01F83B1E8 key=LevelText val=5
+
+#11 nodePoolBase=0x2A01F838EF8 score=4500 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | DefaultTakeButton.key | LevelText.key
+derived:
+  LevelTextNode          = 0x2A01F839860
+  DefaultWasTakenNode    = 0x2A01F839C68
+  DefaultTakeButtonNode  = 0x2A01F839DC0
+reasons:
+  hit=0x2A01F839038 off=0x140 back=0
+  hit=0x2A01F839190 off=0x140 back=1
+  hit=0x2A01F8392E8 off=0x140 back=2
+  hit=0x2A01F839440 off=0x140 back=3
+  hit=0x2A01F839598 off=0x140 back=4
+details:
+  node[0] 0x2A01F838EF8 headerScore=126
+  node[1] 0x2A01F839050 headerScore=126
+  node[2] 0x2A01F8391A8 headerScore=126
+  node[3] 0x2A01F839300 headerScore=126
+  node[4] 0x2A01F839458 headerScore=126
+  node[5] 0x2A01F8395B0 headerScore=126
+  LevelTextNode            node=0x2A01F839860 key=DefaultTakeButtonText val=T
+  DefaultWasTakenNode      node=0x2A01F839C68 key=PremiumWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x2A01F839DC0 key=LevelText val=2
+
+#12 nodePoolBase=0x2A01F83A5D0 score=4355 clusterHits=19
+notes: clusterHits=19 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultTakeButton.key | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x2A01F83AF38
+  DefaultWasTakenNode    = 0x2A01F83B340
+  DefaultTakeButtonNode  = 0x2A01F83B498
+reasons:
+  hit=0x2A01F83A710 off=0x140 back=0
+  hit=0x2A01F83A868 off=0x140 back=1
+  hit=0x2A01F83A9C0 off=0x140 back=2
+  hit=0x2A01F83AB18 off=0x140 back=3
+  hit=0x2A01F83AC70 off=0x140 back=4
+details:
+  node[0] 0x2A01F83A5D0 headerScore=126
+  node[1] 0x2A01F83A728 headerScore=126
+  node[2] 0x2A01F83A880 headerScore=126
+  node[3] 0x2A01F83A9D8 headerScore=126
+  node[4] 0x2A01F83AB30 headerScore=126
+  node[5] 0x2A01F83AC88 headerScore=126
+  LevelTextNode            node=0x2A01F83AF38 key=PremiumTakeButtonText val=T
+  DefaultWasTakenNode      node=0x2A01F83B340 key=DefaultTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x2A01F83B498 key=DefaultWasTakenText val=nil
+
+#13 nodePoolBase=0x2A01F839300 score=4285 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x2A01F839C68
+  DefaultWasTakenNode    = 0x2A01F83A070
+  DefaultTakeButtonNode  = 0x2A01F83A1C8
+reasons:
+  hit=0x2A01F839440 off=0x140 back=0
+  hit=0x2A01F839598 off=0x140 back=1
+  hit=0x2A01F8396F0 off=0x140 back=2
+  hit=0x2A01F839848 off=0x140 back=3
+  hit=0x2A01F8399A0 off=0x140 back=4
+details:
+  node[0] 0x2A01F839300 headerScore=126
+  node[1] 0x2A01F839458 headerScore=126
+  node[2] 0x2A01F8395B0 headerScore=126
+  node[3] 0x2A01F839708 headerScore=126
+  node[4] 0x2A01F839860 headerScore=126
+  node[5] 0x2A01F8399B8 headerScore=126
+  LevelTextNode            node=0x2A01F839C68 key=PremiumWasTakenText val=nil
+  DefaultWasTakenNode      node=0x2A01F83A070 key=DefaultWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x2A01F83A1C8 key=PremiumTakeButtonText val=T
+
+#14 nodePoolBase=0x2A01F8399B8 score=4285 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x2A01F83A320
+  DefaultWasTakenNode    = 0x2A01F83A728
+  DefaultTakeButtonNode  = 0x2A01F83A880
+reasons:
+  hit=0x2A01F839AF8 off=0x140 back=0
+  hit=0x2A01F839C50 off=0x140 back=1
+  hit=0x2A01F839DA8 off=0x140 back=2
+  hit=0x2A01F839F00 off=0x140 back=3
+  hit=0x2A01F83A058 off=0x140 back=4
+details:
+  node[0] 0x2A01F8399B8 headerScore=126
+  node[1] 0x2A01F839B10 headerScore=126
+  node[2] 0x2A01F839C68 headerScore=126
+  node[3] 0x2A01F839DC0 headerScore=126
+  node[4] 0x2A01F839F18 headerScore=126
+  node[5] 0x2A01F83A070 headerScore=126
+  LevelTextNode            node=0x2A01F83A320 key=PremiumWasTakenText val=nil
+  DefaultWasTakenNode      node=0x2A01F83A728 key=DefaultWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x2A01F83A880 key=PremiumTakeButtonText val=T
+
+#15 nodePoolBase=0x2A01F83A070 score=4285 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x2A01F83A9D8
+  DefaultWasTakenNode    = 0x2A01F83ADE0
+  DefaultTakeButtonNode  = 0x2A01F83AF38
+reasons:
+  hit=0x2A01F83A1B0 off=0x140 back=0
+  hit=0x2A01F83A308 off=0x140 back=1
+  hit=0x2A01F83A460 off=0x140 back=2
+  hit=0x2A01F83A5B8 off=0x140 back=3
+  hit=0x2A01F83A710 off=0x140 back=4
+details:
+  node[0] 0x2A01F83A070 headerScore=126
+  node[1] 0x2A01F83A1C8 headerScore=126
+  node[2] 0x2A01F83A320 headerScore=126
+  node[3] 0x2A01F83A478 headerScore=126
+  node[4] 0x2A01F83A5D0 headerScore=126
+  node[5] 0x2A01F83A728 headerScore=126
+  LevelTextNode            node=0x2A01F83A9D8 key=PremiumWasTakenText val=nil
+  DefaultWasTakenNode      node=0x2A01F83ADE0 key=DefaultWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x2A01F83AF38 key=PremiumTakeButtonText val=T
+
+#16 nodePoolBase=0x2A01F839458 score=4250 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | LevelText.key
+derived:
+  LevelTextNode          = 0x2A01F839DC0
+  DefaultWasTakenNode    = 0x2A01F83A1C8
+  DefaultTakeButtonNode  = 0x2A01F83A320
+reasons:
+  hit=0x2A01F839598 off=0x140 back=0
+  hit=0x2A01F8396F0 off=0x140 back=1
+  hit=0x2A01F839848 off=0x140 back=2
+  hit=0x2A01F8399A0 off=0x140 back=3
+  hit=0x2A01F839AF8 off=0x140 back=4
+details:
+  node[0] 0x2A01F839458 headerScore=126
+  node[1] 0x2A01F8395B0 headerScore=126
+  node[2] 0x2A01F839708 headerScore=126
+  node[3] 0x2A01F839860 headerScore=126
+  node[4] 0x2A01F8399B8 headerScore=126
+  node[5] 0x2A01F839B10 headerScore=126
+  LevelTextNode            node=0x2A01F839DC0 key=LevelText val=2
+  DefaultWasTakenNode      node=0x2A01F83A1C8 key=PremiumTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x2A01F83A320 key=PremiumWasTakenText val=nil
+
+#17 nodePoolBase=0x2A01F839B10 score=4250 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | LevelText.key
+derived:
+  LevelTextNode          = 0x2A01F83A478
+  DefaultWasTakenNode    = 0x2A01F83A880
+  DefaultTakeButtonNode  = 0x2A01F83A9D8
+reasons:
+  hit=0x2A01F839C50 off=0x140 back=0
+  hit=0x2A01F839DA8 off=0x140 back=1
+  hit=0x2A01F839F00 off=0x140 back=2
+  hit=0x2A01F83A058 off=0x140 back=3
+  hit=0x2A01F83A1B0 off=0x140 back=4
+details:
+  node[0] 0x2A01F839B10 headerScore=126
+  node[1] 0x2A01F839C68 headerScore=126
+  node[2] 0x2A01F839DC0 headerScore=126
+  node[3] 0x2A01F839F18 headerScore=126
+  node[4] 0x2A01F83A070 headerScore=126
+  node[5] 0x2A01F83A1C8 headerScore=126
+  LevelTextNode            node=0x2A01F83A478 key=LevelText val=3
+  DefaultWasTakenNode      node=0x2A01F83A880 key=PremiumTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x2A01F83A9D8 key=PremiumWasTakenText val=nil
+
+#18 nodePoolBase=0x2A01F83A1C8 score=4250 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=3 | float1211Nodes=9 | LevelText.key
+derived:
+  LevelTextNode          = 0x2A01F83AB30
+  DefaultWasTakenNode    = 0x2A01F83AF38
+  DefaultTakeButtonNode  = 0x2A01F83B090
+reasons:
+  hit=0x2A01F83A308 off=0x140 back=0
+  hit=0x2A01F83A460 off=0x140 back=1
+  hit=0x2A01F83A5B8 off=0x140 back=2
+  hit=0x2A01F83A710 off=0x140 back=3
+  hit=0x2A01F83A868 off=0x140 back=4
+details:
+  node[0] 0x2A01F83A1C8 headerScore=126
+  node[1] 0x2A01F83A320 headerScore=126
+  node[2] 0x2A01F83A478 headerScore=126
+  node[3] 0x2A01F83A5D0 headerScore=126
+  node[4] 0x2A01F83A728 headerScore=126
+  node[5] 0x2A01F83A880 headerScore=126
+  LevelTextNode            node=0x2A01F83AB30 key=LevelText val=4
+  DefaultWasTakenNode      node=0x2A01F83AF38 key=PremiumTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x2A01F83B090 key=PremiumWasTakenText val=nil
+
+#19 nodePoolBase=0x2A01F838AF0 score=4200 clusterHits=18
+notes: clusterHits=18 | goodHeaders=10 | strideOK | strongStride | count20Nodes=2 | float1211Nodes=6 | DefaultTakeButton.key | DefaultWasTaken.key | val=Получено
+derived:
+  LevelTextNode          = 0x2A01F839458
+  DefaultWasTakenNode    = 0x2A01F839860
+  DefaultTakeButtonNode  = 0x2A01F8399B8
+reasons:
+  hit=0x2A01F839038 off=0x140 back=3
+  hit=0x2A01F839190 off=0x140 back=4
+  hit=0x2A01F8392E8 off=0x140 back=5
+  hit=0x2A01F839440 off=0x140 back=6
+  hit=0x2A01F839598 off=0x140 back=7
+details:
+  node[0] 0x2A01F838AF0 headerScore=126
+  node[1] 0x2A01F838C48 headerScore=126
+  node[2] 0x2A01F838DA0 headerScore=126
+  node[3] 0x2A01F838EF8 headerScore=126
+  node[4] 0x2A01F839050 headerScore=126
+  node[5] 0x2A01F8391A8 headerScore=126
+  LevelTextNode            node=0x2A01F839458 key=PremiumTakeButtonText val=T
+  DefaultWasTakenNode      node=0x2A01F839860 key=DefaultTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x2A01F8399B8 key=DefaultWasTakenText val=Получено
+
+#20 nodePoolBase=0x2A01F838C48 score=4085 clusterHits=19
+notes: clusterHits=19 | goodHeaders=10 | strideOK | strongStride | count20Nodes=2 | float1211Nodes=7 | DefaultWasTaken.key | val=Получено
+derived:
+  LevelTextNode          = 0x2A01F8395B0
+  DefaultWasTakenNode    = 0x2A01F8399B8
+  DefaultTakeButtonNode  = 0x2A01F839B10
+reasons:
+  hit=0x2A01F839038 off=0x140 back=2
+  hit=0x2A01F839190 off=0x140 back=3
+  hit=0x2A01F8392E8 off=0x140 back=4
+  hit=0x2A01F839440 off=0x140 back=5
+  hit=0x2A01F839598 off=0x140 back=6
+details:
+  node[0] 0x2A01F838C48 headerScore=126
+  node[1] 0x2A01F838DA0 headerScore=126
+  node[2] 0x2A01F838EF8 headerScore=126
+  node[3] 0x2A01F839050 headerScore=126
+  node[4] 0x2A01F8391A8 headerScore=126
+  node[5] 0x2A01F839300 headerScore=126
+  LevelTextNode            node=0x2A01F8395B0 key=PremiumWasTakenText val=nil
+  DefaultWasTakenNode      node=0x2A01F8399B8 key=DefaultWasTakenText val=Получено
+  DefaultTakeButtonNode    node=0x2A01F839B10 key=PremiumTakeButtonText val=T
+
+#21 nodePoolBase=0x2A01F838DA0 score=4080 clusterHits=20
+notes: clusterHits=20 | goodHeaders=10 | strideOK | strongStride | count20Nodes=2 | float1211Nodes=8 | LevelText.key
+derived:
+  LevelTextNode          = 0x2A01F839708
+  DefaultWasTakenNode    = 0x2A01F839B10
+  DefaultTakeButtonNode  = 0x2A01F839C68
+reasons:
+  hit=0x2A01F839038 off=0x140 back=1
+  hit=0x2A01F839190 off=0x140 back=2
+  hit=0x2A01F8392E8 off=0x140 back=3
+  hit=0x2A01F839440 off=0x140 back=4
+  hit=0x2A01F839598 off=0x140 back=5
+details:
+  node[0] 0x2A01F838DA0 headerScore=126
+  node[1] 0x2A01F838EF8 headerScore=126
+  node[2] 0x2A01F839050 headerScore=126
+  node[3] 0x2A01F8391A8 headerScore=126
+  node[4] 0x2A01F839300 headerScore=126
+  node[5] 0x2A01F839458 headerScore=126
+  LevelTextNode            node=0x2A01F839708 key=LevelText val=1
+  DefaultWasTakenNode      node=0x2A01F839B10 key=PremiumTakeButtonText val=T
+  DefaultTakeButtonNode    node=0x2A01F839C68 key=PremiumWasTakenText val=nil
+
+#22 nodePoolBase=0x2A01F838840 score=4030 clusterHits=17
+notes: clusterHits=17 | goodHeaders=10 | strideOK | strongStride | count20Nodes=1 | float1211Nodes=5 | DefaultTakeButton.key | val=Забрать | LevelText.key
+derived:
+  LevelTextNode          = 0x2A01F8391A8
+  DefaultWasTakenNode    = 0x2A01F8395B0
+  DefaultTakeButtonNode  = 0x2A01F839708
+reasons:
+  hit=0x2A01F838980 off=0x140 back=0
+  hit=0x2A01F839038 off=0x140 back=5
+  hit=0x2A01F839190 off=0x140 back=6
+  hit=0x2A01F8392E8 off=0x140 back=7
+  hit=0x2A01F839440 off=0x140 back=8
+details:
+  node[0] 0x2A01F838840 headerScore=126
+  node[1] 0x2A01F838998 headerScore=126
+  node[2] 0x2A01F838AF0 headerScore=126
+  node[3] 0x2A01F838C48 headerScore=126
+  node[4] 0x2A01F838DA0 headerScore=126
+  node[5] 0x2A01F838EF8 headerScore=126
+  LevelTextNode            node=0x2A01F8391A8 key=DefaultTakeButtonText val=Забрать
+  DefaultWasTakenNode      node=0x2A01F8395B0 key=PremiumWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x2A01F839708 key=LevelText val=1
+
+#23 nodePoolBase=0x2A01F83A728 score=4015 clusterHits=18
+notes: clusterHits=18 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | DefaultWasTaken.key
+derived:
+  LevelTextNode          = 0x2A01F83B090
+  DefaultWasTakenNode    = 0x2A01F83B498
+  DefaultTakeButtonNode  = 0x2A01F83B5F0
+reasons:
+  hit=0x2A01F83A868 off=0x140 back=0
+  hit=0x2A01F83A9C0 off=0x140 back=1
+  hit=0x2A01F83AB18 off=0x140 back=2
+  hit=0x2A01F83AC70 off=0x140 back=3
+  hit=0x2A01F83ADC8 off=0x140 back=4
+details:
+  node[0] 0x2A01F83A728 headerScore=126
+  node[1] 0x2A01F83A880 headerScore=126
+  node[2] 0x2A01F83A9D8 headerScore=126
+  node[3] 0x2A01F83AB30 headerScore=126
+  node[4] 0x2A01F83AC88 headerScore=126
+  node[5] 0x2A01F83ADE0 headerScore=126
+  LevelTextNode            node=0x2A01F83B090 key=PremiumWasTakenText val=nil
+  DefaultWasTakenNode      node=0x2A01F83B498 key=DefaultWasTakenText val=nil
+  DefaultTakeButtonNode    node=0x2A01F83B5F0 key=PremiumTakeButtonText val=T
+
+#24 nodePoolBase=0x2A01F839858 score=3827 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take | val=Take
+derived:
+  LevelTextNode          = 0x2A01F83A1C0
+  DefaultWasTakenNode    = 0x2A01F83A5C8
+  DefaultTakeButtonNode  = 0x2A01F83A720
+reasons:
+  hit=0x2A01F8399A0 off=0x148 back=0
+  hit=0x2A01F839AF8 off=0x148 back=1
+  hit=0x2A01F839C50 off=0x148 back=2
+  hit=0x2A01F839DA8 off=0x148 back=3
+  hit=0x2A01F839F00 off=0x148 back=4
+details:
+  node[0] 0x2A01F839858 headerScore=84
+  node[1] 0x2A01F8399B0 headerScore=86
+  node[2] 0x2A01F839B08 headerScore=84
+  node[3] 0x2A01F839C60 headerScore=86
+  node[4] 0x2A01F839DB8 headerScore=86
+  node[5] 0x2A01F839F10 headerScore=84
+  LevelTextNode            node=0x2A01F83A1C0 key=nil val=Take
+  DefaultWasTakenNode      node=0x2A01F83A5C8 key=nil val=Take
+  DefaultTakeButtonNode    node=0x2A01F83A720 key=nil val=nil
+
+#25 nodePoolBase=0x2A01F839F10 score=3827 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take | val=Take
+derived:
+  LevelTextNode          = 0x2A01F83A878
+  DefaultWasTakenNode    = 0x2A01F83AC80
+  DefaultTakeButtonNode  = 0x2A01F83ADD8
+reasons:
+  hit=0x2A01F83A058 off=0x148 back=0
+  hit=0x2A01F83A1B0 off=0x148 back=1
+  hit=0x2A01F83A308 off=0x148 back=2
+  hit=0x2A01F83A460 off=0x148 back=3
+  hit=0x2A01F83A5B8 off=0x148 back=4
+details:
+  node[0] 0x2A01F839F10 headerScore=84
+  node[1] 0x2A01F83A068 headerScore=86
+  node[2] 0x2A01F83A1C0 headerScore=84
+  node[3] 0x2A01F83A318 headerScore=86
+  node[4] 0x2A01F83A470 headerScore=86
+  node[5] 0x2A01F83A5C8 headerScore=84
+  LevelTextNode            node=0x2A01F83A878 key=nil val=Take
+  DefaultWasTakenNode      node=0x2A01F83AC80 key=nil val=Take
+  DefaultTakeButtonNode    node=0x2A01F83ADD8 key=nil val=nil
+
+#26 nodePoolBase=0x2A01F8391A0 score=3817 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take | val=Take
+derived:
+  LevelTextNode          = 0x2A01F839B08
+  DefaultWasTakenNode    = 0x2A01F839F10
+  DefaultTakeButtonNode  = 0x2A01F83A068
+reasons:
+  hit=0x2A01F8392E8 off=0x148 back=0
+  hit=0x2A01F839440 off=0x148 back=1
+  hit=0x2A01F839598 off=0x148 back=2
+  hit=0x2A01F8396F0 off=0x148 back=3
+  hit=0x2A01F839848 off=0x148 back=4
+details:
+  node[0] 0x2A01F8391A0 headerScore=92
+  node[1] 0x2A01F8392F8 headerScore=86
+  node[2] 0x2A01F839450 headerScore=78
+  node[3] 0x2A01F8395A8 headerScore=86
+  node[4] 0x2A01F839700 headerScore=86
+  node[5] 0x2A01F839858 headerScore=78
+  LevelTextNode            node=0x2A01F839B08 key=nil val=Take
+  DefaultWasTakenNode      node=0x2A01F839F10 key=nil val=Take
+  DefaultTakeButtonNode    node=0x2A01F83A068 key=nil val=nil
+
+#27 nodePoolBase=0x2A01F8392F8 score=3709 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
+derived:
+  LevelTextNode          = 0x2A01F839C60
+  DefaultWasTakenNode    = 0x2A01F83A068
+  DefaultTakeButtonNode  = 0x2A01F83A1C0
+reasons:
+  hit=0x2A01F839440 off=0x148 back=0
+  hit=0x2A01F839598 off=0x148 back=1
+  hit=0x2A01F8396F0 off=0x148 back=2
+  hit=0x2A01F839848 off=0x148 back=3
+  hit=0x2A01F8399A0 off=0x148 back=4
+details:
+  node[0] 0x2A01F8392F8 headerScore=92
+  node[1] 0x2A01F839450 headerScore=78
+  node[2] 0x2A01F8395A8 headerScore=86
+  node[3] 0x2A01F839700 headerScore=86
+  node[4] 0x2A01F839858 headerScore=78
+  node[5] 0x2A01F8399B0 headerScore=86
+  LevelTextNode            node=0x2A01F839C60 key=nil val=nil
+  DefaultWasTakenNode      node=0x2A01F83A068 key=nil val=nil
+  DefaultTakeButtonNode    node=0x2A01F83A1C0 key=nil val=Take
+
+#28 nodePoolBase=0x2A01F8395A8 score=3709 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
+derived:
+  LevelTextNode          = 0x2A01F839F10
+  DefaultWasTakenNode    = 0x2A01F83A318
+  DefaultTakeButtonNode  = 0x2A01F83A470
+reasons:
+  hit=0x2A01F8396F0 off=0x148 back=0
+  hit=0x2A01F839848 off=0x148 back=1
+  hit=0x2A01F8399A0 off=0x148 back=2
+  hit=0x2A01F839AF8 off=0x148 back=3
+  hit=0x2A01F839C50 off=0x148 back=4
+details:
+  node[0] 0x2A01F8395A8 headerScore=92
+  node[1] 0x2A01F839700 headerScore=86
+  node[2] 0x2A01F839858 headerScore=78
+  node[3] 0x2A01F8399B0 headerScore=86
+  node[4] 0x2A01F839B08 headerScore=78
+  node[5] 0x2A01F839C60 headerScore=86
+  LevelTextNode            node=0x2A01F839F10 key=nil val=Take
+  DefaultWasTakenNode      node=0x2A01F83A318 key=nil val=nil
+  DefaultTakeButtonNode    node=0x2A01F83A470 key=nil val=3
+
+#29 nodePoolBase=0x2A01F8399B0 score=3709 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
+derived:
+  LevelTextNode          = 0x2A01F83A318
+  DefaultWasTakenNode    = 0x2A01F83A720
+  DefaultTakeButtonNode  = 0x2A01F83A878
+reasons:
+  hit=0x2A01F839AF8 off=0x148 back=0
+  hit=0x2A01F839C50 off=0x148 back=1
+  hit=0x2A01F839DA8 off=0x148 back=2
+  hit=0x2A01F839F00 off=0x148 back=3
+  hit=0x2A01F83A058 off=0x148 back=4
+details:
+  node[0] 0x2A01F8399B0 headerScore=92
+  node[1] 0x2A01F839B08 headerScore=78
+  node[2] 0x2A01F839C60 headerScore=86
+  node[3] 0x2A01F839DB8 headerScore=86
+  node[4] 0x2A01F839F10 headerScore=78
+  node[5] 0x2A01F83A068 headerScore=86
+  LevelTextNode            node=0x2A01F83A318 key=nil val=nil
+  DefaultWasTakenNode      node=0x2A01F83A720 key=nil val=nil
+  DefaultTakeButtonNode    node=0x2A01F83A878 key=nil val=Take
+
+#30 nodePoolBase=0x2A01F839C60 score=3709 clusterHits=21
+notes: clusterHits=21 | goodHeaders=10 | strideOK | strongStride | count20Nodes=4 | float1211Nodes=9 | val=Take
+derived:
+  LevelTextNode          = 0x2A01F83A5C8
+  DefaultWasTakenNode    = 0x2A01F83A9D0
+  DefaultTakeButtonNode  = 0x2A01F83AB28
+reasons:
+  hit=0x2A01F839DA8 off=0x148 back=0
+  hit=0x2A01F839F00 off=0x148 back=1
+  hit=0x2A01F83A058 off=0x148 back=2
+  hit=0x2A01F83A1B0 off=0x148 back=3
+  hit=0x2A01F83A308 off=0x148 back=4
+details:
+  node[0] 0x2A01F839C60 headerScore=92
+  node[1] 0x2A01F839DB8 headerScore=86
+  node[2] 0x2A01F839F10 headerScore=78
+  node[3] 0x2A01F83A068 headerScore=86
+  node[4] 0x2A01F83A1C0 headerScore=78
+  node[5] 0x2A01F83A318 headerScore=86
+  LevelTextNode            node=0x2A01F83A5C8 key=nil val=Take
+  DefaultWasTakenNode      node=0x2A01F83A9D0 key=nil val=nil
+  DefaultTakeButtonNode    node=0x2A01F83AB28 key=nil val=4
+
+DONE
+Report: C:\Users\Bogdan\Desktop\ce_nodePoolBase_FAST_cluster_20260520_215528.txt
